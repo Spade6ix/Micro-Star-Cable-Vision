@@ -1,4 +1,4 @@
-package employee;
+package microStar.employee;
 
 public class EmployeeModel {
 }

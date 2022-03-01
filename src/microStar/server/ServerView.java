@@ -1,4 +1,4 @@
-package server;
+package microStar.server;
 
 public class ServerView {
 }
