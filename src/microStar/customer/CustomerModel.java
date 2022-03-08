@@ -1,7 +1,6 @@
 package microStar.customer;
 
 public class CustomerModel {
-<<<<<<< HEAD
     private String customerID;
     private String password;
     private String firstName;
@@ -108,6 +107,4 @@ public class CustomerModel {
                 '}';
     }
 
-=======
->>>>>>> parent of 3ab7936 (Customer Object and ORM config)
 }
