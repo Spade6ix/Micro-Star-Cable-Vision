@@ -99,7 +99,6 @@ public class CustomerModel {
     public String toString() {
         return "CustomerModel{" +
                 "Customer ID: " + customerID +
-                ", Password: " + password +
                 ", First Name: " + firstName +
                 ", Last Name: " + lastName +
                 ", Email: " + email +
