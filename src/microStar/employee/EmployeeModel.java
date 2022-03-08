@@ -1,6 +1,8 @@
 package microStar.employee;
 
-public class EmployeeModel {
+import java.io.Serializable;
+
+public class EmployeeModel implements Serializable {
 	
 	//Attributes
 	private String staffID;

@@ -1,6 +1,8 @@
 package microStar.customer;
 
-public class CustomerModel {
+import java.io.Serializable;
+
+public class CustomerModel implements Serializable {
     private String customerID;
     private String password;
     private String firstName;
