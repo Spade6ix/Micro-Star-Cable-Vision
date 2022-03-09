@@ -2,6 +2,7 @@ package microStar.employee;
 
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -20,7 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public class EmployeeLoginScreen implements MouseListener{
+public class EmployeeLoginScreen extends Component implements MouseListener{
 	/* COLOURS:
 
 	   --grays
@@ -39,9 +40,9 @@ public class EmployeeLoginScreen implements MouseListener{
     JLabel companyNameLabel = new JLabel("Micro Star Cable Vision");
     JLabel idLabel = new JLabel("ID");
     JLabel passwordLabel = new JLabel("Password");
-    JTextField idTextField = new JTextField();
-    JTextField passwordTextField = new JTextField();
-    JButton loginButton = new JButton("Login");
+    public static JTextField idTextField = new JTextField();
+    public static JTextField passwordTextField = new JTextField();
+    public static JButton loginButton = new JButton("Login");
 
 
 
