@@ -1,3 +1,5 @@
+package microStar.customer;
+
 import java.io.Serializable;
 
 public class Complaint implements Serializable {
