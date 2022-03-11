@@ -1,19 +1,145 @@
 package microStar.customer;
 
-import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JPanel;
 
 
-public class CustomerView {
+public class CustomerView implements MouseListener{
+	
+	public static JPanel currentPanel = null;
+	public static Dashboard dashBoard = null;
+	
+	public static LoginScreen loginScreen = null;
+	public static Dashboard dashboard = null;
+	public static WelcomeScreen welcomeScreen = null;
+	
+	
+	/*
+	public static void main(String[] args) {
+		CustomerView customerView = new CustomerView();
+		customerView.createCustomerLoginScreen();
+	}
+	*/
+	
+	
+	
+	
 
-	public static Component createCustomerLoginScreen() {
+	public void createCustomerLoginScreen() {
 		/*public vars
 		  
-		 CustomerLoginScreen.idTextField			-ID TextField	
-    	 CustomerLoginScreen.passwordTextField 		-Password TextField
-    	 CustomerLoginScreen.loginButton 			-Login Button
+		 loginScreen.idTextField						-ID TextField	
+    	 loginScreen.passwordTextField 					-Password TextField
+    	 loginScreen.loginButton 						-Login Button
 		 */
-		CustomerLoginScreen loginScreen = new CustomerLoginScreen();
-		return loginScreen;
+		LoginScreen obj = new LoginScreen();
+		obj.loginButton.addMouseListener(this);
+		loginScreen = obj;
+	}
+	
+	
+	
+	
+	public void createCustomerDashboard() {
+		/*public vars
+		  
+	  	dashboard.lodgeComplaint 						-Lodge Complaint
+		dashboard.accountStatus 						-Account Status
+		dashboard.paymentHistory 						-Payment History
+		dashboard.complaintHistory 						-Complaint History
+		dashboard.liveVideoChat 						-live video chat 
+		dashboard.liveChat								-liveChat
+		 */
+		Dashboard obj = new Dashboard();
+		obj.lodgeComplaint.addMouseListener(this);
+		obj.accountStatus.addMouseListener(this);
+		obj.paymentHistory.addMouseListener(this);
+		obj.complaintHistory.addMouseListener(this);
+		obj.liveVideoChat.addMouseListener(this);
+		obj.liveChat.addMouseListener(this);
+		dashBoard = obj;
+	}
+	
+	
+	
+	
+	public void createCustomerWelcomeScreen() {
+		/*public vars
+		  
+		 welcomeScreen.welcomeMessage    			    - Welcome message JLabel
+		 */
+		WelcomeScreen obj = new WelcomeScreen();
+		welcomeScreen = obj;
+	}
+
+
+
+
+
+
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		
+		if(e.getSource() == loginScreen.loginButton) {
+			
+			if(true) { //if correct credentials
+				loginScreen.dispose();
+				createCustomerDashboard();
+				createCustomerWelcomeScreen();
+				dashBoard.add(welcomeScreen);
+			}
+			
+		}
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

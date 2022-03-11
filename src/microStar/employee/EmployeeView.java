@@ -6,7 +6,7 @@ import java.awt.Component;
 public class EmployeeView {
 
 	public static Component createEmployeeLoginScreen() {
-		/*public vars
+		/*public static vars
 		  
 		 EmployeeLoginScreen.idTextField			-ID TextField	
     	 EmployeeLoginScreen.passwordTextField 		-Password TextField
