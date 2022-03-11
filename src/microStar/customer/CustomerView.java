@@ -9,19 +9,18 @@ import javax.swing.JPanel;
 public class CustomerView implements MouseListener{
 	
 	public static JPanel currentPanel = null;
-	public static Dashboard dashBoard = null;
 	
 	public static LoginScreen loginScreen = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
 	
 	
-	/*
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
 		CustomerView customerView = new CustomerView();
 		customerView.createCustomerLoginScreen();
 	}
-	*/
+	
 	
 	
 	
@@ -59,7 +58,7 @@ public class CustomerView implements MouseListener{
 		obj.complaintHistory.addMouseListener(this);
 		obj.liveVideoChat.addMouseListener(this);
 		obj.liveChat.addMouseListener(this);
-		dashBoard = obj;
+		dashboard = obj;
 	}
 	
 	
@@ -91,7 +90,7 @@ public class CustomerView implements MouseListener{
 				loginScreen.dispose();
 				createCustomerDashboard();
 				createCustomerWelcomeScreen();
-				dashBoard.add(welcomeScreen);
+				dashboard.add(welcomeScreen);
 			}
 			
 		}

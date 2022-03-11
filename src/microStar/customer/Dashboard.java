@@ -89,7 +89,7 @@ public class Dashboard extends JFrame implements MouseListener {
         
         //setup window
         this.setTitle("Dashboard");
-	    this.setSize(1180, 680);
+	    this.setSize(1180, 680); //vertical, horizantal
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setResizable(false);
