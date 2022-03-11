@@ -1,8 +1,8 @@
-package microStar.employee;
+package microStar.model;
 
 import java.io.Serializable;
 
-public class EmployeeModel implements Serializable {
+public class Employee implements Serializable {
 	
 	//Attributes
 	private String staffID;
@@ -12,7 +12,7 @@ public class EmployeeModel implements Serializable {
 	private char job;
 	
 	//Constructors
-	public EmployeeModel() {
+	public Employee() {
 		this.staffID = "";
 		this.password = "";
 		this.firstName = "";
@@ -20,7 +20,7 @@ public class EmployeeModel implements Serializable {
 		this.job = 'E';
 	}
 	
-	public EmployeeModel(String staffID, String password, String firstName, String lastName, char job) {
+	public Employee(String staffID, String password, String firstName, String lastName, char job) {
 		this.staffID = staffID;
 		this.password = password;
 		this.firstName = firstName;
@@ -28,7 +28,7 @@ public class EmployeeModel implements Serializable {
 		this.job = job;
 	}
 	
-	public EmployeeModel(EmployeeModel empModelObj) {
+	public Employee(Employee empModelObj) {
 		this.staffID = empModelObj.staffID;
 		this.password = empModelObj.password;
 		this.firstName = empModelObj.firstName;

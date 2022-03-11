@@ -1,8 +1,8 @@
-package microStar.customer;
+package microStar.model;
 
 import java.io.Serializable;
 
-public class CustomerModel implements Serializable {
+public class Customer implements Serializable {
     private String customerID;
     private String password;
     private String firstName;
@@ -11,7 +11,7 @@ public class CustomerModel implements Serializable {
     private String phone;
     private String address;
 
-    public CustomerModel(){
+    public Customer(){
         customerID = " ";
         password = " ";
         firstName = " ";
@@ -21,7 +21,7 @@ public class CustomerModel implements Serializable {
         address = " ";
     }
 
-    public CustomerModel(String customerID, String password, String firstName, String lastName, String email, String phone, String address){
+    public Customer(String customerID, String password, String firstName, String lastName, String email, String phone, String address){
         this.customerID = customerID;
         this.password = password;
         this.firstName = firstName;
@@ -31,7 +31,7 @@ public class CustomerModel implements Serializable {
         this.address = address;
     }
 
-    public CustomerModel(CustomerModel c){
+    public Customer(Customer c){
         this.customerID = c.customerID;
         this.password = c.password;
         this.firstName = c.firstName;

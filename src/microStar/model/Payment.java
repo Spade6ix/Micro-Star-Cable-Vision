@@ -1,4 +1,4 @@
-package microStar.customer;
+package microStar.model;
 
 import java.io.Serializable;
 
