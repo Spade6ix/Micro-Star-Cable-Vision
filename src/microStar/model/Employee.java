@@ -1,11 +1,12 @@
 package microStar.model;
 
 import java.io.Serializable;
+import microStar.factory.SessionFactoryBuilder;
 
 public class Employee implements Serializable {
 	
 	//Attributes
-	private String staffID;
+	private String staffID; //Primary Key
 	private String password;
 	private String firstName;
 	private String lastName;

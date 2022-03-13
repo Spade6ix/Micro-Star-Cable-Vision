@@ -1,25 +1,27 @@
 package microStar.model;
 
 import java.io.Serializable;
+import microStar.factory.DBConnectorFactory;
+import java.time.LocalDateTime;
 
 public class Response implements Serializable {
-    private String responseID;
-    private String complaintID;
-    private String proposedDateOfVisit;
+    private int responseID; //Primary Key
+    private int complaintID; //Foreign Key
+    private LocalDateTime proposedDateOfVisit;
     private String responseDetails;
-    private String responseDateTime;
-    private String staffID;
+    private LocalDateTime responseDateTime;
+    private String staffID; //Foreign Key //ID of Staff member that made Response
 
     public Response(){
-        this.responseID = " ";
-        this.complaintID = " ";
-        this.proposedDateOfVisit = " ";
+        this.responseID = 0;
+        this.complaintID = 0;
+        this.proposedDateOfVisit = null;
         this.responseDetails = " ";
-        this.responseDateTime = " ";
+        this.responseDateTime = null;
         this.staffID = " ";
     }
 
-    public Response(String responseID, String complaintID, String proposedDateOfVisit, String responseDetails, String responseDateTime, String staffID){
+    public Response(int responseID, int complaintID, LocalDateTime proposedDateOfVisit, String responseDetails, LocalDateTime responseDateTime, String staffID){
         this.responseID = responseID;
         this.complaintID = complaintID;
         this.proposedDateOfVisit = proposedDateOfVisit;
@@ -37,15 +39,15 @@ public class Response implements Serializable {
         this.staffID = r.staffID;
     }
 
-    public void setResponseID(String responseID) {
+    public void setResponseID(int responseID) {
         this.responseID = responseID;
     }
 
-    public void setComplaintID(String complaintID) {
+    public void setComplaintID(int complaintID) {
         this.complaintID = complaintID;
     }
 
-    public void setProposedDateOfVisit(String proposedDateOfVisit) {
+    public void setProposedDateOfVisit(LocalDateTime proposedDateOfVisit) {
         this.proposedDateOfVisit = proposedDateOfVisit;
     }
 
@@ -53,7 +55,7 @@ public class Response implements Serializable {
         this.responseDetails = responseDetails;
     }
 
-    public void setResponseDateTime(String responseDateTime) {
+    public void setResponseDateTime(LocalDateTime responseDateTime) {
         this.responseDateTime = responseDateTime;
     }
 
@@ -61,15 +63,15 @@ public class Response implements Serializable {
         this.staffID = staffID;
     }
 
-    public String getResponseID() {
+    public int getResponseID() {
         return responseID;
     }
 
-    public String getComplaintID() {
+    public int getComplaintID() {
         return complaintID;
     }
 
-    public String getProposedDateOfVisit() {
+    public LocalDateTime getProposedDateOfVisit() {
         return proposedDateOfVisit;
     }
 
@@ -77,7 +79,7 @@ public class Response implements Serializable {
         return responseDetails;
     }
 
-    public String getResponseDateTime() {
+    public LocalDateTime getResponseDateTime() {
         return responseDateTime;
     }
 

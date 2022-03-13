@@ -1,10 +1,11 @@
 package microStar.model;
 
 import java.io.Serializable;
+import microStar.factory.DBConnectorFactory;
 
 public class CustomerPhone implements Serializable {
-    private String phone;
-    private String customerID;
+    private String phone; //Primary Key
+    private String customerID; //Primary Key & Foreign Key
 
     public CustomerPhone(){
         this.phone = " ";
