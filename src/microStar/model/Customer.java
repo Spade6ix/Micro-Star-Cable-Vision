@@ -3,11 +3,26 @@ package microStar.model;
 import java.io.Serializable;
 import microStar.factory.SessionFactoryBuilder;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Customer")
 public class Customer implements Serializable {
+    @Column(name = "customerID")
     private String customerID; //Primary Key
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "firstName")
     private String firstName;
+
+    @Column(name = "lastName")
     private String lastName;
+
+    @Column(name = "address")
     private String address;
 
     public Customer(){

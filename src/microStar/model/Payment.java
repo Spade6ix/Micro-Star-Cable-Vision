@@ -3,10 +3,23 @@ package microStar.model;
 import java.io.Serializable;
 import microStar.factory.SessionFactoryBuilder;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Payment")
 public class Payment implements Serializable {
+    @Column(name = "paymentID")
     private String paymentID; //Primary Key
+
+    @Column(name = "customerID")
     private String customerID; //Foreign Key
+
+    @Column(name = "dateOfPayment")
     private String dateOfPayment;
+
+    @Column(name = "amountPaid")
     private Double amountPaid;
 
     public Payment(){

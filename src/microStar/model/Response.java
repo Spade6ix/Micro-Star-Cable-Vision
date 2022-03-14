@@ -2,14 +2,32 @@ package microStar.model;
 
 import java.io.Serializable;
 import microStar.factory.DBConnectorFactory;
+
+import javax.annotation.processing.Generated;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "Response")
 public class Response implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "responseID")
     private int responseID; //Primary Key
+
+    @Column(name = "complaintID")
     private int complaintID; //Foreign Key
+
+    @Column(name = "proposedDateOfVisit")
     private LocalDateTime proposedDateOfVisit;
+
+    @Column(name = "responseDetails")
     private String responseDetails;
+
+    @Column(name = "responseDateTime")
     private LocalDateTime responseDateTime;
+
+    @Column(name = "staffID")
     private String staffID; //Foreign Key //ID of Staff member that made Response
 
     public Response(){

@@ -3,12 +3,29 @@ package microStar.model;
 import java.io.Serializable;
 import microStar.factory.SessionFactoryBuilder;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Complaint")
 public class Complaint implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "complaintID")
     private int complaintID; //Primary Key
+
+    @Column(name = "complaintType")
     private String complaintType; //(Payment, Internet, Cable, Other)
+
+    @Column(name = "complaintDetails")
     private String complaintDetails;
+
+    @Column(name = "status")
     private char status; //(R/U)
+
+    @Column(name = "customerID")
     private String customerID; //(Foreign Key)
+
+    @Column(name = "staffID")
     private String staffID; //(Foreign Key) //TechnicianID
 
     public Complaint(){
