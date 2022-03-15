@@ -1,7 +1,7 @@
 package microStar.model;
 
 import java.io.Serializable;
-import microStar.factory.DBConnectorFactory;
+import microStar.factory.SessionFactoryBuilder;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.*;

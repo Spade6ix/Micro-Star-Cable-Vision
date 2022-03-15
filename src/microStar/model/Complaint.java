@@ -1,7 +1,14 @@
 package microStar.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import microStar.factory.SessionFactoryBuilder;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import javax.persistence.*;
 
@@ -27,6 +34,8 @@ public class Complaint implements Serializable {
 
     @Column(name = "staffID")
     private String staffID; //(Foreign Key) //TechnicianID
+
+    private static final Logger logger = LogManager.getLogger(Complaint.class);
 
     public Complaint(){
         this.complaintID = 0;
@@ -112,4 +121,173 @@ public class Complaint implements Serializable {
                 + "Staff ID: " + staffID;
     }
 
+    public void create(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            session.save(this);
+            transaction.commit();
+            logger.info("Complaint created and saved");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public void updateTechnician(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            com.setStaffID(this.staffID);
+            session.update(com);
+            transaction.commit();
+            logger.info("Complaint updated");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public void updateStatus(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            com.setStatus(this.status);
+            session.update(com);
+            transaction.commit();
+            logger.info("Complaint updated");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public List<Complaint> readAll(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        List<Complaint> complaintList = new ArrayList<Complaint>();
+
+        try{
+            transaction = session.beginTransaction();
+            complaintList = (List<Complaint>) session.createQuery("FROM Complaint").getResultList();
+            transaction.commit();
+            logger.info("All Complaints read");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+        return complaintList;
+    }
+
+    public Complaint readComplaint(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        Complaint complaintObj = new Complaint();
+
+        try{
+            transaction = session.beginTransaction();
+            complaintObj = (Complaint) session.get(Complaint.class,this.complaintID);
+            transaction.commit();
+            logger.info("Complaint read");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+        return complaintObj;
+    }
+
+    public void delete(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            session.delete(com);
+            transaction.commit();
+            logger.info("Complaint deleted");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
 }

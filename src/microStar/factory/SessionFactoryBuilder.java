@@ -26,15 +26,15 @@ public class SessionFactoryBuilder {
             }
             catch(HibernateException h){
                 h.printStackTrace();
-                logger.fatal("Hibernate Exception Occurred");
+                logger.error("Hibernate Exception Occurred");
             }
             catch(RuntimeException r){
                 r.printStackTrace();
-                logger.fatal("Runtime Exception Occurred");
+                logger.error("Runtime Exception Occurred");
             }
             catch(Exception e){
                 e.printStackTrace();
-                logger.fatal("Exception Occurred");
+                logger.error("Exception Occurred");
             }
         }
         return session;
@@ -48,15 +48,15 @@ public class SessionFactoryBuilder {
             }
             catch(HibernateException h){
                 h.printStackTrace();
-                logger.fatal("Hibernate Exception Occurred");
+                logger.error("Hibernate Exception Occurred");
             }
             catch(RuntimeException r){
                 r.printStackTrace();
-                logger.fatal("Runtime Exception Occurred");
+                logger.error("Runtime Exception Occurred");
             }
             catch(Exception e){
                 e.printStackTrace();
-                logger.fatal("Exception Occurred");
+                logger.error("Exception Occurred");
             }
         }
     }

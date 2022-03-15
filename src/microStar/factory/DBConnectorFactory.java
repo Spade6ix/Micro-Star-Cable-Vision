@@ -20,14 +20,31 @@ public class DBConnectorFactory {
             }
             catch(SQLException s){
                 s.printStackTrace();
-                logger.fatal("SQL Exception Occurred");
+                logger.error("SQL Exception Occurred");
             }
             catch(Exception e){
                 e.printStackTrace();
-                logger.fatal("Exception Occurred");
+                logger.error("Exception Occurred");
             }
         }
         return connection;
+    }
+
+    public static void closeDatabaseConnection(){
+        if (connection != null){
+            try{
+                connection.close();
+                logger.info("Database Connection closed");
+            }
+            catch(SQLException s){
+                s.printStackTrace();
+                logger.error("SQL Exception Occurred");
+            }
+            catch(Exception e){
+                e.printStackTrace();
+                logger.error("Exception Occurred");
+            }
+        }
     }
 }
 
