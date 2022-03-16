@@ -65,7 +65,7 @@ public class AccountStatus extends JFrame {
 		panel.add(txtps);
 		txtps.setColumns(10);
 		txtps.setEnabled(false); //User cannot edit the payment field
-		txtps.setBorder(null);
+		txtps.setBorder(null);   //no outline
 		
 		txtad = new JTextField();
 		txtad.setForeground(new Color(0x333333));
@@ -74,7 +74,7 @@ public class AccountStatus extends JFrame {
 		panel.add(txtad);
 		txtad.setColumns(10);
 		txtad.setEnabled(false); ////User cannot edit the amount due
-		txtad.setBorder(null);
+		txtad.setBorder(null);   //no outline
 		
 		txtpdd = new JTextField();
 		txtpdd.setForeground(new Color(0x333333));
@@ -84,6 +84,6 @@ public class AccountStatus extends JFrame {
 		panel.add(txtpdd);
 		txtpdd.setColumns(10);
 		txtpdd.setEnabled(false); ///User cannot edit the payment due date
-		txtpdd.setBorder(null);
+		txtpdd.setBorder(null);	   //no outline
 	}
 }
