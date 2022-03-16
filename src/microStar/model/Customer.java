@@ -13,11 +13,13 @@ import org.hibernate.Transaction;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Customer")
 public class Customer implements Serializable {
+    @Id
     @Column(name = "customerID")
     private String customerID; //Primary Key
 
