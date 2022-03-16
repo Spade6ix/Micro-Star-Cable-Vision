@@ -13,6 +13,7 @@ public class CustomerView implements MouseListener{
 	public static LoginScreen loginScreen = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
+	public static AccountStatus accountstatus = null;
 	
 	
 	
