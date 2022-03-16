@@ -3,8 +3,7 @@ package microstar.customer;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+     import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -66,6 +65,7 @@ public class AccountStatus extends JFrame {
 		panel.add(txtps);
 		txtps.setColumns(10);
 		txtps.setEnabled(false); //User cannot edit the payment field
+		txtps.setBorder(null);
 		
 		txtad = new JTextField();
 		txtad.setForeground(new Color(0x333333));
@@ -74,6 +74,7 @@ public class AccountStatus extends JFrame {
 		panel.add(txtad);
 		txtad.setColumns(10);
 		txtad.setEnabled(false); ////User cannot edit the amount due
+		txtad.setBorder(null);
 		
 		txtpdd = new JTextField();
 		txtpdd.setForeground(new Color(0x333333));
@@ -83,5 +84,6 @@ public class AccountStatus extends JFrame {
 		panel.add(txtpdd);
 		txtpdd.setColumns(10);
 		txtpdd.setEnabled(false); ///User cannot edit the payment due date
+		txtpdd.setBorder(null);
 	}
 }
