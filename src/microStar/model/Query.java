@@ -1,10 +1,7 @@
 package microStar.model;
 
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import org.apache.logging.log4j.LogManager;
 

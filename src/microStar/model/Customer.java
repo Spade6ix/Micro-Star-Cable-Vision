@@ -179,6 +179,14 @@ public class Customer implements Serializable {
             transaction.commit();
             logger.info("All Customers read");
         }
+        catch(ClassCastException c){
+            c.printStackTrace();
+            logger.error("ClassCast exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
         catch(RuntimeException ex){
             ex.printStackTrace();
             logger.error("RunTime exception occurred");
