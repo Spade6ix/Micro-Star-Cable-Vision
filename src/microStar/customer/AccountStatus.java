@@ -60,22 +60,25 @@ public class AccountStatus extends JFrame {
 		panel.add(lblpdd);
 		
 		txtps = new JTextField();
-		txtps.setForeground(new Color(105, 105, 105));
-		txtps.setBackground(new Color(105, 105, 105));
+		txtps.setForeground(new Color(0x333333));
+		txtps.setBackground(new Color(0x999999));
 		txtps.setBounds(455, 160, 327, 53);
 		panel.add(txtps);
 		txtps.setColumns(10);
 		txtps.setEnabled(false); //User cannot edit the payment field
 		
 		txtad = new JTextField();
-		txtad.setBackground(new Color(105, 105, 105));
+		txtad.setForeground(new Color(0x333333));
+		txtad.setBackground(new Color(0x999999));
 		txtad.setBounds(455, 264, 198, 30);
 		panel.add(txtad);
 		txtad.setColumns(10);
 		txtad.setEnabled(false); ////User cannot edit the amount due
 		
 		txtpdd = new JTextField();
-		txtpdd.setBackground(new Color(105, 105, 105));
+		txtpdd.setForeground(new Color(0x333333));
+		txtpdd.setBackground(new Color(0x999999));
+	//	txtpdd.setBackground(new Color(105, 105, 105));
 		txtpdd.setBounds(455, 350, 198, 30);
 		panel.add(txtpdd);
 		txtpdd.setColumns(10);
