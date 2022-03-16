@@ -72,11 +72,7 @@ public class CustomerView implements MouseListener{
 		WelcomeScreen obj = new WelcomeScreen();
 		welcomeScreen = obj;
 	}
-
-
-
-
-
+	
 
 
 
