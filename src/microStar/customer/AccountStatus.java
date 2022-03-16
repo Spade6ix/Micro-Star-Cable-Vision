@@ -1,14 +1,12 @@
-package microstar.customer;
+package microStar.customer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-     import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
 
 
 public class AccountStatus extends JFrame {
