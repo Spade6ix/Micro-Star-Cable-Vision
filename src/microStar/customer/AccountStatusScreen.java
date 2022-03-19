@@ -70,7 +70,6 @@ public class AccountStatusScreen extends JPanel {
 		txtpdd = new JTextField();
 		txtpdd.setForeground(new Color(0x999999));
 		txtpdd.setBackground(new Color(0x4d4d4d));
-	//	txtpdd.setBackground(new Color(105, 105, 105));
 		txtpdd.setBounds(455, 350, 300, 50);
 		this.add(txtpdd);
 		txtpdd.setColumns(10);
