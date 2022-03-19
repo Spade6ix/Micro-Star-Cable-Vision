@@ -1,34 +1,55 @@
 package microStar.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import microStar.factory.SessionFactoryBuilder;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Complaint")
 public class Complaint implements Serializable {
-    private String complaintID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "complaintID")
+    private int complaintID; //Primary Key
+
+    @Column(name = "complaintType")
     private String complaintType; //(Payment, Internet, Cable, Other)
+
+    @Column(name = "complaintDetails")
     private String complaintDetails;
-    private String lastResponderName;
-    private String lastResponseDate;
+
+    @Column(name = "status")
     private char status; //(R/U)
+
+    @Column(name = "customerID")
     private String customerID; //(Foreign Key)
-    private String staffID; //(Foreign Key)
+
+    @Column(name = "staffID")
+    private String staffID; //(Foreign Key) //TechnicianID
+
+    private static final Logger logger = LogManager.getLogger(Complaint.class);
 
     public Complaint(){
-        this.complaintID = "";
+        this.complaintID = 0;
         this.complaintType = "";
         this.complaintDetails = "";
-        this.lastResponderName = "";
-        this.lastResponseDate = "";
-        this.status = 'R';
+        this.status = 'U';
         this.customerID = "";
         this.staffID = "";
     }
 
-    public Complaint(String complaintID, String complaintType, String complaintDetails, String lastResponderName, String lastResponseDate, char status, String customerID, String staffID) {
+    public Complaint(int complaintID, String complaintType, String complaintDetails, char status, String customerID, String staffID) {
         this.complaintID = complaintID;
         this.complaintType = complaintType;
         this.complaintDetails = complaintDetails;
-        this.lastResponderName = lastResponderName;
-        this.lastResponseDate = lastResponseDate;
         this.status = status;
         this.customerID = customerID;
         this.staffID = staffID;
@@ -38,18 +59,16 @@ public class Complaint implements Serializable {
         this.complaintID = complaint.complaintID;
         this.complaintType = complaint.complaintType;
         this.complaintDetails = complaint.complaintDetails;
-        this.lastResponderName = complaint.lastResponderName;
-        this.lastResponseDate = complaint.lastResponseDate;
         this.status = complaint.status;
         this.customerID = complaint.customerID;
         this.staffID = complaint.staffID;
     }
 
-    public String getComplaintID() {
+    public int getComplaintID() {
         return complaintID;
     }
 
-    public void setComplaintID(String complaintID) {
+    public void setComplaintID(int complaintID) {
         this.complaintID = complaintID;
     }
 
@@ -67,22 +86,6 @@ public class Complaint implements Serializable {
 
     public void setComplaintDetails(String complaintDetails) {
         this.complaintDetails = complaintDetails;
-    }
-
-    public String getLastResponderName() {
-        return lastResponderName;
-    }
-
-    public void setLastResponderName(String lastResponderName) {
-        this.lastResponderName = lastResponderName;
-    }
-
-    public String getLastResponseDate() {
-        return lastResponseDate;
-    }
-
-    public void setLastResponseDate(String lastResponseDate) {
-        this.lastResponseDate = lastResponseDate;
     }
 
     public char getStatus() {
@@ -113,11 +116,186 @@ public class Complaint implements Serializable {
         return "Complaint ID: " + complaintID + "\n"
                 + "Complaint Type: " + complaintType + "\n"
                 + "Complaint Detail: " + complaintDetails + "\n"
-                + "Last Responder Name: " + lastResponderName + "\n"
-                + "Last Response: " + lastResponseDate + "\n"
-                + "Status: " + status + "\n" + "\n"
+                + "Status: " + status + "\n"
                 + "Customer ID: " + customerID + "\n"
                 + "Staff ID: " + staffID;
     }
 
+    public void create(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            session.save(this);
+            transaction.commit();
+            logger.info("Complaint created and saved");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public void updateTechnician(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            com.setStaffID(this.staffID);
+            session.update(com);
+            transaction.commit();
+            logger.info("Complaint updated");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public void updateStatus(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            com.setStatus(this.status);
+            session.update(com);
+            transaction.commit();
+            logger.info("Complaint updated");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
+
+    public List<Complaint> readAll(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        List<Complaint> complaintList = new ArrayList<Complaint>();
+
+        try{
+            transaction = session.beginTransaction();
+            complaintList = (List<Complaint>) session.createQuery("FROM Complaint").getResultList();
+            transaction.commit();
+            logger.info("All Complaints read");
+        }
+        catch(ClassCastException c){
+            c.printStackTrace();
+            logger.error("ClassCast exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+        return complaintList;
+    }
+
+    public Complaint readComplaint(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+        Complaint complaintObj = new Complaint();
+
+        try{
+            transaction = session.beginTransaction();
+            complaintObj = (Complaint) session.get(Complaint.class,this.complaintID);
+            transaction.commit();
+            logger.info("Complaint read");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+        return complaintObj;
+    }
+
+    public void delete(){
+        Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
+        Transaction transaction = null;
+
+        try{
+            transaction = session.beginTransaction();
+            Complaint com = (Complaint) session.get(Complaint.class,this.complaintID);
+            session.delete(com);
+            transaction.commit();
+            logger.info("Complaint deleted");
+        }
+        catch(RuntimeException ex){
+            ex.printStackTrace();
+            logger.error("RunTime exception occurred");
+            if(transaction != null){
+                transaction.rollback();
+                logger.error("Transaction rolled back");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            logger.error("Exception occurred");
+        }
+        finally{
+            session.close();
+        }
+    }
 }
