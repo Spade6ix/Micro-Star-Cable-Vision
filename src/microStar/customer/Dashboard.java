@@ -33,7 +33,7 @@ public class Dashboard extends JFrame implements MouseListener {
 	private JMenu view = new JMenu("View");
 	private JMenu other = new JMenu("Other");
 	private JMenu gap = new JMenu();
-	public JMenuItem lodgeComplaint = new JMenuItem("Logde Complaint");
+	public JMenuItem  lodgeComplaint = new JMenuItem("Logde Complaint");
 	public JMenuItem accountStatus = new JMenuItem("Account Status");
 	public JMenuItem paymentHistory = new JMenuItem("Payment History");
 	public JMenuItem complaintHistory = new JMenuItem("Complaint History");
@@ -89,7 +89,7 @@ public class Dashboard extends JFrame implements MouseListener {
         
         //setup window
         this.setTitle("Dashboard");
-	    this.setSize(1180, 680); //vertical, horizantal
+	    this.setSize(1180, 680); //vertical, horizantal 1100 * 600
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setResizable(false);
