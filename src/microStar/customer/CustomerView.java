@@ -17,6 +17,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
 	public static LodgeComplaintScreen lodgeComplaintScreen = null;
+	public static AccountStatusScreen accountStatusScreen = null;
 	
 	
 	
@@ -108,6 +109,17 @@ public class CustomerView implements MouseListener, ActionListener{
 	}
 
 	
+	
+	public void createCustomerAccountStatusScreen() {
+		/*public vars
+		  
+		 acountStatusScreen.txtps						-Payment Status TextField	
+    	 acountStatusScreen.passwordTextField 			-Amount Due TextField
+    	 acountStatusScreen.loginButton 				-Payment Due Date TextField
+		 */
+		AccountStatusScreen obj = new AccountStatusScreen();
+		accountStatusScreen = obj;
+	}
 
 
 
@@ -177,12 +189,24 @@ public class CustomerView implements MouseListener, ActionListener{
 		//Lodge Complaint
 		if(e.getSource() == dashboard.lodgeComplaint) {
 			
-			System.out.println("lodge complaint");
+			System.out.println("lodge complaint screen");
 			createCustomerLodgeComplaintScreen();  //creates new panel
 			dashboard.remove(currentPanel);  //removes current panel from dashboard
 			dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
 			currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
 			dashboard.setVisible(true);  //Reloads Component
+		}
+		
+		
+		//Account Status
+		if(e.getSource() == dashboard.accountStatus) {
+			
+			System.out.println("account status screen");
+			createCustomerAccountStatusScreen();  
+			dashboard.remove(currentPanel);  
+			dashboard.add(accountStatusScreen);  
+			currentPanel = accountStatusScreen;  
+			dashboard.setVisible(true);  
 		}
 		
 	}
