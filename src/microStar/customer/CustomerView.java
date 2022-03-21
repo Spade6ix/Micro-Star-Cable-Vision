@@ -95,15 +95,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		lodgeComplainScreen.submit 						- submit TextField
 		 */
 		LodgeComplaintScreen obj = new LodgeComplaintScreen();
-		obj.id.addActionListener(this);
-		obj.firstName.addActionListener(this);
-		obj.lastName.addActionListener(this);
-		obj.email.addActionListener(this);
-		obj.contact.addActionListener(this);
-		obj.street.addActionListener(this);
-		obj.parish_state.addActionListener(this);
-		obj.issueType.addActionListener(this);
-		obj.issueDetails.addActionListener(this);
 		obj.submit.addActionListener(this);
 		lodgeComplaintScreen = obj;
 	}
@@ -114,8 +105,8 @@ public class CustomerView implements MouseListener, ActionListener{
 		/*public vars
 		  
 		 acountStatusScreen.txtps						-Payment Status TextField	
-    	 acountStatusScreen.passwordTextField 			-Amount Due TextField
-    	 acountStatusScreen.loginButton 				-Payment Due Date TextField
+    	 acountStatusScreen.txtad			 			-Amount Due TextField
+    	 acountStatusScreen.txtpdd		 				-Payment Due Date TextField
 		 */
 		AccountStatusScreen obj = new AccountStatusScreen();
 		accountStatusScreen = obj;
@@ -189,7 +180,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		//Lodge Complaint
 		if(e.getSource() == dashboard.lodgeComplaint) {
 			
-			System.out.println("lodge complaint screen");
 			createCustomerLodgeComplaintScreen();  //creates new panel
 			dashboard.remove(currentPanel);  //removes current panel from dashboard
 			dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
@@ -201,7 +191,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		//Account Status
 		if(e.getSource() == dashboard.accountStatus) {
 			
-			System.out.println("account status screen");
 			createCustomerAccountStatusScreen();  
 			dashboard.remove(currentPanel);  
 			dashboard.add(accountStatusScreen);  
