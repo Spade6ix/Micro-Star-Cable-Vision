@@ -19,9 +19,7 @@ public class EmployeeController {
             logger.error("Exception Occurred");
         }
         finally {
-            SessionFactoryBuilder.closeSessionFactory();
-            DBConnectorFactory.closeDatabaseConnection();
-            logger.info("Database Connections Closed");
+            
         }
     }
 }
