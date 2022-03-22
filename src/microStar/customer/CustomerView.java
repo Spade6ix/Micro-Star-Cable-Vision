@@ -18,6 +18,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	public static WelcomeScreen welcomeScreen = null;
 	public static LodgeComplaintScreen lodgeComplaintScreen = null;
 	public static AccountStatusScreen accountStatusScreen= null;
+	public static ComplaintHistoryScreen complaintHistoryScreen= null;
 	
 	
 	
@@ -111,6 +112,22 @@ public class CustomerView implements MouseListener, ActionListener{
 		AccountStatusScreen obj = new AccountStatusScreen();
 		accountStatusScreen = obj;
 	}
+	
+	
+	
+	
+	private String data[][] = { //DUMMY DATA
+			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
+			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
+			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"}
+		};
+	public void createCustomerComplaintHistoryScreen() {
+		/*public vars
+		  
+		 */
+		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(data);
+		complaintHistoryScreen = obj;
+	}
 
 
 
@@ -195,6 +212,17 @@ public class CustomerView implements MouseListener, ActionListener{
 			dashboard.remove(currentPanel);  
 			dashboard.add(accountStatusScreen);  
 			currentPanel = accountStatusScreen;  
+			dashboard.setVisible(true);  
+		}
+		
+		
+		//Lodge Complaint
+		if(e.getSource() == dashboard.complaintHistory) {
+			
+			createCustomerComplaintHistoryScreen();  
+			dashboard.remove(currentPanel);  
+			dashboard.add(complaintHistoryScreen);  
+			currentPanel = complaintHistoryScreen;  
 			dashboard.setVisible(true);  
 		}
 		

@@ -71,7 +71,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         //ID Label
         gbc.gridx = 1;
         gbc.gridy = 1;
-        idLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+        idLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         idLabel.setForeground(new Color(0xbfbfbf));
         this.add(idLabel, gbc);
         
@@ -79,7 +79,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         //FirstName Label
         gbc.gridx = 1;
         gbc.gridy = 2;
-        firstNameLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+        firstNameLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         firstNameLabel.setForeground(new Color(0xbfbfbf));
         this.add(firstNameLabel, gbc);
         
@@ -87,7 +87,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         //LastName Label
 	    gbc.gridx = 1;
 	    gbc.gridy = 3;
-	    lastNameLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+	    lastNameLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
 	    lastNameLabel.setForeground(new Color(0xbfbfbf));
 	    this.add(lastNameLabel, gbc);
         
@@ -95,7 +95,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	    //Email Label
 	    gbc.gridx = 1;
 	    gbc.gridy = 4;
-	    emailLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+	    emailLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
 	    emailLabel.setForeground(new Color(0xbfbfbf));
 	    this.add(emailLabel, gbc);
 	    
@@ -103,7 +103,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	    //Contact Label
 	    gbc.gridx = 1;
 	    gbc.gridy = 5;
-	    contactLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+	    contactLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
 	    contactLabel.setForeground(new Color(0xbfbfbf));
 	    this.add(contactLabel, gbc);
 	    
@@ -111,7 +111,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	    //Issue Details Label
 	    gbc.gridx = 1;
 	    gbc.gridy = 6;
-	    issueDetailsLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+	    issueDetailsLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
 	    issueDetailsLabel.setForeground(new Color(0xbfbfbf));
 	    this.add(issueDetailsLabel, gbc);
 	    
@@ -197,7 +197,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	    //Street Label
         gbc.gridx = 3;
         gbc.gridy = 1;
-        streetLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+        streetLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         streetLabel.setForeground(new Color(0xbfbfbf));
         this.add(streetLabel, gbc);
         
@@ -205,7 +205,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         //Parish/ State Label
         gbc.gridx = 3;
         gbc.gridy = 2;
-        parish_stateLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+        parish_stateLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         parish_stateLabel.setForeground(new Color(0xbfbfbf));
         this.add(parish_stateLabel, gbc);
         
@@ -213,7 +213,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         //Issue Type Label
         gbc.gridx = 3;
         gbc.gridy = 3;
-        issueTypeLabel.setFont(new Font("Calibri", Font.PLAIN, 30));
+        issueTypeLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         issueTypeLabel.setForeground(new Color(0xbfbfbf));
         this.add(issueTypeLabel, gbc);
         
