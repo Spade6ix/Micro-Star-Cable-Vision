@@ -75,7 +75,7 @@ public class PaymentHistoryScreen extends JPanel {
     
         scrollpane.setPreferredSize(new Dimension(1100, 450));
         scrollpane.setBackground(new Color(0x333333));
-        scrollpane.getHorizontalScrollBar().setUI(null); //removes horizontal slider
+        scrollpane.getVertitalScrollBar().setUI(null); 
         scrollpane.setBorder(new EmptyBorder(0,0,0,0)); 
 		this.add(scrollpane, gbc);
 
