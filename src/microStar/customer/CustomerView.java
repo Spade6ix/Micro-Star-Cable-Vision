@@ -1,4 +1,4 @@
-package microStar.customer;
+package microstar.customer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,7 +19,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	public static LodgeComplaintScreen lodgeComplaintScreen = null;
 	public static AccountStatusScreen accountStatusScreen= null;
 	public static ComplaintHistoryScreen complaintHistoryScreen= null;
-	
+	public static PaymentHistoryScreen paymentHistoryScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -113,9 +113,8 @@ public class CustomerView implements MouseListener, ActionListener{
 		accountStatusScreen = obj;
 	}
 	
-	
-	
-	
+
+
 	private String data[][] = { //DUMMY DATA
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
@@ -128,12 +127,17 @@ public class CustomerView implements MouseListener, ActionListener{
 		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(data);
 		complaintHistoryScreen = obj;
 	}
-
-
-
-
-
-
+	
+	private String data1[][] = { //dummy data for payment history
+			{"12/20/2022", "$10,000"},
+			{"13/2/2020", "$125,000"},
+			{"12,6,2021", "$126,452"}
+	};
+	
+	public void createCustomerPaymentHistoryScreen() {
+		PaymentHistoryScreen obj = new PaymentHistoryScreen(data1); 
+			paymentHistoryScreen = obj;
+	}
 
 
 
@@ -224,6 +228,15 @@ public class CustomerView implements MouseListener, ActionListener{
 			dashboard.add(complaintHistoryScreen);  
 			currentPanel = complaintHistoryScreen;  
 			dashboard.setVisible(true);  
+		}
+		
+		//payment history
+		if(e.getSource() == dashboard.paymentHistory) {
+			createCustomerPaymentHistoryScreen();
+			dashboard.remove(currentPanel);
+			dashboard.add(paymentHistoryScreen);
+			currentPanel = paymentHistoryScreen;
+			dashboard.setVisible(true);
 		}
 		
 	}
