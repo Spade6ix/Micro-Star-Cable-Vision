@@ -29,6 +29,7 @@ public class CustomerClient {
     private Response responseObj;
     private ResultSet result;
     private boolean login;
+    private boolean flag;
     private String customerID;
     private List<Response> responseList;
     private List<Complaint> complaintList;
@@ -78,6 +79,7 @@ public class CustomerClient {
             objOs.close();
             objIs.close();
             connectionSocket.close();
+            logger.info("Connection Closed");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -93,6 +95,7 @@ public class CustomerClient {
         this.action = action;
         try{
             objOs.writeObject(action);
+            logger.info("Action Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -107,6 +110,7 @@ public class CustomerClient {
     public void sendComplaintObj(Complaint complaintObj){
         try{
             objOs.writeObject(complaintObj);
+            logger.info("Complaint Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -121,6 +125,7 @@ public class CustomerClient {
     public void sendCustomerObj(Customer customerObj){
         try{
             objOs.writeObject(customerObj);
+            logger.info("Customer Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -135,6 +140,7 @@ public class CustomerClient {
     public void sendCustomerEmailObj(CustomerEmail customerEmailObj){
         try{
             objOs.writeObject(customerEmailObj);
+            logger.info("CustomerEmail Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -149,6 +155,7 @@ public class CustomerClient {
     public void sendCustomerPhoneObj(CustomerPhone customerPhoneObj){
         try{
             objOs.writeObject(customerPhoneObj);
+            logger.info("CustomerPhone Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -163,6 +170,7 @@ public class CustomerClient {
     public void sendEmployeeObj(Employee employeeObj){
         try{
             objOs.writeObject(employeeObj);
+            logger.info("Employee Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -177,6 +185,7 @@ public class CustomerClient {
     public void sendLiveChatObj(LiveChat liveChatObj){
         try{
             objOs.writeObject(liveChatObj);
+            logger.info("LiveChat Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -191,6 +200,7 @@ public class CustomerClient {
     public void sendPaymentObj(Payment paymentObj){
         try{
             objOs.writeObject(paymentObj);
+            logger.info("Payment Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -205,6 +215,7 @@ public class CustomerClient {
     public void sendQueryObj(Query queryObj){
         try{
             objOs.writeObject(queryObj);
+            logger.info("Query Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -219,6 +230,7 @@ public class CustomerClient {
     public void sendResponseObj(Response responseObj){
         try{
             objOs.writeObject(responseObj);
+            logger.info("Response Object Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -233,6 +245,7 @@ public class CustomerClient {
     public void sendCustomerID(String customerID){
         try{
             objOs.writeObject(customerID);
+            logger.info("CustomerID Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -248,9 +261,8 @@ public class CustomerClient {
 
     public void receiveResponse() {
         try {
-            Boolean flag;
             if (action.equalsIgnoreCase("Customer Login")) {
-                login = (Boolean) objIs.readObject();
+                login = (boolean) objIs.readObject();
                 if(login){
                     logger.info("Customer Authenticated");
                 }
@@ -259,7 +271,7 @@ public class CustomerClient {
                 }
             }
             else if (action.equalsIgnoreCase("Create Complaint")){
-                flag = (Boolean) objIs.readObject();
+                flag = (boolean) objIs.readObject();
                 if (flag){
                     logger.info("Complaint Created successfully");
                 }
@@ -290,7 +302,7 @@ public class CustomerClient {
                 logger.info("Payments fetched successfully");
             }
             else if (action.equalsIgnoreCase("Customer Create LiveChat")){
-                flag = (Boolean) objIs.readObject();
+                flag = (boolean) objIs.readObject();
                 if (flag){
                     logger.info("Live Chat sent to Database successfully");
                 }
@@ -299,7 +311,7 @@ public class CustomerClient {
                 }
             }
             else if (action.equalsIgnoreCase("Update Complaint Status")){
-                flag = (Boolean) objIs.readObject();
+                flag = (boolean) objIs.readObject();
                 if (flag){
                     logger.info("Complaint updated successfully");
                 }
@@ -330,6 +342,14 @@ public class CustomerClient {
             logger.error("Exception Occurred");
             ex.printStackTrace();
         }
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     public String getAction() {
