@@ -1,4 +1,4 @@
-package microstar.customer;
+package microStar.customer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -135,8 +135,8 @@ public class CustomerView implements MouseListener, ActionListener{
 	};
 	
 	public void createCustomerPaymentHistoryScreen() {
-		PaymentHistoryScreen obj = new PaymentHistoryScreen(data1); 
-			paymentHistoryScreen = obj;
+		PaymentHistoryScreen obj = new PaymentHistoryScreen(data1);
+		paymentHistoryScreen = obj;
 	}
 
 
