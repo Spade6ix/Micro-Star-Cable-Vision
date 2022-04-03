@@ -18,8 +18,6 @@ import javax.swing.JTable;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.ColorUIResource;
-import javax.swing.plaf.ScrollBarUI;
 import javax.swing.table.*;
 
 
@@ -107,7 +105,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 		this.add(scrollPane, gbc);
 		
 		
-		//More Infor Button
+		//More Info Button
 		gbc.gridx = 1;
 		gbc.gridy = 2;
 		gbc.insets = new Insets(0, 50, 0, 0);

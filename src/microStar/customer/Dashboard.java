@@ -88,7 +88,7 @@ public class Dashboard extends JFrame implements MouseListener {
         
         
         //setup window
-        this.setTitle("Dashboard");
+        this.setTitle("Miro-Star CableVision");
 	    this.setSize(1180, 680); //vertical, horizantal 1100 * 600
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
