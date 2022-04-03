@@ -1,4 +1,4 @@
-package microStar.customer;
+package microStar.employee;
 
 import java.awt.Color;
 import java.awt.Dimension;

@@ -47,6 +47,9 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	
+	
+	
+	
 	public void createCustomerDashboard() {
 		/*public vars
 		  
@@ -70,6 +73,10 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	
+	
+	
+	
+	
 	public void createCustomerWelcomeScreen() {
 		/*public vars
 		  
@@ -78,6 +85,9 @@ public class CustomerView implements MouseListener, ActionListener{
 		WelcomeScreen obj = new WelcomeScreen();
 		welcomeScreen = obj;
 	}
+	
+	
+	
 	
 	
 	
@@ -102,6 +112,9 @@ public class CustomerView implements MouseListener, ActionListener{
 
 	
 	
+	
+	
+	
 	public void createCustomerAccountStatusScreen() {
 		/*public vars
 		  
@@ -114,6 +127,9 @@ public class CustomerView implements MouseListener, ActionListener{
 	}
 	
 
+	
+	
+	
 
 	private String data[][] = { //DUMMY DATA
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
@@ -128,18 +144,26 @@ public class CustomerView implements MouseListener, ActionListener{
 		complaintHistoryScreen = obj;
 	}
 	
+	
+	
+	
+	
+	
 	private String data1[][] = { //dummy data for payment history
 			{"12/20/2022", "$10,000"},
 			{"13/2/2020", "$125,000"},
 			{"12,6,2021", "$126,452"}
 	};
-	
 	public void createCustomerPaymentHistoryScreen() {
 		PaymentHistoryScreen obj = new PaymentHistoryScreen(data1);
 		paymentHistoryScreen = obj;
 	}
 
 
+	
+	
+	
+	
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -193,6 +217,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				createCustomerDashboard();
 				createCustomerWelcomeScreen();
 				dashboard.add(welcomeScreen);
+				welcomeScreen.welcomeMessage.setText("Welcome <cust name>");
 				currentPanel = welcomeScreen;
 			}
 		}

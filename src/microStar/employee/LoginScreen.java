@@ -2,7 +2,6 @@ package microStar.employee;
 
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -21,7 +20,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public class EmployeeLoginScreen extends Component implements MouseListener{
+public class LoginScreen extends JFrame implements MouseListener{
+	
 	/* COLOURS:
 
 	   --grays
@@ -35,21 +35,23 @@ public class EmployeeLoginScreen extends Component implements MouseListener{
 	   0x6666ff
 	 */
 
-    JFrame frame = new JFrame("Login");
-    JPanel form = new JPanel();
-    JLabel companyNameLabel = new JLabel("Micro Star Cable Vision");
-    JLabel idLabel = new JLabel("ID");
-    JLabel passwordLabel = new JLabel("Password");
-    public static JTextField idTextField = new JTextField();
-    public static JTextField passwordTextField = new JTextField();
-    public static JButton loginButton = new JButton("Login");
+    
+    
+	private static final long serialVersionUID = 1L;
+	private JPanel form = new JPanel();
+    private JLabel companyNameLabel = new JLabel("Micro Star Cable Vision");
+    private JLabel idLabel = new JLabel("ID");
+    private JLabel passwordLabel = new JLabel("Password");
+    public JTextField idTextField = new JTextField();
+    public JTextField passwordTextField = new JTextField();
+    public JButton loginButton = new JButton("Login");
 
 
 
-    public EmployeeLoginScreen() {
+    public LoginScreen() {
 
         //initialize Components
-        JPanel content = (JPanel) frame.getContentPane();
+        JPanel content = (JPanel) this.getContentPane();
         content.setLayout(new GridBagLayout());
         content.setBackground(new Color(0x333333));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -138,23 +140,24 @@ public class EmployeeLoginScreen extends Component implements MouseListener{
 
 
         //setup window
-        frame.setSize(1024, 600);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        this.setTitle("Login");
+        this.setSize(1024, 600);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
         ImageIcon icon = new ImageIcon("images/logo.png");
-        frame.setIconImage(icon.getImage());
-        frame.setVisible(true);
+        this.setIconImage(icon.getImage());
+        this.setVisible(true);
     }
 
 
 
+   
 
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
-
+    	
     }
 
 
@@ -199,5 +202,4 @@ public class EmployeeLoginScreen extends Component implements MouseListener{
 
     }
 }
-
 
