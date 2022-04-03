@@ -121,6 +121,7 @@ public static JPanel currentPanel = null;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		//Login button
 		if(e.getSource() == loginScreen.loginButton) {
 			
@@ -135,5 +136,12 @@ public static JPanel currentPanel = null;
 			}
 		}
 		
+		
+		
+		
+		
 	}
+	
+	
+	
 }
