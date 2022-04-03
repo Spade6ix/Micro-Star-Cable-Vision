@@ -1,4 +1,4 @@
-package microstar.customer;
+package microStar.customer;
 
 import javax.swing.JPanel;
 
@@ -75,7 +75,7 @@ public class PaymentHistoryScreen extends JPanel {
     
         scrollpane.setPreferredSize(new Dimension(1100, 450));
         scrollpane.setBackground(new Color(0x333333));
-        scrollpane.getVertitalScrollBar().setUI(null); 
+        scrollpane.getVerticalScrollBar().setUI(null);
         scrollpane.setBorder(new EmptyBorder(0,0,0,0)); 
 		this.add(scrollpane, gbc);
 
