@@ -1,4 +1,4 @@
-package microStar.employee;
+package microstar.employee;
 
 import java.awt.Color;
 
@@ -37,27 +37,28 @@ public class ResolvedScreen extends JPanel {
 		
 	}
 	
-		private String[] issues = {"","Internet", "Cable", "Payment"};
+		private String[] issues = {"All","Internet", "Cable", "Payment"};
 		public JComboBox<String> issueType = new JComboBox<String>(issues);
 	
 		private String col[] = {"Customer ID", "Customer Name", "Email","Contact","Address","Issue Type","Complaint Details", "Tech"};
 		private DefaultTableModel tableModel = null;
 		
-		private String data[][] = null;
-		private String data1[][] = null;
-		private String data2[][] = null;
-		private String data3[][]= null;
+		private String allData[][] = null;
+		private String internetData[][] = null;
+		private String cableData[][] = null;
+		private String paymentData[][] = null;
 	
 		public JTable table = null;
 		public JButton query = new JButton("Query");
 		public JLabel issuetype = new JLabel("Issue Type:");
 		
 		
-		public ResolvedScreen(String d1[][], String d11[][], String d2[][], String d3[][]) {
-			this.data = d1;
-			this.data1 = d11;
-			this.data2 = d2;
-			this.data3 = d3;
+		public ResolvedScreen(String d1[][], String d2[][], String d3[][], String d4[][]) {
+			this.allData = d1;
+			this.internetData = d2;
+			this.cableData = d3;
+			this.paymentData = d4;
+			
 			
 			tableModel = new DefaultTableModel(d1, col); 
 			table = new JTable(tableModel) {
@@ -149,18 +150,22 @@ public class ResolvedScreen extends JPanel {
 	      	
 	      		String combo = null;
 	      		combo = issueType.getSelectedItem().toString();
+	      		
+	      		if(combo=="All") {
+	      			tableModel.setDataVector(allData, col);
+	      		}
 	      	 	
 	      		if(combo=="Internet") {
 	      		//	String[] issues = {"Internet"};
-	      			tableModel.setDataVector(d11,d11);
+	      			tableModel.setDataVector(internetData,col);
 	      		}
 	      		
 	      		if(combo=="Cable") {
-	      			tableModel.setDataVector(d2, d2);
+	      			tableModel.setDataVector(cableData, col);
 	      		}
 	      		
 	      		if(combo=="Payment") {
-	      			tableModel.setDataVector(d3, d3);
+	      			tableModel.setDataVector(paymentData, col);
 	      		}
 	      	}
 	      });
@@ -174,5 +179,4 @@ public class ResolvedScreen extends JPanel {
 
 }
 	
-
 
