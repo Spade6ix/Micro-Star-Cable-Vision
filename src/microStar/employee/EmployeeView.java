@@ -1,4 +1,4 @@
-package microStar.employee;
+package microstar.employee;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +18,7 @@ public static JPanel currentPanel = null;
 	public static LoginScreen loginScreen = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
-	
+	public static EmployeeResolvedScreen employeeResolvedScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -84,6 +84,31 @@ public static JPanel currentPanel = null;
 	
 	
 	
+	private String data[][] = {
+			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},
+			
+	};
+	
+	private String data1[][] = {
+			{"The internet is very Slow...Unable to load page."},
+	};
+	private String data2[][] = {
+			{"The cable and connectors are outdated...."},
+			
+	};
+	private String data3[][] = {
+			{"There was no payment."},
+			
+	};
+	
+	public void createEmployeeResolvedScreen() {
+		
+		EmployeeResolvedScreen obj = new EmployeeResolvedScreen (data, data1,data2, data3);
+		employeeResolvedScreen = obj;
+	}
+	
+	
+	
 	
 	
 	
@@ -134,6 +159,14 @@ public static JPanel currentPanel = null;
 				dashboard.add(welcomeScreen);
 				currentPanel = welcomeScreen;
 			}
+		}
+		
+		if(e.getSource() == dashboard.resolved) {
+			createEmployeeResolvedScreen();
+			dashboard.remove(currentPanel);
+			dashboard.add(employeeResolvedScreen);
+			currentPanel = employeeResolvedScreen;
+			dashboard.setVisible(true);
 		}
 		
 		
