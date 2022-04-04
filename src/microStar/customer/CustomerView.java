@@ -131,16 +131,21 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 
-	private String data[][] = { //DUMMY DATA
+	private String mainData[][] = { //DUMMY DATA main table
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
 			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"}
+		};
+	private String moreData[][] = { //DUMMY DATA more info table
+			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
+			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
+			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"}
 		};
 	public void createCustomerComplaintHistoryScreen() {
 		/*public vars
 		  
 		 */
-		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(data);
+		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(mainData, moreData);
 		complaintHistoryScreen = obj;
 	}
 	
