@@ -87,7 +87,7 @@ public static JPanel currentPanel = null;
 	
 	
 	
-	
+	//resolved screen
 	public void createEmployeeResolvedScreen() {
 		
 		ResolvedScreen obj = new ResolvedScreen (allData, internetData, cableData, paymentData);
