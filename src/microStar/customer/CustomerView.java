@@ -7,6 +7,8 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
+import microStar.employee.LiveChatScreen;
+
 
 
 public class CustomerView implements MouseListener, ActionListener{
@@ -20,6 +22,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	public static AccountStatusScreen accountStatusScreen= null;
 	public static ComplaintHistoryScreen complaintHistoryScreen= null;
 	public static PaymentHistoryScreen paymentHistoryScreen = null;
+	public static LiveChatScreen liveChatScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -169,6 +172,14 @@ public class CustomerView implements MouseListener, ActionListener{
 		paymentHistoryScreen = obj;
 	}
 
+	
+	
+	
+	
+	public void createCustomerLiveChatScreen() {
+		LiveChatScreen obj = new LiveChatScreen();
+		liveChatScreen = obj;
+	}
 
 	
 	
@@ -279,6 +290,15 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.remove(currentPanel);
 				dashboard.add(paymentHistoryScreen);
 				currentPanel = paymentHistoryScreen;
+				dashboard.setVisible(true);
+			}
+			
+			//Live chat
+			if(e.getSource() == dashboard.liveChat) {
+				createCustomerLiveChatScreen();
+				dashboard.remove(currentPanel);
+				dashboard.add(liveChatScreen);
+				currentPanel = liveChatScreen;
 				dashboard.setVisible(true);
 			}
 		} catch(Exception ex) {

@@ -20,6 +20,8 @@ public static JPanel currentPanel = null;
 	public static WelcomeScreen welcomeScreen = null;
 	public static ResolvedScreen resolvedScreen = null;
 	public static OutstandingScreen outstandingScreen = null;
+	public static RespondScreen respondScreen = null;
+	public static LiveChatScreen liveChatScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -95,7 +97,7 @@ public static JPanel currentPanel = null;
 	//resolved screen
 	public void createEmployeeResolvedScreen() {
 		
-		ResolvedScreen obj = new ResolvedScreen (allData, internetData, cableData, paymentData);
+		ResolvedScreen obj = new ResolvedScreen (allData, internetData, cableData, paymentData, otherData);
 		resolvedScreen = obj;
 	}
 	
@@ -130,6 +132,29 @@ public static JPanel currentPanel = null;
 		outstandingScreen = obj;
 	}
 	
+	
+	
+	
+	
+	private String resolvedData[][] = { //DUMMY DATA for resolved and outstanding screens
+			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","true"},
+			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","false"},
+			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","false"},
+			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","true"}
+	};
+	public void createEmployeeRespondScreen() {
+		RespondScreen obj = new RespondScreen(resolvedData);
+		respondScreen = obj;
+	}
+	
+	
+	
+	
+	
+	public void createEmployeeLiveChatScreen() {
+		LiveChatScreen obj = new LiveChatScreen();
+		liveChatScreen = obj;
+	}
 	
 	
 	
@@ -180,7 +205,7 @@ public static JPanel currentPanel = null;
 					createEmployeeDashboard();
 					createEmployeeWelcomeScreen();
 					dashboard.respond.setVisible(false);
-					welcomeScreen.welcomeMessage.setText("Welcome <emp name>");
+					welcomeScreen.welcomeMessage.setText("Welcome <rep name>");
 					dashboard.add(welcomeScreen);
 					currentPanel = welcomeScreen;
 				}
@@ -192,7 +217,7 @@ public static JPanel currentPanel = null;
 					createEmployeeWelcomeScreen();
 					dashboard.outstanding.setVisible(false);
 					dashboard.resolved.setVisible(false);
-					welcomeScreen.welcomeMessage.setText("Welcome <emp name>");
+					welcomeScreen.welcomeMessage.setText("Welcome <tech name>");
 					dashboard.add(welcomeScreen);
 					currentPanel = welcomeScreen;
 				}
@@ -204,6 +229,7 @@ public static JPanel currentPanel = null;
 		
 		
 		try {
+			//resolved
 			if(e.getSource() == dashboard.resolved) {
 				createEmployeeResolvedScreen();
 				dashboard.remove(currentPanel);
@@ -213,12 +239,30 @@ public static JPanel currentPanel = null;
 			}
 			
 			
-			
+			//Outstanding
 			if(e.getSource() == dashboard.outstanding) {
 				createEmployeeOustandingScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(outstandingScreen);
 				currentPanel = outstandingScreen;
+				dashboard.setVisible(true);
+			}
+			
+			//Respond
+			if(e.getSource() == dashboard.respond) {
+				createEmployeeRespondScreen();
+				dashboard.remove(currentPanel);
+				dashboard.add(respondScreen);
+				currentPanel = respondScreen;
+				dashboard.setVisible(true);
+			}
+			
+			//Live chat
+			if(e.getSource() == dashboard.liveChat) {
+				createEmployeeLiveChatScreen();
+				dashboard.remove(currentPanel);
+				dashboard.add(liveChatScreen);
+				currentPanel = liveChatScreen;
 				dashboard.setVisible(true);
 			}
 		

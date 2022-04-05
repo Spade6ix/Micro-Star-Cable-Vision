@@ -37,7 +37,7 @@ public class ResolvedScreen extends JPanel {
 		
 	}
 	
-		private String[] issues = {"All","Internet", "Cable", "Payment"};
+		private String[] issues = {"All","Internet", "Cable", "Payment", "Other"};
 		public JComboBox<String> issueType = new JComboBox<String>(issues);
 	
 		private String col[] = {"Customer ID", "Customer Name", "Email","Contact","Address","Issue Type","Complaint Details", "Tech"};
@@ -47,17 +47,19 @@ public class ResolvedScreen extends JPanel {
 		private String internetData[][] = null;
 		private String cableData[][] = null;
 		private String paymentData[][] = null;
+		private String otherData[][] = null;
 	
 		public JTable table = null;
 		public JButton query = new JButton("Query");
 		public JLabel issuetype = new JLabel("Issue Type:");
 		
 		
-		public ResolvedScreen(String d1[][], String d2[][], String d3[][], String d4[][]) {
+		public ResolvedScreen(String d1[][], String d2[][], String d3[][], String d4[][], String d5[][]) {
 			this.allData = d1;
 			this.internetData = d2;
 			this.cableData = d3;
 			this.paymentData = d4;
+			this.otherData = d5;
 			
 			
 			tableModel = new DefaultTableModel(d1, col); 
@@ -166,6 +168,10 @@ public class ResolvedScreen extends JPanel {
 	      		
 	      		if(combo=="Payment") {
 	      			tableModel.setDataVector(paymentData, col);
+	      		}
+	      		
+	      		if(combo=="Other") {
+	      			tableModel.setDataVector(otherData, col);
 	      		}
 	      	}
 	      });
