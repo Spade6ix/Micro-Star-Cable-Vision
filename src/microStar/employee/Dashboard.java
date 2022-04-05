@@ -32,10 +32,11 @@ public class Dashboard extends JFrame implements MouseListener {
 	private JMenu complaints = new JMenu("Complaints");
 	private JMenu other = new JMenu("Other");
 	private JMenu gap = new JMenu();
-	public JMenuItem  resolved = new JMenuItem("Resolved");
-	public JMenuItem outstanding = new JMenuItem("Outstanding");
-	public JMenuItem liveChat = new JMenuItem("Live Chat");
-	public JMenuItem liveVideoChat = new JMenuItem("Live Video Chat");
+	public JMenuItem  resolved = new JMenuItem("Resolved  'r'");
+	public JMenuItem outstanding = new JMenuItem("Outstanding  'o'");
+	public JMenuItem respond = new JMenuItem("Respond  'r'  ");
+	public JMenuItem liveChat = new JMenuItem("Live Chat  't'");
+	public JMenuItem liveVideoChat = new JMenuItem("Live Video Chat  'v'");
 	
 	
 	
@@ -50,18 +51,33 @@ public class Dashboard extends JFrame implements MouseListener {
         
         
         //Complaints Menu
-        resolved.setFont(new Font("Calibri", Font.PLAIN, 15));
-        complaints.add(resolved);
-        outstanding.setFont(new Font("Calibri", Font.PLAIN, 15));
-        complaints.add(outstanding);
         complaints.setPreferredSize(new Dimension(100, 0)); 
         complaints.setForeground(new Color(0xffffff));
+        respond.setFont(new Font("Calibri", Font.PLAIN, 15));
+        respond.setToolTipText("Respond to complaints");
+        respond.setMnemonic('r');
+        complaints.add(respond);
+        
+        resolved.setFont(new Font("Calibri", Font.PLAIN, 15));
+        resolved.setToolTipText("Resolved complaints");
+        resolved.setMnemonic('r');
+        complaints.add(resolved);
+        
+        outstanding.setFont(new Font("Calibri", Font.PLAIN, 15));
+        outstanding.setToolTipText("Outstanding complaints");
+        outstanding.setMnemonic('o');
+        complaints.add(outstanding);
+        
         
         
         //Other Menu
         liveChat.setFont(new Font("Calibri", Font.PLAIN, 15));
+        liveChat.setToolTipText("Live text chat");
+        liveChat.setMnemonic('t');
         other.add(liveChat);
         liveVideoChat.setFont(new Font("Calibri", Font.PLAIN, 15));
+        liveVideoChat.setToolTipText("Live video chat");
+        liveVideoChat.setMnemonic('v');
         other.add(liveVideoChat);
         other.setPreferredSize(new Dimension(100, 0));
         other.setForeground(new Color(0xffffff));

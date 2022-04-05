@@ -95,7 +95,12 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 			private static final long serialVersionUID = 1L;
 
 			public boolean isCellEditable(int d, int column) { //makes table non editable
-				return true;
+				if(column == 7) {
+					return true;
+				}
+				else {
+					return false;
+				}
 			}
 			
 			public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
@@ -179,6 +184,7 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		//QUERRY BUTTON
 		if(e.getSource() == querry && issueType.getSelectedItem() == "All") {
 			tableModel.setDataVector(allData, col);
 		}
@@ -195,8 +201,33 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 			tableModel.setDataVector(paymentData, col);
 		}
 		
+		
+		
+		
+		//SAVE BUTTON
+		if(e.getSource() == save) {
+			try {
+				int selectedRow = table.getSelectedRow();
+				int selectedCol = table.getSelectedColumn();
+				String cellValue = (String) table.getValueAt(selectedRow, selectedCol);
+				String idValue = (String) table.getValueAt(selectedRow, 0);
+				//call method to update database
+				System.out.println(idValue + " " + cellValue);
+			}
+			catch (Exception ex) {
+				System.out.println("Nothing selected");
+			}
+		}
+			
+
+		
 	}
 
+	
+	
+	
+	
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub

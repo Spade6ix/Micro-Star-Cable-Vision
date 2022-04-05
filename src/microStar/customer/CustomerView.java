@@ -35,6 +35,8 @@ public class CustomerView implements MouseListener, ActionListener{
 	public void createCustomerLoginScreen() {
 		/*public vars
 		  
+		  Customer login = "cust"
+		  
 		 loginScreen.idTextField						-ID TextField	
     	 loginScreen.passwordTextField 					-Password TextField
     	 loginScreen.loginButton 						-Login Button
@@ -217,59 +219,70 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		
 		//Login button
-		if(e.getSource() == loginScreen.loginButton) {
-			
-			if(true) { //if correct credentials
-				System.out.println("login successfull");
-				loginScreen.dispose();
-				createCustomerDashboard();
-				createCustomerWelcomeScreen();
-				dashboard.add(welcomeScreen);
-				welcomeScreen.welcomeMessage.setText("Welcome <cust name>");
-				currentPanel = welcomeScreen;
+		try {
+			if(e.getSource() == loginScreen.loginButton) {
+				
+				if(loginScreen.idTextField.getText().equals("cust")) { //if correct credentials
+					System.out.println("login successfull");
+					loginScreen.dispose();
+					createCustomerDashboard();
+					createCustomerWelcomeScreen();
+					dashboard.add(welcomeScreen);
+					welcomeScreen.welcomeMessage.setText("Welcome <cust name>");
+					currentPanel = welcomeScreen;
+				}
 			}
+		} catch(Exception ex) {
+			//login screen is null
 		}
+		
+		
+		
 		
 		
 		//Lodge Complaint
-		if(e.getSource() == dashboard.lodgeComplaint) {
+		try {
+			if(e.getSource() == dashboard.lodgeComplaint) {
+				
+				createCustomerLodgeComplaintScreen();  //creates new panel
+				dashboard.remove(currentPanel);  //removes current panel from dashboard
+				dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
+				currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
+				dashboard.setVisible(true);  //Reloads Component
+			}
 			
-			createCustomerLodgeComplaintScreen();  //creates new panel
-			dashboard.remove(currentPanel);  //removes current panel from dashboard
-			dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
-			currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
-			dashboard.setVisible(true);  //Reloads Component
-		}
-		
-		
-		//Account Status
-		if(e.getSource() == dashboard.accountStatus) {
 			
-			createCustomerAccountStatusScreen();  
-			dashboard.remove(currentPanel);  
-			dashboard.add(accountStatusScreen);  
-			currentPanel = accountStatusScreen;  
-			dashboard.setVisible(true);  
-		}
-		
-		
-		//Lodge Complaint
-		if(e.getSource() == dashboard.complaintHistory) {
+			//Account Status
+			if(e.getSource() == dashboard.accountStatus) {
+				
+				createCustomerAccountStatusScreen();  
+				dashboard.remove(currentPanel);  
+				dashboard.add(accountStatusScreen);  
+				currentPanel = accountStatusScreen;  
+				dashboard.setVisible(true);  
+			}
 			
-			createCustomerComplaintHistoryScreen();  
-			dashboard.remove(currentPanel);  
-			dashboard.add(complaintHistoryScreen);  
-			currentPanel = complaintHistoryScreen;  
-			dashboard.setVisible(true);  
-		}
-		
-		//payment history
-		if(e.getSource() == dashboard.paymentHistory) {
-			createCustomerPaymentHistoryScreen();
-			dashboard.remove(currentPanel);
-			dashboard.add(paymentHistoryScreen);
-			currentPanel = paymentHistoryScreen;
-			dashboard.setVisible(true);
+			
+			//Lodge Complaint
+			if(e.getSource() == dashboard.complaintHistory) {
+				
+				createCustomerComplaintHistoryScreen();  
+				dashboard.remove(currentPanel);  
+				dashboard.add(complaintHistoryScreen);  
+				currentPanel = complaintHistoryScreen;  
+				dashboard.setVisible(true);  
+			}
+			
+			//payment history
+			if(e.getSource() == dashboard.paymentHistory) {
+				createCustomerPaymentHistoryScreen();
+				dashboard.remove(currentPanel);
+				dashboard.add(paymentHistoryScreen);
+				currentPanel = paymentHistoryScreen;
+				dashboard.setVisible(true);
+			}
+		} catch(Exception ex) {
+			//Dashboard is null
 		}
 		
 	}

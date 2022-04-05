@@ -194,7 +194,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 		moreTable.setGridColor(new Color(0x5a5a5a));
 		moreTable.setBackground(new Color(0x666666));
 		moreTable.setForeground(new Color(0xc2c2c2));
-		moreTable.setPreferredSize(new Dimension(890, 360));	
+		moreTable.setPreferredSize(new Dimension(990, 360));	
 		moreTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         
@@ -202,7 +202,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
         moreScrollPane.setBackground(new Color(0x333333));
         moreScrollPane.getVerticalScrollBar().setUI(null); //removes vertical slider
         moreScrollPane.setBorder(new EmptyBorder(0,0,0,0)); //removes ScrollPane border
-        moreScrollPane.setPreferredSize(new Dimension(890, 360));
+        moreScrollPane.setPreferredSize(new Dimension(990, 360));
 		
         
         //LayeredPane
@@ -211,7 +211,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 		
         
 		//setup JInternal Frame
-		iFrame.setBounds(100,25,900,400);
+		iFrame.setBounds(50,25,1000,400);
         iFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         iFrame.setResizable(false);
         iFrame.setClosable(true);
