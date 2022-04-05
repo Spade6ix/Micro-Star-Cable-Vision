@@ -18,7 +18,7 @@ public static JPanel currentPanel = null;
 	public static LoginScreen loginScreen = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
-	public static EmployeeResolvedScreen employeeResolvedScreen = null;
+	public static ResolvedScreen resolvedScreen = null;
 	public static OutstandingScreen outstandingScreen = null;
 	
 	
@@ -90,8 +90,8 @@ public static JPanel currentPanel = null;
 	
 	public void createEmployeeResolvedScreen() {
 		
-		EmployeeResolvedScreen obj = new EmployeeResolvedScreen (allData, internetData, cableData, paymentData);
-		employeeResolvedScreen = obj;
+		ResolvedScreen obj = new ResolvedScreen (allData, internetData, cableData, paymentData);
+		resolvedScreen = obj;
 	}
 	
 	
@@ -178,8 +178,8 @@ public static JPanel currentPanel = null;
 		if(e.getSource() == dashboard.resolved) {
 			createEmployeeResolvedScreen();
 			dashboard.remove(currentPanel);
-			dashboard.add(employeeResolvedScreen);
-			currentPanel = employeeResolvedScreen;
+			dashboard.add(resolvedScreen);
+			currentPanel = resolvedScreen;
 			dashboard.setVisible(true);
 		}
 		

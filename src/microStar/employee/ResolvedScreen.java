@@ -1,4 +1,4 @@
-package microstar.employee;
+package microStar.employee;
 
 import java.awt.Color;
 
@@ -30,10 +30,10 @@ import javax.swing.table.TableCellRenderer;
 
 import javax.swing.JLabel;
 
-public class EmployeeResolvedScreen extends JPanel {
+public class ResolvedScreen extends JPanel {
 	
 	
-	public EmployeeResolvedScreen() {
+	public ResolvedScreen() {
 		
 	}
 	
@@ -53,7 +53,7 @@ public class EmployeeResolvedScreen extends JPanel {
 		public JLabel issuetype = new JLabel("Issue Type:");
 		
 		
-		public EmployeeResolvedScreen(String d1[][], String d11[][], String d2[][], String d3[][]) {
+		public ResolvedScreen(String d1[][], String d11[][], String d2[][], String d3[][]) {
 			this.data = d1;
 			this.data1 = d11;
 			this.data2 = d2;
