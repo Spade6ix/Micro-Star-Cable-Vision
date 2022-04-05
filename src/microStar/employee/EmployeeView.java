@@ -85,24 +85,12 @@ public static JPanel currentPanel = null;
 	
 	
 	
-	private String data[][] = {
-			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},		
-	};
 	
-	private String data1[][] = {
-			{"The internet is very Slow...Unable to load page."},
-	};
-	private String data2[][] = {
-			{"The cable and connectors are outdated...."},
-			
-	};
-	private String data3[][] = {
-			{"There was no payment."},		
-	};
+	
 	
 	public void createEmployeeResolvedScreen() {
 		
-		EmployeeResolvedScreen obj = new EmployeeResolvedScreen (data, data1,data2, data3);
+		EmployeeResolvedScreen obj = new EmployeeResolvedScreen (allData, internetData, cableData, paymentData);
 		employeeResolvedScreen = obj;
 	}
 	
