@@ -19,6 +19,7 @@ public static JPanel currentPanel = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
 	public static EmployeeResolvedScreen employeeResolvedScreen = null;
+	public static OutstandingScreen outstandingScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -85,8 +86,7 @@ public static JPanel currentPanel = null;
 	
 	
 	private String data[][] = {
-			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},
-			
+			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},		
 	};
 	
 	private String data1[][] = {
@@ -97,14 +97,40 @@ public static JPanel currentPanel = null;
 			
 	};
 	private String data3[][] = {
-			{"There was no payment."},
-			
+			{"There was no payment."},		
 	};
 	
 	public void createEmployeeResolvedScreen() {
 		
 		EmployeeResolvedScreen obj = new EmployeeResolvedScreen (data, data1,data2, data3);
 		employeeResolvedScreen = obj;
+	}
+	
+	
+	
+	
+	
+	
+	private String allData[][] = {
+			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},
+			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","Alanzo Black"},
+			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"}
+	};
+	
+	private String internetData[][] = {
+			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"}
+	};
+	private String cableData[][] = {
+			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","Alanzo Black"}
+			
+	};
+	private String paymentData[][] = {
+			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"}		
+	};
+	public void createEmployeeOustandingScreen() {
+		
+		OutstandingScreen obj = new OutstandingScreen (allData, internetData, cableData, paymentData);
+		outstandingScreen = obj;
 	}
 	
 	
@@ -166,6 +192,16 @@ public static JPanel currentPanel = null;
 			dashboard.remove(currentPanel);
 			dashboard.add(employeeResolvedScreen);
 			currentPanel = employeeResolvedScreen;
+			dashboard.setVisible(true);
+		}
+		
+		
+		
+		if(e.getSource() == dashboard.outstanding) {
+			createEmployeeOustandingScreen();
+			dashboard.remove(currentPanel);
+			dashboard.add(outstandingScreen);
+			currentPanel = outstandingScreen;
 			dashboard.setVisible(true);
 		}
 		

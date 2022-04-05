@@ -144,6 +144,9 @@ public class CustomerView implements MouseListener, ActionListener{
 	public void createCustomerComplaintHistoryScreen() {
 		/*public vars
 		  
+		  complaintHistory.moreTable						-more info table
+		  complaintHistory.mainTable						-main table
+		  complaintHistory.moreInfo							-more info button
 		 */
 		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(mainData, moreData);
 		complaintHistoryScreen = obj;
