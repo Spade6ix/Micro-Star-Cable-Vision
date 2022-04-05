@@ -1,4 +1,4 @@
-package microstar.employee;
+package microStar.employee;
 
 import java.awt.Color;
 
