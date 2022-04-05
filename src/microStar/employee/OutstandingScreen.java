@@ -41,11 +41,12 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	   0x43c6e0 - querry 
 	 */
 	private String col[] = {"Customer ID", "Customer Name", "Email", "Contact", "Address", "Issue Type", "Details", "Techncian Name"};
-	private String[] issueTypeData = {"All", "Internet", "Cable", "Payment"};
+	private String[] issueTypeData = {"All", "Internet", "Cable", "Payment", "Other"};
 	private String allData[][] = null;
 	private String internetData[][] = null;
 	private String cableData[][] = null;
 	private String paymentData[][] = null;
+	private String otherData[][] = null;
 	private DefaultTableModel tableModel = null;
 	private JScrollPane scrollPane;
 	private JComboBox<String> issueType = new JComboBox<String>(issueTypeData);
@@ -54,12 +55,13 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	public JButton save = new JButton("Save Changes");
 	public JTable table = null;
 	
-	public OutstandingScreen(String d1[][], String d2[][], String d3[][], String d4[][]) {
+	public OutstandingScreen(String d1[][], String d2[][], String d3[][], String d4[][], String d5[][]) {
 		
 		this.allData = d1;
 		this.internetData = d2;
 		this.cableData = d3;
 		this.paymentData = d4;
+		this.otherData = d5;
 		
 		
 		
@@ -199,6 +201,10 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 		
 		if(e.getSource() == querry && issueType.getSelectedItem() == "Payment") {
 			tableModel.setDataVector(paymentData, col);
+		}
+		
+		if(e.getSource() == querry && issueType.getSelectedItem() == "Other") {
+			tableModel.setDataVector(otherData, col);
 		}
 		
 		

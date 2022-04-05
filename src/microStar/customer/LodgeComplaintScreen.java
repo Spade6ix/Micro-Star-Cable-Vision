@@ -36,7 +36,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	   0x6666ff
 	 */
 	
-	private String[] issues = {"Internet", "Cable", "Payment"};
+	private String[] issues = {"Internet", "Cable", "Payment", "Other"};
 	
 	public JTextField id = new JTextField();
 	public JTextField firstName = new JTextField();

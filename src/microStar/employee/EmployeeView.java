@@ -107,7 +107,8 @@ public static JPanel currentPanel = null;
 	private String allData[][] = { //DUMMY DATA for resolved and outstanding screens
 			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},
 			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","Alanzo Black"},
-			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"}
+			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"},
+			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","Alanzo Black"}
 	};
 	
 	private String internetData[][] = {
@@ -120,9 +121,12 @@ public static JPanel currentPanel = null;
 	private String paymentData[][] = {
 			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"}		
 	};
+	private String otherData[][] = {
+			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","Alanzo Black"}		
+	};
 	public void createEmployeeOustandingScreen() {
 		
-		OutstandingScreen obj = new OutstandingScreen (allData, internetData, cableData, paymentData);
+		OutstandingScreen obj = new OutstandingScreen (allData, internetData, cableData, paymentData, otherData);
 		outstandingScreen = obj;
 	}
 	
