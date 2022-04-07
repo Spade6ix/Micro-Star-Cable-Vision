@@ -245,7 +245,7 @@ public class CustomerView implements MouseListener, ActionListener{
 					createCustomerDashboard();
 					createCustomerWelcomeScreen();
 					dashboard.add(welcomeScreen);
-					welcomeScreen.welcomeMessage.setText("Welcome <cust name>");
+					welcomeScreen.welcomeMessage.setText("Welcome " + CustomerController.client.getCustomerObj().getFirstName() + " " + CustomerController.client.getCustomerObj().getLastName());
 					currentPanel = welcomeScreen;
 				}
 			}

@@ -263,6 +263,7 @@ public class CustomerClient {
         try {
             if (action.equalsIgnoreCase("Customer Login")) {
                 login = (boolean) objIs.readObject();
+                customerObj = (Customer) objIs.readObject();
                 if(login){
                     logger.info("Customer Authenticated");
                 }

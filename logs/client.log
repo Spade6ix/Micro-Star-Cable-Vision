@@ -40,3 +40,12 @@
 [INFO ] 2022-04-06 20:36:13.136 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-06 20:36:13.136 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
 [INFO ] 2022-04-06 20:36:13.167 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-06 21:59:14.697 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-06 21:59:14.916 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-06 21:59:36.532 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-06 22:01:41.746 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 22:01:41.824 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 22:01:42.098 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 22:01:42.098 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 22:01:42.098 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 22:01:42.130 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician

@@ -284,6 +284,7 @@ public class EmployeeClient {
         try {
             if (action.equalsIgnoreCase("Employee Login")) {
                 login = (boolean) objIs.readObject();
+                employeeObj = (Employee) objIs.readObject();
                 if(login){
                     logger.info("Employee Authenticated");
                 }

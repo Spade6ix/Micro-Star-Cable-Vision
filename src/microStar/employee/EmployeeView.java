@@ -217,7 +217,7 @@ public static JPanel currentPanel = null;
 						createEmployeeDashboard();
 						createEmployeeWelcomeScreen();
 						dashboard.respond.setVisible(false);
-						welcomeScreen.welcomeMessage.setText("Welcome <rep name>");
+						welcomeScreen.welcomeMessage.setText("Welcome " + EmployeeController.empClient.getEmployeeObj().getFirstName() + " " + EmployeeController.empClient.getEmployeeObj().getLastName());
 						dashboard.add(welcomeScreen);
 						currentPanel = welcomeScreen;
 					}
@@ -231,7 +231,7 @@ public static JPanel currentPanel = null;
 						createEmployeeWelcomeScreen();
 						dashboard.outstanding.setVisible(false);
 						dashboard.resolved.setVisible(false);
-						welcomeScreen.welcomeMessage.setText("Welcome <tech name>");
+						welcomeScreen.welcomeMessage.setText("Welcome "  + EmployeeController.empClient.getEmployeeObj().getFirstName() + " " + EmployeeController.empClient.getEmployeeObj().getLastName());
 						dashboard.add(welcomeScreen);
 						currentPanel = welcomeScreen;
 					}
