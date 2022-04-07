@@ -27,7 +27,6 @@ public class EmployeeClient {
     private Payment paymentObj;
     private Query queryObj;
     private Response responseObj;
-    private ResultSet result;
     private boolean login;
     private boolean flag;
     private int resolved;
@@ -40,6 +39,7 @@ public class EmployeeClient {
     private List<CustomerEmail> customerEmailList;
     private List<CustomerPhone> customerPhoneList;
     private List<Employee> employeeList;
+    private List<LiveChat> liveChatList;
     private static final Logger logger = LogManager.getLogger(EmployeeClient.class);
 
     public EmployeeClient(){
@@ -54,7 +54,6 @@ public class EmployeeClient {
             paymentObj = new Payment();
             queryObj = new Query();
             responseObj = new Response();
-            ResultSet result = null;
             login = false;
             resolved = 0;
             unresolved = 0;
@@ -66,6 +65,7 @@ public class EmployeeClient {
             customerEmailList = new ArrayList<>();
             customerPhoneList = new ArrayList<>();
             employeeList = new ArrayList<>();
+            liveChatList = new ArrayList<>();
             connectionSocket = new Socket("localhost", 9555);
             objOs = new ObjectOutputStream(connectionSocket.getOutputStream());
             objIs = new ObjectInputStream(connectionSocket.getInputStream());
@@ -101,6 +101,7 @@ public class EmployeeClient {
         this.action = action;
         try{
             objOs.writeObject(action);
+            objOs.flush();
             logger.info("Action Sent");
         }
         catch(IOException ex){
@@ -176,6 +177,7 @@ public class EmployeeClient {
     public void sendEmployeeObj(Employee employeeObj){
         try{
             objOs.writeObject(employeeObj);
+            objOs.flush();
             logger.info("Employee Object Sent");
         }
         catch(IOException ex){
@@ -284,8 +286,8 @@ public class EmployeeClient {
         try {
             if (action.equalsIgnoreCase("Employee Login")) {
                 login = (boolean) objIs.readObject();
-                employeeObj = (Employee) objIs.readObject();
                 if(login){
+                    employeeObj = (Employee) objIs.readObject();
                     logger.info("Employee Authenticated");
                 }
                 else{
@@ -509,12 +511,12 @@ public class EmployeeClient {
         this.responseObj = responseObj;
     }
 
-    public ResultSet getResult() {
-        return result;
+    public List<LiveChat> getLiveChatList() {
+        return liveChatList;
     }
 
-    public void setResult(ResultSet result) {
-        this.result = result;
+    public void setLiveChatList(List<LiveChat> liveChatList) {
+        this.liveChatList = liveChatList;
     }
 
     public boolean isLogin() {

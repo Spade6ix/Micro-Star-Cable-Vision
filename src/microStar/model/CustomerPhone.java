@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import microStar.factory.DBConnectorFactory;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +32,7 @@ public class CustomerPhone implements Serializable {
         this.customerID = p.customerID;
     }
 
-    public void setphone(String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -39,7 +40,7 @@ public class CustomerPhone implements Serializable {
         this.customerID = customerID;
     }
 
-    public String getphone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -74,15 +75,19 @@ public class CustomerPhone implements Serializable {
         }
     }
 
-    public ResultSet readAll(){
+    public ArrayList<CustomerPhone> readAll(){
         ResultSet result = null;
+        ArrayList<CustomerPhone> customerPhoneArrayList = new ArrayList<>();
+        CustomerPhone customerPhone = new CustomerPhone();
         try(Connection c = DBConnectorFactory.getDatabaseConnection()){
             String sql = "SELECT * FROM CustomerPhone";
             PreparedStatement ps = c.prepareStatement(sql);
             result = ps.executeQuery();
-            /*while(result.next()){
-                System.out.println(result.getString(1) + " " + result.getString(2) + " " + result.getDouble(3) + " " + result.getString(4) + "\n");
-            }*/
+            while(result.next()){
+                customerPhone.setPhone(result.getString(1));
+                customerPhone.setCustomerID(result.getString(2));
+                customerPhoneArrayList.add(customerPhone);
+            }
             logger.info("All records in CustomerPhone Table read");
         }
         catch(SQLException s){
@@ -93,7 +98,7 @@ public class CustomerPhone implements Serializable {
             e.printStackTrace();
             logger.error("Exception occurred");
         }
-        return result;
+        return customerPhoneArrayList;
     }
 
     public void updatePhone(String prevPhone, String newPhone, String customerID){
@@ -135,3 +140,4 @@ public class CustomerPhone implements Serializable {
         }
     }
 }
+

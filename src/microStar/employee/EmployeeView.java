@@ -206,11 +206,12 @@ public static JPanel currentPanel = null;
 				EmployeeController.empClient.sendAction("Employee Login");
 				EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
 				EmployeeController.empClient.receiveResponse();
-				EmployeeController.empClient.sendAction("Is Employee a Technician?");
-				EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
-				EmployeeController.empClient.receiveResponse();
 
-				if(EmployeeController.empClient.isLogin()) { //customer rep
+
+				if (EmployeeController.empClient.isLogin()) { //customer rep
+					EmployeeController.empClient.sendAction("Is Employee a Technician?");
+					EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
+					EmployeeController.empClient.receiveResponse();
 					if (!EmployeeController.empClient.isFlag()) {
 						System.out.println("rep login successful");
 						loginScreen.dispose();
@@ -222,19 +223,24 @@ public static JPanel currentPanel = null;
 						currentPanel = welcomeScreen;
 					}
 				}
-				
-				if(EmployeeController.empClient.isLogin()) { //technician
-					if(EmployeeController.empClient.isFlag()) {
+
+				if (EmployeeController.empClient.isLogin()) { //technician
+					if (EmployeeController.empClient.isFlag()) {
 						System.out.println("tech login successful");
 						loginScreen.dispose();
 						createEmployeeDashboard();
 						createEmployeeWelcomeScreen();
 						dashboard.outstanding.setVisible(false);
 						dashboard.resolved.setVisible(false);
-						welcomeScreen.welcomeMessage.setText("Welcome "  + EmployeeController.empClient.getEmployeeObj().getFirstName() + " " + EmployeeController.empClient.getEmployeeObj().getLastName());
+						welcomeScreen.welcomeMessage.setText("Welcome " + EmployeeController.empClient.getEmployeeObj().getFirstName() + " " + EmployeeController.empClient.getEmployeeObj().getLastName());
 						dashboard.add(welcomeScreen);
 						currentPanel = welcomeScreen;
 					}
+				}
+
+				if (!EmployeeController.empClient.isLogin()) {
+					loginScreen.idTextField.setText(null);
+					loginScreen.passwordTextField.setText(null);
 				}
 			}
 		} catch(Exception ex) {

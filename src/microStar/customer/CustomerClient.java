@@ -27,7 +27,6 @@ public class CustomerClient {
     private Payment paymentObj;
     private Query queryObj;
     private Response responseObj;
-    private ResultSet result;
     private boolean login;
     private boolean flag;
     private String customerID;
@@ -37,6 +36,8 @@ public class CustomerClient {
     private List<CustomerEmail> customerEmailList;
     private List<CustomerPhone> customerPhoneList;
     private List<Employee> employeeList;
+    private List<Query> queryList;
+    private List<LiveChat> liveChatList;
     private static final Logger logger = LogManager.getLogger(CustomerClient.class);
 
     public CustomerClient(){
@@ -51,7 +52,6 @@ public class CustomerClient {
             paymentObj = new Payment();
             queryObj = new Query();
             responseObj = new Response();
-            ResultSet result = null;
             login = false;
             customerID = "";
             responseList = new ArrayList<>();
@@ -60,6 +60,8 @@ public class CustomerClient {
             customerEmailList = new ArrayList<>();
             customerPhoneList = new ArrayList<>();
             employeeList = new ArrayList<>();
+            queryList = new ArrayList<>();
+            liveChatList = new ArrayList<>();
             connectionSocket = new Socket("localhost", 9555);
             objOs = new ObjectOutputStream(connectionSocket.getOutputStream());
             objIs = new ObjectInputStream(connectionSocket.getInputStream());
@@ -263,8 +265,8 @@ public class CustomerClient {
         try {
             if (action.equalsIgnoreCase("Customer Login")) {
                 login = (boolean) objIs.readObject();
-                customerObj = (Customer) objIs.readObject();
                 if(login){
+                    customerObj = (Customer) objIs.readObject();
                     logger.info("Customer Authenticated");
                 }
                 else{
@@ -281,7 +283,7 @@ public class CustomerClient {
                 }
             }
             else if (action.equalsIgnoreCase("Make Query")){
-                result = (ResultSet) objIs.readObject();
+                queryObj = (Query) objIs.readObject();
                 logger.info("Query Data fetched successfully");
             }
             else if (action.equalsIgnoreCase("View All Responses to a Complaint")){
@@ -433,14 +435,6 @@ public class CustomerClient {
         this.responseObj = responseObj;
     }
 
-    public ResultSet getResult() {
-        return result;
-    }
-
-    public void setResult(ResultSet result) {
-        this.result = result;
-    }
-
     public boolean isLogin() {
         return login;
     }
@@ -503,5 +497,21 @@ public class CustomerClient {
 
     public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
+    }
+
+    public List<Query> getQueryList() {
+        return queryList;
+    }
+
+    public void setQueryList(List<Query> queryList) {
+        this.queryList = queryList;
+    }
+
+    public List<LiveChat> getLiveChatList() {
+        return liveChatList;
+    }
+
+    public void setLiveChatList(List<LiveChat> liveChatList) {
+        this.liveChatList = liveChatList;
     }
 }

@@ -7,8 +7,10 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
+import microStar.employee.EmployeeController;
 import microStar.employee.LiveChatScreen;
-
+import microStar.model.Customer;
+import microStar.model.Payment;
 
 
 public class CustomerView implements MouseListener, ActionListener{
@@ -31,7 +33,22 @@ public class CustomerView implements MouseListener, ActionListener{
 		customerView.createCustomerLoginScreen();
 	}
 	
-	
+	/*public CustomerView(){
+		CustomerController.client.sendAction("View All Payments made by a Customer");
+		CustomerController.client.sendCustomerObj(CustomerController.client.getCustomerObj());
+		CustomerController.client.receiveResponse();
+		int i = 0;
+		int j = 0;
+		data1= new String [CustomerController.client.getPaymentList().size()][2];
+		for (Payment p: CustomerController.client.getPaymentList()){
+			data1[i][j] = p.getDateOfPayment();
+			j++;
+			data1[i][j] = p.getAmountPaid().toString();
+			i++;
+			j=0;
+		}
+
+	}*/
 	
 	
 	
@@ -248,6 +265,10 @@ public class CustomerView implements MouseListener, ActionListener{
 					welcomeScreen.welcomeMessage.setText("Welcome " + CustomerController.client.getCustomerObj().getFirstName() + " " + CustomerController.client.getCustomerObj().getLastName());
 					currentPanel = welcomeScreen;
 				}
+				if (!CustomerController.client.isLogin()) {
+					loginScreen.idTextField.setText("");
+					loginScreen.passwordTextField.setText("");
+				}
 			}
 		} catch(Exception ex) {
 			//login screen is null
@@ -267,15 +288,30 @@ public class CustomerView implements MouseListener, ActionListener{
 				currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
 				dashboard.setVisible(true);  //Reloads Component
 			}
-			
+
+			if (e.getSource() == lodgeComplaintScreen.submit){
+				CustomerController.client.getComplaintObj().setComplaintType(lodgeComplaintScreen.issueType.getSelectedItem().toString());
+				CustomerController.client.getComplaintObj().setComplaintDetails(lodgeComplaintScreen.issueDetails.getText());
+				CustomerController.client.getComplaintObj().setStatus('U');
+				CustomerController.client.getComplaintObj().setCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
+				CustomerController.client.getComplaintObj().setStaffID(null);
+				CustomerController.client.sendAction("Create Complaint");
+				CustomerController.client.sendComplaintObj(CustomerController.client.getComplaintObj());
+				CustomerController.client.receiveResponse();
+			}
 			
 			//Account Status
 			if(e.getSource() == dashboard.accountStatus) {
-				
 				createCustomerAccountStatusScreen();  
 				dashboard.remove(currentPanel);  
 				dashboard.add(accountStatusScreen);  
-				currentPanel = accountStatusScreen;  
+				currentPanel = accountStatusScreen;
+				CustomerController.client.sendAction("Make Query");
+				CustomerController.client.sendCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
+				CustomerController.client.receiveResponse();
+				accountStatusScreen.txtps.setText(CustomerController.client.getQueryObj().getPaymentStatus());
+				accountStatusScreen.txtad.setText(CustomerController.client.getQueryObj().getAmountDue().toString());
+				accountStatusScreen.txtpdd.setText(CustomerController.client.getQueryObj().getDueDate());
 				dashboard.setVisible(true);  
 			}
 			
