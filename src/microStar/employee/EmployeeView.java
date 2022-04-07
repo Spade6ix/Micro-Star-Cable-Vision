@@ -1,5 +1,7 @@
 package microStar.employee;
 
+import microStar.customer.CustomerController;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,6 +27,7 @@ public static JPanel currentPanel = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
+		new EmployeeController();
 		EmployeeView employeeView = new EmployeeView();
 		employeeView.createEmployeeLoginScreen();
 	}
@@ -198,28 +201,40 @@ public static JPanel currentPanel = null;
 		//Login button
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
+				EmployeeController.e.setStaffID(String.valueOf(loginScreen.idTextField.getText()));
+				EmployeeController.e.setPassword(String.valueOf(loginScreen.passwordTextField.getText()));
+				EmployeeController.empClient.sendAction("Employee Login");
+				EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
+				EmployeeController.empClient.receiveResponse();
+				EmployeeController.empClient.sendAction("Is Employee a Technician?");
+				EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
+				EmployeeController.empClient.receiveResponse();
 
-				if(loginScreen.idTextField.getText().equals("cusRep")) { //customer rep
-					System.out.println("rep login successfull");
-					loginScreen.dispose();
-					createEmployeeDashboard();
-					createEmployeeWelcomeScreen();
-					dashboard.respond.setVisible(false);
-					welcomeScreen.welcomeMessage.setText("Welcome <rep name>");
-					dashboard.add(welcomeScreen);
-					currentPanel = welcomeScreen;
+				if(EmployeeController.empClient.isLogin()) { //customer rep
+					if (!EmployeeController.empClient.isFlag()) {
+						System.out.println("rep login successful");
+						loginScreen.dispose();
+						createEmployeeDashboard();
+						createEmployeeWelcomeScreen();
+						dashboard.respond.setVisible(false);
+						welcomeScreen.welcomeMessage.setText("Welcome <rep name>");
+						dashboard.add(welcomeScreen);
+						currentPanel = welcomeScreen;
+					}
 				}
 				
-				if(loginScreen.idTextField.getText().equals("tech")) { //technician
-					System.out.println("tech login successfull");
-					loginScreen.dispose();
-					createEmployeeDashboard();
-					createEmployeeWelcomeScreen();
-					dashboard.outstanding.setVisible(false);
-					dashboard.resolved.setVisible(false);
-					welcomeScreen.welcomeMessage.setText("Welcome <tech name>");
-					dashboard.add(welcomeScreen);
-					currentPanel = welcomeScreen;
+				if(EmployeeController.empClient.isLogin()) { //technician
+					if(EmployeeController.empClient.isFlag()) {
+						System.out.println("tech login successful");
+						loginScreen.dispose();
+						createEmployeeDashboard();
+						createEmployeeWelcomeScreen();
+						dashboard.outstanding.setVisible(false);
+						dashboard.resolved.setVisible(false);
+						welcomeScreen.welcomeMessage.setText("Welcome <tech name>");
+						dashboard.add(welcomeScreen);
+						currentPanel = welcomeScreen;
+					}
 				}
 			}
 		} catch(Exception ex) {

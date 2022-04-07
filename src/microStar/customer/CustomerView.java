@@ -26,6 +26,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
+		new CustomerController();
 		CustomerView customerView = new CustomerView();
 		customerView.createCustomerLoginScreen();
 	}
@@ -232,9 +233,14 @@ public class CustomerView implements MouseListener, ActionListener{
 		//Login button
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
-				
-				if(loginScreen.idTextField.getText().equals("cust")) { //if correct credentials
-					System.out.println("login successfull");
+				CustomerController.c.setCustomerID(String.valueOf(loginScreen.idTextField.getText()));
+				CustomerController.c.setPassword(String.valueOf(loginScreen.passwordTextField.getText()));
+				CustomerController.client.sendAction("Customer Login");
+				CustomerController.client.sendCustomerObj(CustomerController.c);
+				CustomerController.client.receiveResponse();
+
+				if(CustomerController.client.isLogin()) { //if correct credentials
+					System.out.println("login successful");
 					loginScreen.dispose();
 					createCustomerDashboard();
 					createCustomerWelcomeScreen();

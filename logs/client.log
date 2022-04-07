@@ -1,0 +1,42 @@
+[INFO ] 2022-04-06 20:14:31.616 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-06 20:14:31.648 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-06 20:14:39.838 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-06 20:15:57.277 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-06 20:15:57.308 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-06 20:16:02.283 [AWT-EventQueue-0] CustomerClient - Customer provided incorrect credentials
+[INFO ] 2022-04-06 20:22:00.478 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:22:00.509 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:22:05.907 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 20:22:05.907 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:22:05.907 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:22:05.938 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-06 20:24:45.862 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:24:45.893 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:24:52.615 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 20:24:52.615 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:24:52.615 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:24:52.631 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-06 20:25:03.052 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:25:03.052 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:25:03.067 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 20:25:03.067 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:25:03.067 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:25:03.083 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-06 20:28:54.367 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:28:54.398 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:29:02.139 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 20:29:02.139 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:29:02.139 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:29:02.171 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-06 20:31:44.448 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:31:44.464 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:31:50.138 [AWT-EventQueue-0] EmployeeClient - Employee provided incorrect credentials
+[INFO ] 2022-04-06 20:31:50.153 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:31:50.153 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[ERROR] 2022-04-06 20:33:18.646 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-06 20:36:08.011 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:36:08.042 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:36:13.136 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-06 20:36:13.136 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-06 20:36:13.136 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-06 20:36:13.167 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician

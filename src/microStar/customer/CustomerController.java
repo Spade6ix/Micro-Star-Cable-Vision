@@ -10,31 +10,24 @@ import org.apache.logging.log4j.Logger;
 
 public class CustomerController {
     private static final Logger logger = LogManager.getLogger(CustomerController.class);
+    public static CustomerClient client;
+    public static Customer c;
 
-    public static void main(String[] args) {
+    public CustomerController(){
+        client = new CustomerClient();
+        c = new Customer();
+    }
+
+    /*public static void main(String[] args) {
         try{
-            CustomerClient client = new CustomerClient();
-            Customer c = new Customer();
-            c.setCustomerID("B4955");
-            c.setPassword("agnus35");
-            client.sendAction("Customer Login");
-            client.sendCustomerObj(c);
-            client.receiveResponse();
-            if(client.isLogin()){
-                System.out.println("\nSUCCESS!!!!");
-            }
-            else{
-                System.out.println("\nFailure!!!!");
-            }
-            client.sendAction("");
 
         }
         catch(Exception e){
             e.printStackTrace();
             logger.error("Exception Occurred");
         }
-        finally{
-
-        }
-    }
+        //finally{
+            //client.closeConnection();
+        //}
+    }*/
 }
