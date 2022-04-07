@@ -40,13 +40,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		int i = 0;
 		int j = 0;
 		data1= new String [CustomerController.client.getPaymentList().size()][2];
-		for (Payment p: CustomerController.client.getPaymentList()){
-			data1[i][j] = p.getDateOfPayment();
-			j++;
-			data1[i][j] = p.getAmountPaid().toString();
-			i++;
-			j=0;
-		}
+		data1 = CustomerController.client.getPaymentList().toArray();
 
 	}*/
 	
