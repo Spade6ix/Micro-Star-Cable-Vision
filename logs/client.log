@@ -259,3 +259,9 @@
 [INFO ] 2022-04-07 19:55:52.298 [AWT-EventQueue-0] CustomerClient - Action Sent
 [INFO ] 2022-04-07 19:55:52.298 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
 [INFO ] 2022-04-07 19:55:54.533 [AWT-EventQueue-0] CustomerClient - Complaint Created successfully
+[INFO ] 2022-04-07 20:49:16.757 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-07 20:49:16.820 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-07 20:49:27.657 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-07 20:49:37.910 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-07 20:49:37.910 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-07 20:49:38.363 [AWT-EventQueue-0] CustomerClient - Payments fetched successfully
