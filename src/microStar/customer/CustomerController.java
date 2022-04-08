@@ -107,14 +107,14 @@ public class CustomerController {
     public static String[][] getComplaintDetails(){
     	String[][] data = null;
     	List<Response> data1 = new ArrayList<Response>();
-    	/*
-		client.sendAction("View a Complaint of a Customer");
+    	
+		client.sendAction("View All Responses to a complaint");
 		client.sendCustomerObj(client.getCustomerObj());
 		client.receiveResponse();
 		
 		data1 = client.getResponseList();
 		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
-		*/
+		
 
 		return data;
     }
