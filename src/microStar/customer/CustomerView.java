@@ -138,11 +138,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 
-	private String mainData[][] = { //DUMMY DATA main table
-			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
-			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"},
-			{"20/02/2021", "aefaefes efsefse fswefwf", "Sarah Die"}
-		};
+
 	private String moreData[][] = { //DUMMY DATA more info table
 			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
 			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
@@ -155,7 +151,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		  complaintHistory.mainTable						-main table
 		  complaintHistory.moreInfo							-more info button
 		 */
-		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(mainData, moreData);
+		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory(), moreData);
 		complaintHistoryScreen = obj;
 	}
 	
@@ -278,12 +274,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.remove(currentPanel);  
 				dashboard.add(accountStatusScreen);  
 				currentPanel = accountStatusScreen;
-				CustomerController.client.sendAction("Make Query");
-				CustomerController.client.sendCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
-				CustomerController.client.receiveResponse();
-				accountStatusScreen.txtps.setText(CustomerController.client.getQueryObj().getPaymentStatus());
-				accountStatusScreen.txtad.setText(CustomerController.client.getQueryObj().getAmountDue().toString());
-				accountStatusScreen.txtpdd.setText(CustomerController.client.getQueryObj().getDueDate());
+				CustomerController.getAccountStatus();
 				dashboard.setVisible(true);  
 			}
 			
@@ -371,6 +362,15 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		
 		
+		
+		
+		//COMPLAINT HISTORY SCREEN
+		try {
+			
+			
+		} catch (Exception ex) {
+			//payment history screen null
+		}
 		
 		
 		

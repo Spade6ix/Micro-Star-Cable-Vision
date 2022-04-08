@@ -4,6 +4,7 @@ package microStar.customer;
 import com.mysql.cj.xdevapi.Client;
 import microStar.factory.DBConnectorFactory;
 import microStar.factory.SessionFactoryBuilder;
+import microStar.model.Complaint;
 import microStar.model.Customer;
 import microStar.model.Payment;
 
@@ -40,6 +41,19 @@ public class CustomerController {
     
     
     
+    public static void getAccountStatus() {
+    	client.sendAction("Make Query");
+		client.sendCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
+		client.receiveResponse();
+		
+		CustomerView.accountStatusScreen.txtps.setText(client.getQueryObj().getPaymentStatus());
+		CustomerView.accountStatusScreen.txtad.setText(client.getQueryObj().getAmountDue().toString());
+		CustomerView.accountStatusScreen.txtpdd.setText(client.getQueryObj().getDueDate());
+    }
+    
+    
+    
+    
     public static String[][] getPaymentHistory(){
     	String[][] data = null;
     	List<Payment> data1 = new ArrayList<Payment>();
@@ -55,4 +69,44 @@ public class CustomerController {
 		//System.out.println(data.length);
 		return data;
     	}
+    
+    
+    
+    
+    public static String[][] getComplaintHistory(){
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		client.sendAction("View All Complaints of a Customer");
+		client.sendCustomerObj(client.getCustomerObj());
+		client.receiveResponse();
+		
+		data1 = client.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+
+		return data;
+    }
+    
+    /*
+    public static String[][] getComplaintDetails(){
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		client.sendAction("View a Complaint of a Customer");
+		client.sendCustomerObj(client.getCustomerObj());
+		client.receiveResponse();
+		
+		data1 = client.getComplaintObj();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+
+		return data;
+    }
+    */
+    
+    
+    
+    
+    
+    
+    
 }

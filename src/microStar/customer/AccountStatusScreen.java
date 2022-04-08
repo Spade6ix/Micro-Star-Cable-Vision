@@ -52,6 +52,7 @@ public class AccountStatusScreen extends JPanel {
 		txtps = new JTextField();
 		txtps.setForeground(new Color(0x999999));
 		txtps.setBackground(new Color(0x4d4d4d));
+		txtps.setFont(new Font("Calibri", Font.PLAIN, 25));
 		txtps.setBounds(455, 160, 400, 70);
 		this.add(txtps);
 		txtps.setColumns(10);
@@ -61,6 +62,7 @@ public class AccountStatusScreen extends JPanel {
 		txtad = new JTextField();
 		txtad.setForeground(new Color(0x999999));
 		txtad.setBackground(new Color(0x4d4d4d));
+		txtad.setFont(new Font("Calibri", Font.PLAIN, 25));
 		txtad.setBounds(455, 264, 300, 50);
 		this.add(txtad);
 		txtad.setColumns(10);
@@ -70,6 +72,7 @@ public class AccountStatusScreen extends JPanel {
 		txtpdd = new JTextField();
 		txtpdd.setForeground(new Color(0x999999));
 		txtpdd.setBackground(new Color(0x4d4d4d));
+		txtpdd.setFont(new Font("Calibri", Font.PLAIN, 25));
 		txtpdd.setBounds(455, 350, 300, 50);
 		this.add(txtpdd);
 		txtpdd.setColumns(10);
