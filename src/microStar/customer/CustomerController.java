@@ -70,17 +70,26 @@ public class CustomerController {
     
     
     public static String[][] getPaymentHistory(){
-    	String[][] data = null;
-    	List<Payment> data1 = new ArrayList<Payment>();
-    	
-		client.sendAction("View All Payments made by a Customer");
-		client.sendCustomerObj(client.getCustomerObj());
-		client.receiveResponse();
-		
-		data1 = client.getPaymentList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
-
-		return data;
+            String[][] data = null;
+            List<Payment> data1 = new ArrayList<Payment>();
+            
+            client.sendAction("View All Payments made by a Customer");
+            client.sendCustomerObj(client.getCustomerObj());
+            client.receiveResponse();
+    
+            data1 = client.getPaymentList();
+    
+            data = new String[client.getPaymentList().size()][2];
+            int i=0;
+            int j=0;
+            for (Payment p: data1){
+                data[i][j] = p.getDateOfPayment();
+                j++;
+                data[i][j] = p.getAmountPaid().toString();
+                j=0;
+                i++;
+            }
+            return data;
     	}
     
     
