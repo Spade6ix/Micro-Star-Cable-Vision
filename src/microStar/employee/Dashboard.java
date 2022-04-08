@@ -32,8 +32,7 @@ public class Dashboard extends JFrame implements MouseListener {
 	private JMenu complaints = new JMenu("Complaints");
 	private JMenu other = new JMenu("Other");
 	private JMenu gap = new JMenu();
-	public JMenuItem  resolved = new JMenuItem("Resolved  'r'");
-	public JMenuItem outstanding = new JMenuItem("Outstanding  'o'");
+	public JMenuItem assign = new JMenuItem("Assign  'a'");
 	public JMenuItem respond = new JMenuItem("Respond  'r'  ");
 	public JMenuItem liveChat = new JMenuItem("Live Chat  't'");
 	public JMenuItem liveVideoChat = new JMenuItem("Live Video Chat  'v'");
@@ -58,15 +57,11 @@ public class Dashboard extends JFrame implements MouseListener {
         respond.setMnemonic('r');
         complaints.add(respond);
         
-        resolved.setFont(new Font("Calibri", Font.PLAIN, 15));
-        resolved.setToolTipText("Resolved complaints");
-        resolved.setMnemonic('r');
-        complaints.add(resolved);
         
-        outstanding.setFont(new Font("Calibri", Font.PLAIN, 15));
-        outstanding.setToolTipText("Outstanding complaints");
-        outstanding.setMnemonic('o');
-        complaints.add(outstanding);
+        assign.setFont(new Font("Calibri", Font.PLAIN, 15));
+        assign.setToolTipText("Outstanding complaints");
+        assign.setMnemonic('o');
+        complaints.add(assign);
         
         
         

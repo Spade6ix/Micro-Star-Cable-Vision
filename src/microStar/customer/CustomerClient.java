@@ -261,7 +261,8 @@ public class CustomerClient {
     }
 
 
-    public void receiveResponse() {
+    @SuppressWarnings("unchecked")
+	public void receiveResponse() {
         try {
             if (action.equalsIgnoreCase("Customer Login")) {
                 login = (boolean) objIs.readObject();

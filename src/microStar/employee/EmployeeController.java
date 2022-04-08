@@ -4,8 +4,14 @@ import microStar.customer.CustomerClient;
 import microStar.customer.CustomerController;
 import microStar.factory.DBConnectorFactory;
 import microStar.factory.SessionFactoryBuilder;
+import microStar.model.Complaint;
 import microStar.model.Customer;
 import microStar.model.Employee;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,4 +37,88 @@ public class EmployeeController {
             
         }
     }*/
+    
+    
+    
+    public static void login() {
+    	e.setStaffID(String.valueOf(EmployeeView.loginScreen.idTextField.getText()));
+		e.setPassword(String.valueOf(EmployeeView.loginScreen.passwordTextField.getText()));
+		empClient.sendAction("Employee Login");
+		empClient.sendEmployeeObj(e);
+		empClient.receiveResponse();
+    }
+    
+    
+    
+    public static String[][] getInternetComplaintsData() {
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		empClient.sendAction("View Internet Complaints");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		data1 = empClient.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		return data;
+    }
+    
+    
+    
+    
+    public static String[][] getCableComplaintsData() {
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		empClient.sendAction("View Cable Complaints");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		data1 = empClient.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		return data;
+    }
+    
+    
+    
+    
+    public static String[][] getPaymentComplaintsData() {
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		empClient.sendAction("View Payment Complaints");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		data1 = empClient.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		return data;
+    }
+    
+    
+    
+    
+    public static String[][] getOtherComplaintsData() {
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		empClient.sendAction("View Other Complaints");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		data1 = empClient.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		return data;
+    }
+    
+    
+    
+    public static void assignTechnician(String id, String tech) {
+    	// save value
+    }
+    
 }

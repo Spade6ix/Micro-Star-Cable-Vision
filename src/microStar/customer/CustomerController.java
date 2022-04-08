@@ -106,7 +106,7 @@ public class CustomerController {
 		
 		data1 = client.getComplaintList();
 		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
-
+		
 		return data;
     }
     
@@ -117,8 +117,8 @@ public class CustomerController {
     	String[][] data = null;
     	List<Response> data1 = new ArrayList<Response>();
     	
-		client.sendAction("View All Responses to a complaint");
-		client.sendCustomerObj(client.getCustomerObj());
+		client.sendAction("View All Responses to a Complaint");
+		client.sendComplaintObj(client.getComplaintObj());
 		client.receiveResponse();
 		
 		data1 = client.getResponseList();

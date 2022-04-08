@@ -14,6 +14,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 
-public class OutstandingScreen extends JPanel implements MouseListener, ActionListener{
+public class AssignScreen extends JPanel implements MouseListener, ActionListener{
 
 	/* COLOURS:
 
@@ -41,8 +42,7 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	   0x43c6e0 - querry 
 	 */
 	private String col[] = {"Customer ID", "Customer Name", "Email", "Contact", "Address", "Issue Type", "Details", "Techncian Name"};
-	private String[] issueTypeData = {"All", "Internet", "Cable", "Payment", "Other"};
-	private String allData[][] = null;
+	private String[] issueTypeData = {"Internet", "Cable", "Payment", "Other"};
 	private String internetData[][] = null;
 	private String cableData[][] = null;
 	private String paymentData[][] = null;
@@ -51,17 +51,18 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	private JScrollPane scrollPane;
 	private JComboBox<String> issueType = new JComboBox<String>(issueTypeData);
 	
+	public JLabel resolved = new JLabel("Resolved");
+	public JLabel outstanding = new JLabel("Outstanding");
 	public JButton querry = new JButton("Querry");
 	public JButton save = new JButton("Save Changes");
 	public JTable table = null;
 	
-	public OutstandingScreen(String d1[][], String d2[][], String d3[][], String d4[][], String d5[][]) {
+	public AssignScreen(String d1[][], String d2[][], String d3[][], String d4[][]) {
 		
-		this.allData = d1;
-		this.internetData = d2;
-		this.cableData = d3;
-		this.paymentData = d4;
-		this.otherData = d5;
+		this.internetData = d1;
+		this.cableData = d2;
+		this.paymentData = d3;
+		this.otherData = d4;
 		
 		
 		
@@ -75,8 +76,27 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 		
 		
 		
+		//Resolved
+	    gbc.gridx = 1;
+	    gbc.gridy = 1;
+	    gbc.anchor = GridBagConstraints.CENTER;
+	    resolved.setFont(new Font("Calibri", Font.PLAIN, 20));
+	    resolved.setForeground(new Color(0xbfbfbf));
+	    this.add(resolved, gbc);
+		
+		
+		
+		//Outstanding
+	    gbc.gridx = 2;
+	    gbc.gridy = 1;
+	    gbc.anchor = GridBagConstraints.CENTER;
+	    outstanding.setFont(new Font("Calibri", Font.PLAIN, 20));
+	    outstanding.setForeground(new Color(0xbfbfbf));
+	    this.add(outstanding, gbc);
+		
+		
 		//Issue type ComboBox
-        gbc.gridx = 2;
+        gbc.gridx = 4;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.EAST;
         issueType.setFont(new Font("Calibri", Font.PLAIN, 25));
@@ -91,7 +111,7 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 		
 		
 		//Table Setup
-		tableModel = new DefaultTableModel(allData, col); //table data & column names
+		tableModel = new DefaultTableModel(internetData, col); //table data & column names
 		table = new JTable(tableModel) {
 			
 			private static final long serialVersionUID = 1L;
@@ -129,18 +149,18 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
         table.setGridColor(new Color(0x5a5a5a));
         table.setBackground(new Color(0x666666));
         table.setForeground(new Color(0xc2c2c2));
-		table.setPreferredSize(new Dimension(1100, 450));	
+		table.setPreferredSize(new Dimension(1100, 400));	
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         
         
         //ScrollPane
         gbc.gridx = 1;
         gbc.gridy = 2;
-        gbc.gridwidth = 2;
+        gbc.gridwidth = 4;
         scrollPane.setBackground(new Color(0x333333));
         scrollPane.getVerticalScrollBar().setUI(null); //removes vertical slider
         scrollPane.setBorder(new EmptyBorder(0,0,0,0)); //removes ScrollPane border
-        scrollPane.setPreferredSize(new Dimension(1100, 450));	
+        scrollPane.setPreferredSize(new Dimension(1100, 400));	
         this.add(scrollPane, gbc);
         
         
@@ -162,7 +182,7 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 		
 		
 		//Save Button
-		gbc.gridx = 2;
+		gbc.gridx = 4;
 		gbc.gridy = 3;
 		gbc.anchor = GridBagConstraints.EAST;
         save.setFont(new Font("Calibri", Font.PLAIN, 25));
@@ -187,10 +207,6 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 	public void actionPerformed(ActionEvent e) {
 		
 		//QUERRY BUTTON
-		if(e.getSource() == querry && issueType.getSelectedItem() == "All") {
-			tableModel.setDataVector(allData, col);
-		}
-
 		if(e.getSource() == querry && issueType.getSelectedItem() == "Internet") {
 			tableModel.setDataVector(internetData, col);
 		}
@@ -209,21 +225,6 @@ public class OutstandingScreen extends JPanel implements MouseListener, ActionLi
 		
 		
 		
-		
-		//SAVE BUTTON
-		if(e.getSource() == save) {
-			try {
-				int selectedRow = table.getSelectedRow();
-				int selectedCol = table.getSelectedColumn();
-				String cellValue = (String) table.getValueAt(selectedRow, selectedCol);
-				String idValue = (String) table.getValueAt(selectedRow, 0);
-				//call method to update database
-				System.out.println(idValue + " " + cellValue);
-			}
-			catch (Exception ex) {
-				System.out.println("Nothing selected");
-			}
-		}
 			
 
 		

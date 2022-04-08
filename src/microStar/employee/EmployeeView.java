@@ -20,8 +20,7 @@ public static JPanel currentPanel = null;
 	public static LoginScreen loginScreen = null;
 	public static Dashboard dashboard = null;
 	public static WelcomeScreen welcomeScreen = null;
-	public static ResolvedScreen resolvedScreen = null;
-	public static OutstandingScreen outstandingScreen = null;
+	public static AssignScreen assignScreen = null;
 	public static RespondScreen respondScreen = null;
 	public static LiveChatScreen liveChatScreen = null;
 	
@@ -62,15 +61,13 @@ public static JPanel currentPanel = null;
 	public void createEmployeeDashboard() {
 		/*public vars
 		  
-	  	dashboard.outstanding							- outstanding
-	  	dashboard.resolved								- resolved 
+	  	dashboard.assign								- assign
 	  	dashboard.respond								-respond (technician)
 		dashboard.liveVideoChat 						-live video chat 
 		dashboard.liveChat								-liveChat
 		 */
 		Dashboard obj = new Dashboard();
-		obj.outstanding.addActionListener(this);
-		obj.resolved.addActionListener(this);
+		obj.assign.addActionListener(this);
 		obj.respond.addActionListener(this);
 		obj.liveVideoChat.addActionListener(this);
 		obj.liveChat.addActionListener(this);
@@ -97,11 +94,13 @@ public static JPanel currentPanel = null;
 	
 	
 	
-	//resolved screen
-	public void createEmployeeResolvedScreen() {
+	
+	
+	public void createEmployeeAssignScreen() {
 		
-		ResolvedScreen obj = new ResolvedScreen (allData, internetData, cableData, paymentData, otherData);
-		resolvedScreen = obj;
+		AssignScreen obj = new AssignScreen (EmployeeController.getInternetComplaintsData(), EmployeeController.getCableComplaintsData(), 
+				EmployeeController.getPaymentComplaintsData(), EmployeeController.getOtherComplaintsData());
+		assignScreen = obj;
 	}
 	
 	
@@ -109,45 +108,9 @@ public static JPanel currentPanel = null;
 	
 	
 	
-	private String allData[][] = { //DUMMY DATA for resolved and outstanding screens
-			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"},
-			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","Alanzo Black"},
-			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"},
-			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","Alanzo Black"}
-	};
-	
-	private String internetData[][] = {
-			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","Alanzo Black"}
-	};
-	private String cableData[][] = {
-			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","Alanzo Black"}
-			
-	};
-	private String paymentData[][] = {
-			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","Alanzo Black"}		
-	};
-	private String otherData[][] = {
-			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","Alanzo Black"}		
-	};
-	public void createEmployeeOustandingScreen() {
-		
-		OutstandingScreen obj = new OutstandingScreen (allData, internetData, cableData, paymentData, otherData);
-		outstandingScreen = obj;
-	}
-	
-	
-	
-	
-	
-	private String resolvedData[][] = { //DUMMY DATA for resolved and outstanding screens
-			{"197272", "billy love", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Internet","Slow internet","true"},
-			{"197272", "Lowe Richards", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Cable","Slow Cable","false"},
-			{"197272", "Tessa Lweis", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Payment","No payment","false"},
-			{"197272", "Janae Hope", "sjdjdjs@gmail.com","987-383-3737","123 barcelona rd","Other","Misc concerns","true"}
-	};
 	public void createEmployeeRespondScreen() {
-		RespondScreen obj = new RespondScreen(resolvedData);
-		respondScreen = obj;
+		//RespondScreen obj = new RespondScreen(EmployeeController.getRespondData());
+		//respondScreen = obj;
 	}
 	
 	
@@ -201,13 +164,8 @@ public static JPanel currentPanel = null;
 		//Login button
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
-				EmployeeController.e.setStaffID(String.valueOf(loginScreen.idTextField.getText()));
-				EmployeeController.e.setPassword(String.valueOf(loginScreen.passwordTextField.getText()));
-				EmployeeController.empClient.sendAction("Employee Login");
-				EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
-				EmployeeController.empClient.receiveResponse();
-
-
+				EmployeeController.login();
+				
 				if (EmployeeController.empClient.isLogin()) { //customer rep
 					EmployeeController.empClient.sendAction("Is Employee a Technician?");
 					EmployeeController.empClient.sendEmployeeObj(EmployeeController.e);
@@ -230,8 +188,7 @@ public static JPanel currentPanel = null;
 						loginScreen.dispose();
 						createEmployeeDashboard();
 						createEmployeeWelcomeScreen();
-						dashboard.outstanding.setVisible(false);
-						dashboard.resolved.setVisible(false);
+						dashboard.assign.setVisible(false);
 						welcomeScreen.welcomeMessage.setText("Welcome " + EmployeeController.empClient.getEmployeeObj().getFirstName() + " " + EmployeeController.empClient.getEmployeeObj().getLastName());
 						dashboard.add(welcomeScreen);
 						currentPanel = welcomeScreen;
@@ -244,28 +201,22 @@ public static JPanel currentPanel = null;
 				}
 			}
 		} catch(Exception ex) {
-			//login screen obj null
+			System.out.println("login ex");
 		}
 		
 		
 		
+		
+		
+		//DASHBOARD
 		try {
-			//resolved
-			if(e.getSource() == dashboard.resolved) {
-				createEmployeeResolvedScreen();
-				dashboard.remove(currentPanel);
-				dashboard.add(resolvedScreen);
-				currentPanel = resolvedScreen;
-				dashboard.setVisible(true);
-			}
-			
-			
+					
 			//Outstanding
-			if(e.getSource() == dashboard.outstanding) {
-				createEmployeeOustandingScreen();
+			if(e.getSource() == dashboard.assign) {
+				createEmployeeAssignScreen();
 				dashboard.remove(currentPanel);
-				dashboard.add(outstandingScreen);
-				currentPanel = outstandingScreen;
+				dashboard.add(assignScreen);
+				currentPanel = assignScreen;
 				dashboard.setVisible(true);
 			}
 			
@@ -294,9 +245,24 @@ public static JPanel currentPanel = null;
 		
 		
 		
+		//ASSIGN
+		try {
+			//Save Changes
+			try {
+				int selectedRow = assignScreen.table.getSelectedRow();
+				int selectedCol = assignScreen.table.getSelectedColumn();
+				String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
+				String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
+				EmployeeController.assignTechnician(idValue, cellValue);
+			}
+			catch (Exception ex) {
+				System.out.println("Nothing selected");
+			}
+			
+		} catch (Exception ex) {
+			
+		}
 		
 	}
-	
-	
 	
 }
