@@ -226,12 +226,8 @@ public class CustomerView implements MouseListener, ActionListener{
 		//LOGIN SCREEN
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
-				CustomerController.c.setCustomerID(String.valueOf(loginScreen.idTextField.getText()));
-				CustomerController.c.setPassword(String.valueOf(loginScreen.passwordTextField.getText()));
-				CustomerController.client.sendAction("Customer Login");
-				CustomerController.client.sendCustomerObj(CustomerController.c);
-				CustomerController.client.receiveResponse();
-
+				CustomerController.login();
+				
 				if(CustomerController.client.isLogin()) { //if correct credentials
 					System.out.println("login successful");
 					loginScreen.dispose();

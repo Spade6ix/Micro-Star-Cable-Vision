@@ -40,6 +40,15 @@ public class CustomerController {
     
     
     
+    public static void login() {
+    	c.setCustomerID(String.valueOf(CustomerView.loginScreen.idTextField.getText()));
+		c.setPassword(String.valueOf(CustomerView.loginScreen.passwordTextField.getText()));
+		client.sendAction("Customer Login");
+		client.sendCustomerObj(CustomerController.c);
+		client.receiveResponse();
+    }
+    
+    
     
     public static void getAccountStatus() {
     	client.sendAction("Make Query");
