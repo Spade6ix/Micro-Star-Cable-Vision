@@ -7,6 +7,7 @@ import microStar.factory.SessionFactoryBuilder;
 import microStar.model.Complaint;
 import microStar.model.Customer;
 import microStar.model.Payment;
+import microStar.model.Response;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,6 +41,7 @@ public class CustomerController {
     
     
     
+    
     public static void login() {
     	c.setCustomerID(String.valueOf(CustomerView.loginScreen.idTextField.getText()));
 		c.setPassword(String.valueOf(CustomerView.loginScreen.passwordTextField.getText()));
@@ -47,6 +49,8 @@ public class CustomerController {
 		client.sendCustomerObj(CustomerController.c);
 		client.receiveResponse();
     }
+    
+    
     
     
     
@@ -63,6 +67,8 @@ public class CustomerController {
     
     
     
+    
+    
     public static String[][] getPaymentHistory(){
     	String[][] data = null;
     	List<Payment> data1 = new ArrayList<Payment>();
@@ -74,10 +80,9 @@ public class CustomerController {
 		data1 = client.getPaymentList();
 		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
 
-		//System.out.println(data1.size());
-		//System.out.println(data.length);
 		return data;
     	}
+    
     
     
     
@@ -96,21 +101,23 @@ public class CustomerController {
 		return data;
     }
     
-    /*
+    
+    
+    
     public static String[][] getComplaintDetails(){
     	String[][] data = null;
-    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	List<Response> data1 = new ArrayList<Response>();
     	
 		client.sendAction("View a Complaint of a Customer");
 		client.sendCustomerObj(client.getCustomerObj());
 		client.receiveResponse();
 		
-		data1 = client.getComplaintObj();
+		data1 = client.getResponseList();
 		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
 
 		return data;
     }
-    */
+    
     
     
     

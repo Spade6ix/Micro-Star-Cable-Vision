@@ -139,11 +139,6 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 
 
-	private String moreData[][] = { //DUMMY DATA more info table
-			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
-			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"},
-			{"Matthew Dire", "aafefa efaefaeaefaefeaffafaefae", "12/01/2021"}
-		};
 	public void createCustomerComplaintHistoryScreen() {
 		/*public vars
 		  
@@ -151,7 +146,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		  complaintHistory.mainTable						-main table
 		  complaintHistory.moreInfo							-more info button
 		 */
-		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory(), moreData);
+		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory(), CustomerController.getComplaintDetails());
 		complaintHistoryScreen = obj;
 	}
 	
