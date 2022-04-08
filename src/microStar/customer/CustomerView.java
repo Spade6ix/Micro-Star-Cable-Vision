@@ -33,16 +33,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		customerView.createCustomerLoginScreen();
 	}
 	
-	/*public CustomerView(){
-		CustomerController.client.sendAction("View All Payments made by a Customer");
-		CustomerController.client.sendCustomerObj(CustomerController.client.getCustomerObj());
-		CustomerController.client.receiveResponse();
-		int i = 0;
-		int j = 0;
-		data1= new String [CustomerController.client.getPaymentList().size()][2];
-		data1 = CustomerController.client.getPaymentList().toArray();
-
-	}*/
 	
 	
 	
@@ -174,13 +164,9 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	
-	private String data1[][] = { //dummy data for payment history
-			{"12/20/2022", "$10,000"},
-			{"13/2/2020", "$125,000"},
-			{"12,6,2021", "$126,452"}
-	};
+	
 	public void createCustomerPaymentHistoryScreen() {
-		PaymentHistoryScreen obj = new PaymentHistoryScreen(data1);
+		PaymentHistoryScreen obj = new PaymentHistoryScreen(CustomerController.getPaymentHistory());
 		paymentHistoryScreen = obj;
 	}
 
@@ -241,7 +227,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		
-		//Login button
+		//LOGIN SCREEN
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
 				CustomerController.c.setCustomerID(String.valueOf(loginScreen.idTextField.getText()));
@@ -272,7 +258,10 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		
 		
-		//Lodge Complaint
+		
+		
+		
+		//DASHBOARD
 		try {
 			if(e.getSource() == dashboard.lodgeComplaint) {
 				
@@ -281,17 +270,6 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
 				currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
 				dashboard.setVisible(true);  //Reloads Component
-			}
-
-			if (e.getSource() == lodgeComplaintScreen.submit){
-				CustomerController.client.getComplaintObj().setComplaintType(lodgeComplaintScreen.issueType.getSelectedItem().toString());
-				CustomerController.client.getComplaintObj().setComplaintDetails(lodgeComplaintScreen.issueDetails.getText());
-				CustomerController.client.getComplaintObj().setStatus('U');
-				CustomerController.client.getComplaintObj().setCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
-				CustomerController.client.getComplaintObj().setStaffID(null);
-				CustomerController.client.sendAction("Create Complaint");
-				CustomerController.client.sendComplaintObj(CustomerController.client.getComplaintObj());
-				CustomerController.client.receiveResponse();
 			}
 			
 			//Account Status
@@ -340,6 +318,61 @@ public class CustomerView implements MouseListener, ActionListener{
 		} catch(Exception ex) {
 			//Dashboard is null
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		//LODGE COMPLAINT SCREEN
+		try {
+			
+			//submit button
+			if (e.getSource() == lodgeComplaintScreen.submit){
+				CustomerController.client.getComplaintObj().setComplaintType(lodgeComplaintScreen.issueType.getSelectedItem().toString());
+				CustomerController.client.getComplaintObj().setComplaintDetails(lodgeComplaintScreen.issueDetails.getText());
+				CustomerController.client.getComplaintObj().setStatus('U');
+				CustomerController.client.getComplaintObj().setCustomerID(CustomerController.client.getCustomerObj().getCustomerID());
+				CustomerController.client.getComplaintObj().setStaffID(null);
+				CustomerController.client.sendAction("Create Complaint");
+				CustomerController.client.sendComplaintObj(CustomerController.client.getComplaintObj());
+				CustomerController.client.receiveResponse();
+			}
+		} catch (Exception ex) {
+			//lodge complaint screen null
+		}
+		
+		
+		
+		
+		
+		
+		//ACCOUNT STATUS SCREEN
+		try {
+			
+			
+		} catch (Exception ex) {
+			//Account status screen null
+		}
+		
+		
+		
+		
+		
+		//PAYMENT HISTORY SCREEN
+		try {
+			
+			
+		} catch (Exception ex) {
+			//payment history screen null
+		}
+		
+		
+		
+		
+		
 		
 	}
 	

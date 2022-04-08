@@ -5,6 +5,12 @@ import com.mysql.cj.xdevapi.Client;
 import microStar.factory.DBConnectorFactory;
 import microStar.factory.SessionFactoryBuilder;
 import microStar.model.Customer;
+import microStar.model.Payment;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,4 +36,23 @@ public class CustomerController {
             //client.closeConnection();
         //}
     }*/
+    
+    
+    
+    
+    public static String[][] getPaymentHistory(){
+    	String[][] data = null;
+    	List<Payment> data1 = new ArrayList<Payment>();
+    	
+		client.sendAction("View All Payments made by a Customer");
+		client.sendCustomerObj(client.getCustomerObj());
+		client.receiveResponse();
+		
+		data1 = client.getPaymentList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+
+		//System.out.println(data1.size());
+		//System.out.println(data.length);
+		return data;
+    	}
 }
