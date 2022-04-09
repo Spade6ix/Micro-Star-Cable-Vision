@@ -569,3 +569,4 @@
 [INFO ] 2022-04-08 21:12:30.314 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-08 21:12:30.314 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
 [INFO ] 2022-04-08 21:12:32.942 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[ERROR] 2022-04-08 21:56:54.605 [main] CustomerClient - IOException Occurred
