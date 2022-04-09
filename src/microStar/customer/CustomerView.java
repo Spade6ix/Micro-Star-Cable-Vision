@@ -147,6 +147,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		  complaintHistory.moreInfo							-more info button
 		 */
 		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory());
+		obj.moreInfo.addActionListener(this);
 		complaintHistoryScreen = obj;
 	}
 	

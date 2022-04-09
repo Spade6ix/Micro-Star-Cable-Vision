@@ -100,7 +100,9 @@ public static JPanel currentPanel = null;
 		
 		AssignScreen obj = new AssignScreen (EmployeeController.getInternetComplaintsData(), EmployeeController.getCableComplaintsData(), 
 				EmployeeController.getPaymentComplaintsData(), EmployeeController.getOtherComplaintsData());
+		obj.save.addActionListener(this);
 		assignScreen = obj;
+		setComplaintsTotal();
 	}
 	
 	
@@ -122,6 +124,17 @@ public static JPanel currentPanel = null;
 		liveChatScreen = obj;
 	}
 	
+	
+	
+	
+	private void setComplaintsTotal() {
+		System.out.println("total");
+		int out = EmployeeController.getCoutstandingCount();
+		int resolved = EmployeeController.getResolvedCount();
+		
+		assignScreen.outstanding.setText("Outstanding: " + out);
+		assignScreen.resolved.setText("Resolved: " + resolved);
+	}
 	
 	
 	
@@ -247,12 +260,21 @@ public static JPanel currentPanel = null;
 		
 		//ASSIGN
 		try {
-			//Save Changes
-			int selectedRow = assignScreen.table.getSelectedRow();
-			int selectedCol = assignScreen.table.getSelectedColumn();
-			String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
-			String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
-			EmployeeController.assignTechnician(idValue, cellValue);
+			if (e.getSource() == assignScreen.save) {
+				//Save Changes
+				int selectedRow = assignScreen.table.getSelectedRow();
+				int selectedCol = assignScreen.table.getSelectedColumn();
+				String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
+				String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
+				EmployeeController.assignTechnician(idValue, cellValue);
+				System.out.println("dawda");
+			}
+			
+			
+			
+			if (e.getSource() == assignScreen.querry) {
+				setComplaintsTotal();
+			}
 		} 
 		catch (Exception ex) {
 			System.out.println("Nothing selected");

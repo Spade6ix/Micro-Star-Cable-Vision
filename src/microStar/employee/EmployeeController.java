@@ -8,6 +8,8 @@ import microStar.model.Complaint;
 import microStar.model.Customer;
 import microStar.model.Employee;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -59,7 +61,28 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[empClient.getComplaintList().size()][8];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = p.getCustomerID();
+            j++;
+            data[i][j] = "Name";
+            j++;
+            data[i][j] = "Contact";
+            j++;
+            data[i][j] = "Address";
+            j++;
+            data[i][j] = p.getComplaintType();
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStaffID();
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
@@ -76,7 +99,28 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[empClient.getComplaintList().size()][8];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = p.getCustomerID();
+            j++;
+            data[i][j] = "Name";
+            j++;
+            data[i][j] = "Contact";
+            j++;
+            data[i][j] = "Address";
+            j++;
+            data[i][j] = p.getComplaintType();
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStaffID();
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
@@ -93,7 +137,28 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[empClient.getComplaintList().size()][8];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = p.getCustomerID();
+            j++;
+            data[i][j] = "Name";
+            j++;
+            data[i][j] = "Contact";
+            j++;
+            data[i][j] = "Address";
+            j++;
+            data[i][j] = p.getComplaintType();
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStaffID();
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
@@ -110,7 +175,28 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[empClient.getComplaintList().size()][8];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = p.getCustomerID();
+            j++;
+            data[i][j] = "Name";
+            j++;
+            data[i][j] = "Contact";
+            j++;
+            data[i][j] = "Address";
+            j++;
+            data[i][j] = p.getComplaintType();
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStaffID();
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
@@ -118,13 +204,12 @@ public class EmployeeController {
     
     
     public static void assignTechnician(String complaintId, String techId) {
-    	/*
+    	
     	empClient.sendAction("Add a Technician ID to a Complaint");
+    	empClient.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
+    	empClient.getComplaintObj().setStaffID(techId);
 		empClient.sendComplaintObj(empClient.getComplaintObj());
-		empClient.receiveResponse();
-		
-		empClient.sendResponseObj(responseObj);
-		*/
+		empClient.receiveResponse();	
     }
     
     
@@ -157,20 +242,45 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[empClient.getComplaintList().size()][8];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = p.getCustomerID();
+            j++;
+            data[i][j] = "Name";
+            j++;
+            data[i][j] = "Contact";
+            j++;
+            data[i][j] = "Address";
+            j++;
+            data[i][j] = p.getComplaintType();
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStatus() + "";
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
     
     
     public static void setComplaintResponse(String response, String dov, String complaintId) {
-    	/*
-		empClient.sendAction("Technician Create Response");
-		empClient.sendComplaintObj(empClient.getComplaintObj());
-		empClient.receiveResponse();
+
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    	LocalDateTime date = LocalDateTime.parse(dov, formatter);
+    	
+    	empClient.sendAction("Technician Create Response");
+    	empClient.getResponseObj().setProposedDateOfVisit(date);
+    	empClient.getResponseObj().setResponseDetails(response);
+    	empClient.getResponseObj().setComplaintID(Integer.parseInt(complaintId));
+		empClient.sendResponseObj(empClient.getResponseObj());
+		empClient.receiveResponse();	
 		
-		//empClient.sendResponseObj(responseObj);
-		 */
     }
     
 }
