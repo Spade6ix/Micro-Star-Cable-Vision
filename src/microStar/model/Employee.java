@@ -112,6 +112,7 @@ public class Employee implements Serializable {
 	public void create(){
 		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
+		
 		try{
 			transaction = session.beginTransaction();
 			session.save(this);

@@ -109,8 +109,8 @@ public static JPanel currentPanel = null;
 	
 	
 	public void createEmployeeRespondScreen() {
-		//RespondScreen obj = new RespondScreen(EmployeeController.getRespondData());
-		//respondScreen = obj;
+		RespondScreen obj = new RespondScreen(EmployeeController.getRespondData());
+		respondScreen = obj;
 	}
 	
 	
@@ -248,20 +248,37 @@ public static JPanel currentPanel = null;
 		//ASSIGN
 		try {
 			//Save Changes
-			try {
-				int selectedRow = assignScreen.table.getSelectedRow();
-				int selectedCol = assignScreen.table.getSelectedColumn();
-				String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
-				String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
-				EmployeeController.assignTechnician(idValue, cellValue);
-			}
-			catch (Exception ex) {
-				System.out.println("Nothing selected");
-			}
+			int selectedRow = assignScreen.table.getSelectedRow();
+			int selectedCol = assignScreen.table.getSelectedColumn();
+			String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
+			String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
+			EmployeeController.assignTechnician(idValue, cellValue);
+		} 
+		catch (Exception ex) {
+			System.out.println("Nothing selected");
+		}
+		
+		
+		
+		
+		
+		//RESPOND
+		try {
+			//Save Changes
+			String response = null;
+			int selectedRow = respondScreen.table.getSelectedRow();
 			
-		} catch (Exception ex) {
+			response = respondScreen.response.getText();
+			String idValue = (String) respondScreen.table.getValueAt(selectedRow, 0);
+			//EmployeeController.setComplaintResponse(idValue, response);
+		}
+		catch(Exception ex) {
 			
 		}
+		
+		
+		
+		
 		
 	}
 	

@@ -57,9 +57,8 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 	
 	
 	
-	public ComplaintHistoryScreen(String d1[][], String d2[][]) {
+	public ComplaintHistoryScreen(String d1[][]) {
 		this.mainData = d1;
-		this.moreData = d2;
 		
 		//Table Setup
 		mainTableModel = new DefaultTableModel(mainData, mainCol); //table data & column names
@@ -148,7 +147,8 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 	
 	
 	
-	private void moreInfoWindow() {
+	public void moreInfoWindow(String[][] d2) {
+		this.moreData = d2;
 		JInternalFrame iFrame = new JInternalFrame("More Info");
 		
 		iFrame.setLayout(new GridBagLayout());
@@ -227,10 +227,6 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
-		if(e.getSource() == moreInfo) {
-			moreInfoWindow();
-		}
 		
 	}
 

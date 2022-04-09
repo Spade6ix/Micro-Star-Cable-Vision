@@ -146,7 +146,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		  complaintHistory.mainTable						-main table
 		  complaintHistory.moreInfo							-more info button
 		 */
-		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory(), CustomerController.getComplaintDetails());
+		ComplaintHistoryScreen obj = new ComplaintHistoryScreen(CustomerController.getComplaintHistory());
 		complaintHistoryScreen = obj;
 	}
 	
@@ -357,7 +357,12 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		//COMPLAINT HISTORY SCREEN
 		try {
-			
+			if(e.getSource() == complaintHistoryScreen.moreInfo) {
+				int row = complaintHistoryScreen.mainTable.getSelectedRow();
+				String id = (String) complaintHistoryScreen.mainTable.getValueAt(row, 0);
+	
+				complaintHistoryScreen.moreInfoWindow(CustomerController.getComplaintDetails(id));
+			}
 			
 		} catch (Exception ex) {
 			//payment history screen null

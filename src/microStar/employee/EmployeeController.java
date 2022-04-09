@@ -117,8 +117,60 @@ public class EmployeeController {
     
     
     
-    public static void assignTechnician(String id, String tech) {
-    	// save value
+    public static void assignTechnician(String complaintId, String techId) {
+    	/*
+    	empClient.sendAction("Add a Technician ID to a Complaint");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		empClient.sendResponseObj(responseObj);
+		*/
+    }
+    
+    
+    
+    public static int getResolvedCount() {
+    	empClient.sendAction("View Number of Resolved & Unresolved Complaints");
+    	empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		return empClient.getResolved();
+    }
+    
+    
+    public static int getCoutstandingCount() {
+    	empClient.sendAction("View Number of Resolved & Unresolved Complaints");
+    	empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		return empClient.getUnresolved();
+    }
+    
+    
+    
+    public static String[][] getRespondData() {
+    	String[][] data = null;
+    	List<Complaint> data1 = new ArrayList<Complaint>();
+    	
+		empClient.sendAction("View Complaints assigned to a Technician");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		data1 = empClient.getComplaintList();
+		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		return data;
+    }
+    
+    
+    public static void setComplaintResponse(String response, String dov, String complaintId) {
+    	/*
+		empClient.sendAction("Technician Create Response");
+		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.receiveResponse();
+		
+		//empClient.sendResponseObj(responseObj);
+		 */
     }
     
 }

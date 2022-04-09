@@ -105,7 +105,21 @@ public class CustomerController {
 		client.receiveResponse();
 		
 		data1 = client.getComplaintList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		
+		data = new String[client.getComplaintList().size()][4];
+        int i=0;
+        int j=0;
+        for (Complaint p: data1){
+            data[i][j] = (p.getComplaintID()) + "";
+            j++;
+            data[i][j] = "last response date";
+            j++;
+            data[i][j] = p.getComplaintDetails();
+            j++;
+            data[i][j] = p.getStaffID();
+            j=0;
+            i++;
+        }
 		
 		return data;
     }
@@ -113,7 +127,7 @@ public class CustomerController {
     
     
     
-    public static String[][] getComplaintDetails(){
+    public static String[][] getComplaintDetails(String complaintId){
     	String[][] data = null;
     	List<Response> data1 = new ArrayList<Response>();
     	
@@ -122,7 +136,18 @@ public class CustomerController {
 		client.receiveResponse();
 		
 		data1 = client.getResponseList();
-		data = Arrays.copyOf(data1.toArray(), data1.size(), String[][].class);
+		data = new String[client.getResponseList().size()][3];
+        int i=0;
+        int j=0;
+        for (Response p: data1){
+            data[i][j] = (p.getStaffID());
+            j++;
+            data[i][j] = p.getResponseDetails();
+            j++;
+            data[i][j] = p.getProposedDateOfVisit() + "";
+            j=0;
+            i++;
+        }
 		
 
 		return data;
