@@ -278,6 +278,7 @@ public static JPanel currentPanel = null;
 		} 
 		catch (Exception ex) {
 			System.out.println("Nothing selected");
+			ex.printStackTrace();
 		}
 		
 		
