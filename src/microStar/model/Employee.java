@@ -110,7 +110,7 @@ public class Employee implements Serializable {
 	}
 
 	public void create(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 		
 		try{
@@ -137,7 +137,7 @@ public class Employee implements Serializable {
 	}
 
 	public void update(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 
 		try{
@@ -168,7 +168,7 @@ public class Employee implements Serializable {
 	}
 
 	public List<Employee> readAll(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 		List<Employee> employeeList = new ArrayList<Employee>();
 
@@ -205,7 +205,7 @@ public class Employee implements Serializable {
 	}
 
 	public Employee readEmployee(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 		Employee employeeObj = new Employee();
 
@@ -234,7 +234,7 @@ public class Employee implements Serializable {
 	}
 
 	public void delete(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 
 		try{
@@ -262,7 +262,7 @@ public class Employee implements Serializable {
 	}
 
 	public boolean authenticate(){
-		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();
+		Session session = SessionFactoryBuilder.getSessionFactory().getCurrentSession();;
 		Transaction transaction = null;
 		boolean login = false;
 
