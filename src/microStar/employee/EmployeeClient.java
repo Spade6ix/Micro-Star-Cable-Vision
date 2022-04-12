@@ -40,6 +40,7 @@ public class EmployeeClient {
     private List<CustomerPhone> customerPhoneList;
     private List<Employee> employeeList;
     private List<LiveChat> liveChatList;
+    private List<Customer> customerList;
     private static final Logger logger = LogManager.getLogger(EmployeeClient.class);
 
     public EmployeeClient(){
@@ -66,6 +67,7 @@ public class EmployeeClient {
             customerPhoneList = new ArrayList<>();
             employeeList = new ArrayList<>();
             liveChatList = new ArrayList<>();
+            customerList = new ArrayList<>();
             connectionSocket = new Socket("localhost", 9555);
             objOs = new ObjectOutputStream(connectionSocket.getOutputStream());
             objIs = new ObjectInputStream(connectionSocket.getInputStream());
@@ -301,18 +303,22 @@ public class EmployeeClient {
             }
             else if (action.equalsIgnoreCase("View Payment Complaints")){
                 complaintList = (List<Complaint>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
                 logger.info("All Payment Complaints fetched");
             }
             else if (action.equalsIgnoreCase("View Internet Complaints")){
                 complaintList = (List<Complaint>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
                 logger.info("All Internet Complaints fetched");
             }
             else if (action.equalsIgnoreCase("View Cable Complaints")){
                 complaintList = (List<Complaint>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
                 logger.info("All Cable Complaints fetched");
             }
             else if (action.equalsIgnoreCase("View Other Complaints")){
                 complaintList = (List<Complaint>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
                 logger.info("Other Complaints fetched");
             }
             else if (action.equalsIgnoreCase("View Complaint details and Customer account info")){
