@@ -49,7 +49,7 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
 	private JScrollPane scrollPane;
 	public JTable table = null;
 	private JLabel responseLabel = new JLabel("Response:");
-	private JLabel dovLabel = new JLabel("Date of visit:");
+	private JLabel dovLabel = new JLabel("Date of visit yyyy-MM-dd: ");
 	
 	public JTextField dov = new JTextField();
 	public JTextArea response = new JTextArea();
@@ -129,18 +129,7 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
         responseLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
         responseLabel.setForeground(new Color(0x999999));
 	    this.add(responseLabel, gbc);
-        
-        //Issue Details TextArea
-	    gbc.gridx = 2;
-        gbc.gridy = 2;
-        gbc.anchor = GridBagConstraints.SOUTHWEST;
-        response.setFont(new Font("Calibri", Font.PLAIN, 15));
-        response.setForeground(new Color(0x333333));
-        response.setBackground(new Color(0x999999));
-        response.setPreferredSize(new Dimension(30, 50));
-        response.setLineWrap(true);
-        response.setBorder(null);
-	    this.add(response, gbc);
+	    
 	    
 	    //DOV Label
         gbc.gridx = 1;
@@ -151,20 +140,34 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
         dovLabel.setForeground(new Color(0x999999));
 	    this.add(dovLabel, gbc);
 	    
-	    //DOV TextField
+        
+        //Issue Details TextArea
 	    gbc.gridx = 2;
-        gbc.gridy = 3;
-        gbc.anchor = GridBagConstraints.SOUTHWEST;
+        gbc.gridy = 2;
+        gbc.anchor = GridBagConstraints.WEST;
         response.setFont(new Font("Calibri", Font.PLAIN, 15));
         response.setForeground(new Color(0x333333));
         response.setBackground(new Color(0x999999));
-        response.setPreferredSize(new Dimension(40, 30));
+        response.setPreferredSize(new Dimension(500, 100));
+        response.setLineWrap(true);
         response.setBorder(null);
 	    this.add(response, gbc);
+	    
+	    
+	    //DOV TextField
+	    gbc.gridx = 2;
+        gbc.gridy = 3;
+        gbc.anchor = GridBagConstraints.WEST;
+        dov.setFont(new Font("Calibri", Font.PLAIN, 15));
+        dov.setForeground(new Color(0x333333));
+        dov.setBackground(new Color(0x999999));
+        dov.setPreferredSize(new Dimension(200, 40));
+        dov.setBorder(null);
+	    this.add(dov, gbc);
         
         //Save Button
 		gbc.gridx = 3;
-		gbc.gridy = 2;
+		gbc.gridy = 3;
 		gbc.anchor = GridBagConstraints.SOUTHEAST;
 	    save.setFont(new Font("Calibri", Font.PLAIN, 25));
 	    save.setVerticalTextPosition(SwingConstants.CENTER);
@@ -187,13 +190,8 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
 		//SAVE BUTTON
 		if(e.getSource() == save) {
 			try {
-				int selectedRow = table.getSelectedRow();
-				String text = response.getText();
-				String idValue = (String) table.getValueAt(selectedRow, 0);
 				response.setText("");
-				//call method to update database
-				System.out.println(idValue + " " + text);
-				JOptionPane.showMessageDialog(table, "Response saved successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
+				dov.setText("");
 			}
 			catch (Exception ex) {
 				System.out.println("Nothing selected");

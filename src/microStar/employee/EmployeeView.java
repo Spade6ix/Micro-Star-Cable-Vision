@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -112,6 +113,7 @@ public static JPanel currentPanel = null;
 	
 	public void createEmployeeRespondScreen() {
 		RespondScreen obj = new RespondScreen(EmployeeController.getRespondData());
+		obj.save.addActionListener(this);
 		respondScreen = obj;
 	}
 	
@@ -260,6 +262,7 @@ public static JPanel currentPanel = null;
 		
 		//ASSIGN
 		try{
+			
 			//Save button
 			if (e.getSource() == assignScreen.save) {
 				//Save Changes
@@ -272,7 +275,7 @@ public static JPanel currentPanel = null;
 			
 			
 			
-			//Querry button
+			//Query button
 			if (e.getSource() == assignScreen.querry) {
 				setComplaintsTotal();
 			}
@@ -290,6 +293,7 @@ public static JPanel currentPanel = null;
 		
 		//RESPOND
 		try {
+			
 			//Save Changes
 			if (e.getSource() == respondScreen.save) {
 				String response = null;
@@ -297,12 +301,13 @@ public static JPanel currentPanel = null;
 				
 				response = respondScreen.response.getText();
 				String dov = respondScreen.dov.getText();
-				String complaintId = (String) respondScreen.table.getValueAt(selectedRow, 1);
+				String complaintId = (String) respondScreen.table.getValueAt(selectedRow, 0);
 				EmployeeController.setComplaintResponse(response, dov, complaintId);
+				JOptionPane.showMessageDialog(respondScreen.table, "Response saved successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 		} catch(Exception ex) {
-			//tresdpond svreen is null
+			//respond screen is null
 		}
 		
 		

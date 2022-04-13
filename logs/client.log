@@ -172,3 +172,111 @@
 [INFO ] 2022-04-13 01:42:58.762 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-13 01:42:58.762 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
 [INFO ] 2022-04-13 01:42:58.794 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-13 03:12:03.870 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:12:03.918 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:12:08.415 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:12:08.416 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:12:08.417 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:12:08.435 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:12:12.735 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:12:12.749 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:12:13.065 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:13:33.049 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:13:33.092 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:13:36.839 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:13:36.840 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:13:36.841 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:13:36.861 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:13:40.535 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:13:40.538 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:13:40.757 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:15:04.858 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:15:04.995 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:15:14.010 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:15:14.010 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:15:14.011 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:15:14.027 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:15:18.001 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:15:18.004 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:15:18.425 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:18:36.818 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:18:36.858 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:18:40.951 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:18:40.952 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:18:40.952 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:18:40.965 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:18:44.956 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:18:44.961 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:18:45.164 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:23:29.410 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:23:29.712 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:23:41.839 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:23:41.840 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:23:41.841 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:23:41.854 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:23:46.691 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:23:46.696 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:23:47.691 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:26:49.108 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:26:49.309 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:27:03.097 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:27:03.098 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:27:03.099 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:27:03.113 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:27:06.945 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:27:06.948 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:27:07.223 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:30:41.749 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:30:42.563 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:30:54.135 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:30:54.136 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:30:54.136 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:30:54.155 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:30:57.755 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:30:57.758 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:30:58.068 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:32:58.633 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:32:58.676 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:33:02.697 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:33:02.698 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:33:02.698 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:33:02.717 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:33:10.036 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:33:10.038 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:33:10.239 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:44:32.822 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:44:33.269 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:44:44.616 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:44:44.617 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:44:44.618 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:44:44.638 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:44:50.304 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:44:50.307 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:44:50.664 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:47:37.555 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:47:37.599 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:47:41.784 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:47:41.785 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:47:41.786 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:47:41.816 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:47:44.318 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:47:44.321 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:47:44.526 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:50:21.960 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:50:22.003 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:50:25.978 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:50:25.979 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:50:25.980 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:50:26.012 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:50:30.739 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:50:30.742 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:50:30.926 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-13 03:51:59.253 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:51:59.297 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:52:03.563 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 03:52:03.563 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:52:03.564 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 03:52:03.617 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-13 03:52:06.897 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 03:52:06.902 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-13 03:52:07.100 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched

@@ -237,11 +237,11 @@ public class EmployeeController {
     
     
     public static void setComplaintResponse(String response, String dov, String complaintId) {
-
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
     	LocalDateTime date = LocalDateTime.parse(dov, formatter);
 
     	empClient.sendAction("Technician Create Response");
+    	System.out.println("complete");
     	empClient.getResponseObj().setProposedDateOfVisit(date);
     	empClient.getResponseObj().setResponseDetails(response);
     	empClient.getResponseObj().setComplaintID(Integer.parseInt(complaintId));
