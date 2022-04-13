@@ -1,17 +1,11 @@
 package microStar.employee;
 
-import microStar.customer.CustomerClient;
-import microStar.customer.CustomerController;
-import microStar.factory.DBConnectorFactory;
-import microStar.factory.SessionFactoryBuilder;
 import microStar.model.Complaint;
-import microStar.model.Customer;
 import microStar.model.Employee;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;

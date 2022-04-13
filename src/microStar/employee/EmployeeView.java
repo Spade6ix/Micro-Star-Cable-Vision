@@ -1,6 +1,6 @@
 package microStar.employee;
 
-import microStar.customer.CustomerController;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -174,7 +174,7 @@ public static JPanel currentPanel = null;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		//Login button
+		//Login Screen
 		try {
 			if(e.getSource() == loginScreen.loginButton) {
 				EmployeeController.login();
@@ -260,6 +260,7 @@ public static JPanel currentPanel = null;
 		
 		//ASSIGN
 		try {
+			//Save button
 			if (e.getSource() == assignScreen.save) {
 				//Save Changes
 				int selectedRow = assignScreen.table.getSelectedRow();
@@ -269,15 +270,18 @@ public static JPanel currentPanel = null;
 				EmployeeController.assignTechnician(idValue, cellValue);
 				System.out.println("dawda");
 			}
+			else {
+				System.out.println("Nothing selected");
+			}
 			
 			
-			
+			//Querry button
 			if (e.getSource() == assignScreen.querry) {
 				setComplaintsTotal();
 			}
 		} 
 		catch (Exception ex) {
-			System.out.println("Nothing selected");
+			//assign screen is null
 		}
 		
 		
@@ -287,15 +291,18 @@ public static JPanel currentPanel = null;
 		//RESPOND
 		try {
 			//Save Changes
-			String response = null;
-			int selectedRow = respondScreen.table.getSelectedRow();
-			
-			response = respondScreen.response.getText();
-			String idValue = (String) respondScreen.table.getValueAt(selectedRow, 0);
-			//EmployeeController.setComplaintResponse(idValue, response);
+			if (e.getSource() == respondScreen.save) {
+				String response = null;
+				int selectedRow = respondScreen.table.getSelectedRow();
+				
+				response = respondScreen.response.getText();
+				String idValue = (String) respondScreen.table.getValueAt(selectedRow, 0);
+				String complaintId = (String) respondScreen.table.getValueAt(selectedRow, 1);
+				EmployeeController.setComplaintResponse(response, idValue, complaintId);
+			}
 		}
 		catch(Exception ex) {
-			
+			//tresdpond svreen is null
 		}
 		
 		
