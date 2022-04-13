@@ -172,27 +172,3 @@
 [INFO ] 2022-04-13 01:42:58.762 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-13 01:42:58.762 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
 [INFO ] 2022-04-13 01:42:58.794 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-13 02:22:04.620 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:04.666 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-13 02:22:14.681 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
-[INFO ] 2022-04-13 02:22:14.681 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:14.696 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-13 02:22:14.712 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
-[INFO ] 2022-04-13 02:22:18.599 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:18.599 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:19.444 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
-[INFO ] 2022-04-13 02:22:19.444 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:19.444 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:19.522 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
-[INFO ] 2022-04-13 02:22:19.522 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:19.522 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:19.615 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
-[INFO ] 2022-04-13 02:22:19.615 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:19.615 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:19.709 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
-[INFO ] 2022-04-13 02:22:19.928 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:19.928 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:19.975 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-13 02:22:19.975 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-13 02:22:19.975 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-13 02:22:20.006 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
