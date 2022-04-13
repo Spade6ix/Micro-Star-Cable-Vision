@@ -105,7 +105,7 @@ public class CustomerController {
 		client.receiveResponse();
 		
 		data1 = client.getComplaintList();
-		
+		System.out.println("complete");
 		data = new String[client.getComplaintList().size()][3];
         int i=0;
         int j=0;

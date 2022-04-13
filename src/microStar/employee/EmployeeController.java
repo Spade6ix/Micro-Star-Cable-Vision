@@ -241,7 +241,6 @@ public class EmployeeController {
     	LocalDateTime date = LocalDateTime.parse(dov, formatter);
 
     	empClient.sendAction("Technician Create Response");
-    	System.out.println("complete");
     	empClient.getResponseObj().setProposedDateOfVisit(date);
     	empClient.getResponseObj().setResponseDetails(response);
     	empClient.getResponseObj().setComplaintID(Integer.parseInt(complaintId));
