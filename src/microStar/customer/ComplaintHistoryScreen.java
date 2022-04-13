@@ -41,7 +41,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 	 */
 	
 	private String mainCol[] = {"Complaint ID", "Last Response Date", "Complaint Details"};
-	private String moreCol[] = {"Rep Name", "Responses", "Proposed Visit Date"};
+	private String moreCol[] = {"Rep ID", "Responses", "Proposed Visit Date"};
 	private String mainData[][] = null;
 	private String moreData[][] = null;
 	private DefaultTableModel mainTableModel = null;
