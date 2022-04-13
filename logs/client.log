@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 [INFO ] 2022-04-13 00:20:46.449 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-13 00:20:47.028 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
 [INFO ] 2022-04-13 00:21:10.431 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
@@ -199,8 +198,6 @@
 [INFO ] 2022-04-13 02:22:19.975 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
 [INFO ] 2022-04-13 02:22:20.006 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
 =======
-=======
->>>>>>> parent of 8dc5e03 (.)
 [INFO ] 2022-04-12 15:04:39.975 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-12 15:04:40.069 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
 [INFO ] 2022-04-12 15:05:26.483 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
@@ -311,7 +308,4 @@
 [INFO ] 2022-04-12 20:04:12.632 [AWT-EventQueue-0] EmployeeClient - Action Sent
 [INFO ] 2022-04-12 20:04:12.648 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
 [INFO ] 2022-04-12 20:04:13.335 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
-<<<<<<< HEAD
->>>>>>> parent of 8dc5e03 (.)
-=======
 >>>>>>> parent of 8dc5e03 (.)
