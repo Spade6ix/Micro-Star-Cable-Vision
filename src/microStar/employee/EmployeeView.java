@@ -281,7 +281,12 @@ public static JPanel currentPanel = null;
 			}
 		} 
 		catch (Exception ex) {
+<<<<<<< HEAD
 			//assign screen is null
+=======
+			System.out.println("Nothing selected");
+			ex.printStackTrace();
+>>>>>>> d8d12f82ca7fee5611c92da124ba704f74720acf
 		}
 		
 		
