@@ -240,7 +240,7 @@ public class EmployeeController {
 
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
     	LocalDateTime date = LocalDateTime.parse(dov, formatter);
-    	
+
     	empClient.sendAction("Technician Create Response");
     	empClient.getResponseObj().setProposedDateOfVisit(date);
     	empClient.getResponseObj().setResponseDetails(response);

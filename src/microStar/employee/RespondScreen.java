@@ -193,7 +193,7 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
 				response.setText("");
 				//call method to update database
 				System.out.println(idValue + " " + text);
-				JOptionPane.showMessageDialog(table, "Response saved successfully", "successfull", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(table, "Response saved successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			catch (Exception ex) {
 				System.out.println("Nothing selected");
