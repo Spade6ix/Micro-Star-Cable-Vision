@@ -43,15 +43,13 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
 	   0x43c6e0 - querry 
 	 */
 	
-	private String col[] = {"Complaint ID", "Customer ID", "Name", "Email", "Contact", "Address", "Issue Type", "Details", "Resolved"};
+	private String col[] = {"Customer ID", "Customer Name", "Email", "Contact", "Address", "Issue Type", "Details", "Resolved"};
 	private String data[][] = null;
 	private DefaultTableModel tableModel = null;
 	private JScrollPane scrollPane;
 	public JTable table = null;
-	private JLabel responseLabel = new JLabel("Response:");
-	private JLabel dovLabel = new JLabel("Date of visit:");
 	
-	public JTextField dov = new JTextField();
+	private JLabel responseLabel = new JLabel("Response:");
 	public JTextArea response = new JTextArea();
 	public JButton save = new JButton("Save Changes");
 	
@@ -137,28 +135,8 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
         response.setFont(new Font("Calibri", Font.PLAIN, 15));
         response.setForeground(new Color(0x333333));
         response.setBackground(new Color(0x999999));
-        response.setPreferredSize(new Dimension(30, 50));
+        response.setPreferredSize(new Dimension(500, 150));
         response.setLineWrap(true);
-        response.setBorder(null);
-	    this.add(response, gbc);
-	    
-	    //DOV Label
-        gbc.gridx = 1;
-        gbc.gridy = 3;
-        gbc.gridwidth = 1;
-        gbc.anchor = GridBagConstraints.CENTER;
-        dovLabel.setFont(new Font("Calibri", Font.PLAIN, 25));
-        dovLabel.setForeground(new Color(0x999999));
-	    this.add(dovLabel, gbc);
-	    
-	    //DOV TextField
-	    gbc.gridx = 2;
-        gbc.gridy = 3;
-        gbc.anchor = GridBagConstraints.SOUTHWEST;
-        response.setFont(new Font("Calibri", Font.PLAIN, 15));
-        response.setForeground(new Color(0x333333));
-        response.setBackground(new Color(0x999999));
-        response.setPreferredSize(new Dimension(40, 30));
         response.setBorder(null);
 	    this.add(response, gbc);
         

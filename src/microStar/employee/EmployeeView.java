@@ -214,7 +214,7 @@ public static JPanel currentPanel = null;
 				}
 			}
 		} catch(Exception ex) {
-			
+			System.out.println("login ex");
 		}
 		
 		
@@ -224,7 +224,7 @@ public static JPanel currentPanel = null;
 		//DASHBOARD
 		try {
 					
-			//Assign
+			//Outstanding
 			if(e.getSource() == dashboard.assign) {
 				createEmployeeAssignScreen();
 				dashboard.remove(currentPanel);
@@ -259,7 +259,7 @@ public static JPanel currentPanel = null;
 		
 		
 		//ASSIGN
-		try{
+		try {
 			//Save button
 			if (e.getSource() == assignScreen.save) {
 				//Save Changes
@@ -268,21 +268,25 @@ public static JPanel currentPanel = null;
 				String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
 				String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
 				EmployeeController.assignTechnician(idValue, cellValue);
+				System.out.println("dawda");
 			}
-			
+			else {
+				System.out.println("Nothing selected");
+			}
 			
 			
 			//Querry button
 			if (e.getSource() == assignScreen.querry) {
 				setComplaintsTotal();
 			}
-			
-		}catch (Exception ex) {
+		} 
+		catch (Exception ex) {
 			//assign screen is null
+
+			System.out.println("Nothing selected");
+			ex.printStackTrace();
+
 		}
-		
-		
-		
 		
 		
 		
@@ -296,12 +300,12 @@ public static JPanel currentPanel = null;
 				int selectedRow = respondScreen.table.getSelectedRow();
 				
 				response = respondScreen.response.getText();
-				String dov = respondScreen.dov.getText();
+				String idValue = (String) respondScreen.table.getValueAt(selectedRow, 0);
 				String complaintId = (String) respondScreen.table.getValueAt(selectedRow, 1);
-				EmployeeController.setComplaintResponse(response, dov, complaintId);
+				EmployeeController.setComplaintResponse(response, idValue, complaintId);
 			}
-			
-		} catch(Exception ex) {
+		}
+		catch(Exception ex) {
 			//tresdpond svreen is null
 		}
 		

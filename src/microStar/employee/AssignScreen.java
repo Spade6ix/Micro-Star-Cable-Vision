@@ -41,7 +41,7 @@ public class AssignScreen extends JPanel implements MouseListener, ActionListene
 	   0x6666ff
 	   0x43c6e0 - querry 
 	 */
-	private String col[] = {"Complaint ID", "Customer ID", "Name", "Email", "Contact", "Address", "Issue Type", "Details", "Resolved"};
+	private String col[] = {"Customer ID", "Customer Name", "Email", "Contact", "Address", "Issue Type", "Details", "Techncian Name"};
 	private String[] issueTypeData = {"Internet", "Cable", "Payment", "Other"};
 	private String internetData[][] = null;
 	private String cableData[][] = null;

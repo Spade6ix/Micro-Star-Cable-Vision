@@ -106,7 +106,7 @@ public class CustomerController {
 		
 		data1 = client.getComplaintList();
 		
-		data = new String[client.getComplaintList().size()][3];
+		data = new String[client.getComplaintList().size()][4];
         int i=0;
         int j=0;
         for (Complaint p: data1){
@@ -134,12 +134,14 @@ public class CustomerController {
 		client.sendComplaintObj(client.getComplaintObj());
 		client.receiveResponse();
 		
+		System.out.println(complaintId);
 		data1 = client.getResponseList();
-		
+		System.out.println(data1.size());
 		data = new String[client.getResponseList().size()][3];
         int i=0;
         int j=0;
         for (Response p: data1){
+        	System.out.println(0);
             data[i][j] = p.getStaffID();
             j++;
             data[i][j] = p.getResponseDetails();
