@@ -232,6 +232,8 @@ public class EmployeeController {
     	List<Complaint> data1 = new ArrayList<Complaint>();
     	
 		empClient.sendAction("View Complaints assigned to a Technician");
+        empClient.getComplaintObj().setStaffID(empClient.getEmployeeObj().getStaffID());
+        //System.out.println(empClient.getComplaintObj().getStaffID());
 		empClient.sendComplaintObj(empClient.getComplaintObj());
 		empClient.receiveResponse();
 		

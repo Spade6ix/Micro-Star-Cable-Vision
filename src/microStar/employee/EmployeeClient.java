@@ -117,6 +117,7 @@ public class EmployeeClient {
     public void sendComplaintObj(Complaint complaintObj){
         try{
             objOs.writeObject(complaintObj);
+            objOs.flush();
             logger.info("Complaint Object Sent");
         }
         catch(IOException ex){
