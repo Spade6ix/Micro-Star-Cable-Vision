@@ -41,7 +41,7 @@ public class AssignScreen extends JPanel implements MouseListener, ActionListene
 	   0x6666ff
 	   0x43c6e0 - querry 
 	 */
-	private String col[] = {"Complaint ID", "Customer ID", "Name", "Email", "Contact", "Address", "Issue Type", "Details", "Resolved"};
+	private String col[] = {"Complaint ID", "Customer ID", "Name", "Email", "Contact", "Address", "Issue Type", "Details", "Assign Tech"};
 	private String[] issueTypeData = {"Internet", "Cable", "Payment", "Other"};
 	private String internetData[][] = null;
 	private String cableData[][] = null;
@@ -117,7 +117,7 @@ public class AssignScreen extends JPanel implements MouseListener, ActionListene
 			private static final long serialVersionUID = 1L;
 
 			public boolean isCellEditable(int d, int column) { //makes table non editable
-				if(column == 7) {
+				if(column == 8) {
 					return true;
 				}
 				else {
