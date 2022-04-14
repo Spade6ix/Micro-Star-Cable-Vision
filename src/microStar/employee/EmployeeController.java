@@ -1,10 +1,6 @@
 package microStar.employee;
 
-import microStar.model.Complaint;
-import microStar.model.Customer;
-import microStar.model.CustomerEmail;
-import microStar.model.CustomerPhone;
-import microStar.model.Employee;
+import microStar.model.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -156,12 +152,25 @@ public class EmployeeController {
     
     
     public static void assignTechnician(String complaintId, String techId) {
-    	empClient.sendAction("Add a Technician ID to a Complaint");
-    	empClient.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
-    	empClient.getComplaintObj().setStaffID(techId);
-		empClient.sendComplaintObj(empClient.getComplaintObj());
-		System.err.println(empClient.getComplaintObj().getComplaintID());
-		empClient.receiveResponse();	
+		/*empClient.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
+		empClient.getComplaintObj().setStaffID(techId);
+		System.err.println(empClient.getComplaintObj().getComplaintID());*/
+		Employee emp = new Employee();
+		emp.setStaffID(techId);
+
+		empClient.sendAction("Is Employee a Technician?");
+		empClient.sendEmployeeObj(emp);
+		empClient.receiveResponse();
+		if (empClient.isFlag()){
+			empClient.sendAction("Add a Technician ID to a Complaint");
+
+			Complaint complaint = new Complaint();
+			complaint.setComplaintID(Integer.parseInt(complaintId));
+			complaint.setStaffID(techId);
+
+			empClient.sendComplaintObj(complaint);
+			empClient.receiveResponse();
+		}
     }
     
     
@@ -200,10 +209,12 @@ public class EmployeeController {
 		List<Customer> data2 = new ArrayList<Customer>();
 		List<CustomerPhone> data3 = new ArrayList<CustomerPhone>();
 		List<CustomerEmail> data4 = new ArrayList<CustomerEmail>();
-    	
+		Complaint c = new Complaint();
+
+		c.setStaffID(empClient.getEmployeeObj().getStaffID());
+
 		empClient.sendAction("View Complaints assigned to a Technician");
-        empClient.getComplaintObj().setStaffID(empClient.getEmployeeObj().getStaffID());
-		empClient.sendComplaintObj(empClient.getComplaintObj());
+		empClient.sendComplaintObj(c);
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
@@ -261,7 +272,7 @@ public class EmployeeController {
     
     
     public static void setComplaintResponse(String response, String dov, String complaintId) {
-    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    	/*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
     	LocalDateTime date = LocalDateTime.parse(dov, formatter);
     	empClient.sendAction("Technician Create Response");
     	empClient.getResponseObj().setProposedDateOfVisit(date);
@@ -269,9 +280,22 @@ public class EmployeeController {
     	empClient.getResponseObj().setComplaintID(Integer.parseInt(complaintId));
 		empClient.getResponseObj().setStaffID(empClient.getEmployeeObj().getStaffID());
 		empClient.sendResponseObj(empClient.getResponseObj());
-		empClient.receiveResponse();	
-		
-    }
+		empClient.receiveResponse();*/
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    	LocalDateTime date = LocalDateTime.parse(dov, formatter);
+		Response rObj = new Response();
+
+		rObj.setProposedDateOfVisit(date);
+		rObj.setResponseDetails(response);
+		rObj.setComplaintID(Integer.parseInt(complaintId));
+		rObj.setStaffID(empClient.getEmployeeObj().getStaffID());
+
+    	empClient.sendAction("Technician Create Response");
+		empClient.sendResponseObj(rObj);
+		empClient.receiveResponse();
+
+	}
     
     
     

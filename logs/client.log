@@ -1,87 +1,446 @@
-[INFO ] 2022-04-14 00:29:24.881 [AWT-EventQueue-0] CustomerClient - Action Sent
-[INFO ] 2022-04-14 00:29:25.445 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
-[INFO ] 2022-04-14 00:29:40.764 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
-[INFO ] 2022-04-14 00:29:46.310 [AWT-EventQueue-0] CustomerClient - Action Sent
-[INFO ] 2022-04-14 00:29:46.311 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
-[INFO ] 2022-04-14 00:29:47.383 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
-[INFO ] 2022-04-14 00:29:56.503 [AWT-EventQueue-0] CustomerClient - Action Sent
-[INFO ] 2022-04-14 00:29:56.504 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:29:56.539 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
-[INFO ] 2022-04-14 00:30:46.788 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:47.842 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:30:48.096 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
-[INFO ] 2022-04-14 00:30:48.096 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:48.097 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:30:48.109 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
-[INFO ] 2022-04-14 00:30:54.941 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:54.946 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:56.731 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
-[INFO ] 2022-04-14 00:30:56.732 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:56.733 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:57.096 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
-[INFO ] 2022-04-14 00:30:57.097 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:57.097 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:57.275 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
-[INFO ] 2022-04-14 00:30:57.275 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:57.276 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:57.579 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
-[INFO ] 2022-04-14 00:30:58.593 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:58.594 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:58.779 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:30:58.780 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:30:58.780 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:30:59.162 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:31:57.006 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.008 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.121 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
-[INFO ] 2022-04-14 00:31:57.122 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.123 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.343 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
-[INFO ] 2022-04-14 00:31:57.344 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.345 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.598 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
-[INFO ] 2022-04-14 00:31:57.599 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.599 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.885 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
-[INFO ] 2022-04-14 00:31:57.898 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.899 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.930 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:31:57.930 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:31:57.931 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:31:57.948 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:34:30.660 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:30.762 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:34:40.351 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
-[INFO ] 2022-04-14 00:34:40.352 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:40.353 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:34:40.375 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
-[INFO ] 2022-04-14 00:34:47.301 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:47.304 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:47.733 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
-[INFO ] 2022-04-14 00:34:47.734 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:47.734 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:47.838 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
-[INFO ] 2022-04-14 00:34:47.839 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:47.839 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:47.906 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
-[INFO ] 2022-04-14 00:34:47.906 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:47.907 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:47.967 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
-[INFO ] 2022-04-14 00:34:48.226 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:48.228 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:48.271 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:34:48.271 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:48.272 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:34:48.297 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
-[INFO ] 2022-04-14 00:34:57.531 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:34:57.533 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[ERROR] 2022-04-14 00:37:03.552 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
-[INFO ] 2022-04-14 00:38:05.339 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:38:05.383 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:38:14.504 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
-[INFO ] 2022-04-14 00:38:14.505 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:38:14.505 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
-[INFO ] 2022-04-14 00:38:14.549 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
-[INFO ] 2022-04-14 00:38:17.714 [AWT-EventQueue-0] EmployeeClient - Action Sent
-[INFO ] 2022-04-14 00:38:17.721 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
-[INFO ] 2022-04-14 00:38:18.270 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 00:44:27.502 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:44:27.750 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:44:38.933 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 00:44:48.011 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:44:48.011 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:44:49.324 [AWT-EventQueue-0] CustomerClient - Payments fetched successfully
+[INFO ] 2022-04-14 00:44:59.699 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:44:59.699 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:45:00.621 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 00:45:10.918 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:45:10.918 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
+[INFO ] 2022-04-14 00:45:10.996 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
+[INFO ] 2022-04-14 00:45:32.084 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:45:32.084 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
+[INFO ] 2022-04-14 00:45:32.116 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
+[INFO ] 2022-04-14 00:50:38.268 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:50:38.268 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
+[INFO ] 2022-04-14 00:50:38.299 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
+[INFO ] 2022-04-14 00:50:54.302 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:50:54.302 [AWT-EventQueue-0] CustomerClient - CustomerID Sent
+[INFO ] 2022-04-14 00:50:54.536 [AWT-EventQueue-0] CustomerClient - Query Data fetched successfully
+[INFO ] 2022-04-14 00:50:57.896 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:50:57.896 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:50:58.255 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 00:56:32.804 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:56:32.836 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:56:44.539 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 00:56:48.772 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:56:48.772 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:56:49.022 [AWT-EventQueue-0] CustomerClient - Payments fetched successfully
+[INFO ] 2022-04-14 00:56:52.538 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:56:52.538 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:56:53.116 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 00:59:17.678 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:59:17.709 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:59:23.114 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 00:59:26.594 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 00:59:26.594 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 00:59:27.313 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 01:02:23.564 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:02:23.611 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:02:31.263 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 01:02:37.046 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:02:37.046 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:02:37.843 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 01:05:31.013 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:05:31.060 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:05:36.242 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 01:05:39.466 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:05:39.466 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:05:40.185 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 01:11:05.896 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:11:05.990 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:11:15.883 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 01:11:19.894 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:11:19.894 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:11:20.472 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 01:28:45.486 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:28:45.517 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:28:52.149 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-14 01:28:55.316 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-14 01:28:55.316 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-14 01:28:55.769 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-14 01:46:29.741 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:29.834 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 01:46:41.000 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 01:46:41.000 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:41.000 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 01:46:41.015 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 01:46:45.196 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:45.211 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:45.930 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 01:46:45.946 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:45.946 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:46.071 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 01:46:46.087 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:46.087 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:46.212 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 01:46:46.212 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:46.212 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:46.321 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 01:46:46.524 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:46.524 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:46.571 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 01:46:46.571 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:46:46.571 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:46:46.618 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 01:47:26.952 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:47:26.952 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[ERROR] 2022-04-14 01:58:17.091 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-14 01:59:35.384 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:35.415 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 01:59:46.526 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 01:59:46.526 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:46.526 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 01:59:46.557 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 01:59:49.950 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:49.950 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:50.403 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 01:59:50.403 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:50.403 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:50.513 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 01:59:50.513 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:50.513 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:50.607 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 01:59:50.607 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:50.607 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:50.778 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 01:59:51.028 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:51.028 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:51.060 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 01:59:51.060 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 01:59:51.060 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 01:59:51.122 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:00:32.273 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:00:32.273 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[ERROR] 2022-04-14 02:09:03.732 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-14 02:10:42.119 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:42.150 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:10:48.544 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 02:10:48.544 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:48.544 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:10:48.560 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 02:10:53.746 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:53.761 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.214 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 02:10:54.214 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:54.214 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.324 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 02:10:54.324 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:54.324 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.449 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 02:10:54.449 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:54.449 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.605 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 02:10:54.839 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:54.839 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.886 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:10:54.886 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:10:54.886 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:10:54.949 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:11:07.263 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:11:07.263 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[ERROR] 2022-04-14 02:14:50.329 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-14 02:16:22.383 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:22.415 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:16:27.829 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 02:16:27.829 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:27.829 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:16:27.938 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 02:16:31.390 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:31.405 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:31.874 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 02:16:31.874 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:31.874 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:31.999 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 02:16:31.999 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:31.999 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:32.093 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 02:16:32.093 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:32.109 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:32.218 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 02:16:32.281 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:32.296 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:32.343 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:16:32.343 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:32.343 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:16:32.390 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:16:50.245 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:16:50.245 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[ERROR] 2022-04-14 02:17:05.981 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-14 02:20:18.414 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:18.445 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:20:23.774 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 02:20:23.774 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:23.790 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:20:23.805 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 02:20:27.841 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:27.841 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.263 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 02:20:28.263 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:28.263 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.403 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 02:20:28.403 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:28.403 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.497 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 02:20:28.497 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:28.497 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.622 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 02:20:28.700 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:28.700 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.747 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:20:28.747 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:28.747 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:20:28.794 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:20:40.735 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:20:40.735 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:09.529 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:09.560 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:51:20.871 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 02:51:20.871 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:20.871 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:51:20.902 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 02:51:28.731 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:28.747 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:29.841 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 02:51:29.841 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:29.841 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:29.981 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 02:51:29.981 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:29.981 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:30.106 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 02:51:30.106 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:30.106 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:30.200 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 02:51:30.559 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:30.559 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:30.606 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:51:30.606 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:30.606 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:30.637 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:51:39.701 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:39.701 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:40.389 [AWT-EventQueue-0] EmployeeClient - Complaint updated successfully
+[INFO ] 2022-04-14 02:51:44.249 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:51:44.249 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:51:44.265 [AWT-EventQueue-0] EmployeeClient - Complaint updated successfully
+[INFO ] 2022-04-14 02:54:51.705 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:54:51.752 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:54:56.862 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 02:54:56.862 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:54:56.862 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 02:54:56.893 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 02:55:00.218 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:00.218 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:00.640 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 02:55:00.640 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:00.640 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:00.749 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 02:55:00.749 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:00.749 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:00.827 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 02:55:00.827 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:00.827 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:00.921 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 02:55:00.999 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:00.999 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:01.030 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 02:55:01.030 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 02:55:01.030 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 02:55:01.108 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:22:58.966 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:22:59.012 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:23:10.587 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 03:23:10.587 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:23:10.587 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:23:10.602 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-14 03:23:16.499 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:23:16.499 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:23:17.093 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 03:25:49.997 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:25:50.028 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:25:57.823 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 03:25:57.823 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:25:57.823 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:25:57.839 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 03:26:04.890 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:04.890 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:05.484 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 03:26:05.500 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:05.500 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:05.625 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 03:26:05.625 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:05.625 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:05.750 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 03:26:05.750 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:05.750 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:05.906 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 03:26:06.140 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:06.140 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:06.187 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:26:06.187 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:06.187 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:26:06.234 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:26:27.657 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:26:27.657 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[ERROR] 2022-04-14 03:30:33.279 [AWT-EventQueue-0] EmployeeClient - IOException Occurred
+[INFO ] 2022-04-14 03:34:36.433 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:34:36.543 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:35:10.772 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 03:35:10.772 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:10.772 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:35:10.819 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 03:35:17.293 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:17.293 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:18.215 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 03:35:18.215 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:18.215 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:18.293 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 03:35:18.293 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:18.293 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:18.387 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 03:35:18.387 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:18.387 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:18.481 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 03:35:19.154 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:19.154 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:19.201 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:35:19.201 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:19.201 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:35:19.263 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:35:31.124 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:35:31.124 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:35:31.171 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 03:41:33.543 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:33.589 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:41:45.801 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 03:41:45.801 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:45.801 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:41:45.832 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 03:41:49.950 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:49.950 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:50.575 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 03:41:50.575 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:50.575 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:50.701 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 03:41:50.701 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:50.701 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:50.810 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 03:41:50.810 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:50.810 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:50.888 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 03:41:51.170 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:51.170 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:51.201 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:41:51.201 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:41:51.201 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:41:51.232 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:42:00.895 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:42:00.896 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:42:00.907 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 03:45:49.723 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:45:49.723 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:45:49.738 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-14 03:45:49.738 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:45:49.738 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:45:50.098 [AWT-EventQueue-0] EmployeeClient - Complaint updated successfully
+[INFO ] 2022-04-14 03:46:59.922 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:46:59.922 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.031 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 03:47:00.031 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:47:00.031 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.094 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 03:47:00.094 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:47:00.094 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.141 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 03:47:00.141 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:47:00.156 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.219 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 03:47:00.234 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:47:00.234 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.266 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:47:00.266 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:47:00.266 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:47:00.281 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 03:52:24.815 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:52:24.846 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:52:42.903 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 03:52:42.903 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:52:42.903 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 03:52:42.919 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-14 03:52:47.348 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:52:47.348 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 03:52:47.769 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 03:56:46.184 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 03:56:46.200 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 03:56:46.543 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:00:16.941 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:00:16.942 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 04:00:17.067 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:02:12.471 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:02:12.471 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:02:12.548 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 04:02:47.035 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:02:47.036 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 04:02:47.145 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:10:24.308 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:10:24.524 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:10:37.728 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 04:10:37.744 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:10:37.744 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:10:37.759 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-14 04:10:43.982 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:10:43.982 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:10:44.784 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 04:11:55.324 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:11:55.346 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 04:11:55.578 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:13:24.737 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:13:24.739 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 04:13:24.905 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:22:57.988 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:22:58.035 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:23:10.367 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 04:23:10.367 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:23:10.367 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:23:10.383 [AWT-EventQueue-0] EmployeeClient - Employee is a Technician
+[INFO ] 2022-04-14 04:23:14.901 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:23:14.901 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:23:15.558 [AWT-EventQueue-0] EmployeeClient - Complaints assigned to a particular Technician fetched
+[INFO ] 2022-04-14 04:24:08.238 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:24:08.269 [AWT-EventQueue-0] EmployeeClient - Response Object Sent
+[INFO ] 2022-04-14 04:24:11.467 [AWT-EventQueue-0] EmployeeClient - Technician created a Response successfully
+[INFO ] 2022-04-14 04:27:59.600 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:27:59.643 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:28:10.902 [AWT-EventQueue-0] EmployeeClient - Employee provided incorrect credentials
+[INFO ] 2022-04-14 04:28:25.110 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:25.111 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:28:25.253 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-14 04:28:25.253 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:25.253 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:28:25.269 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician
+[INFO ] 2022-04-14 04:28:38.630 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:38.630 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:40.507 [AWT-EventQueue-0] EmployeeClient - All Internet Complaints fetched
+[INFO ] 2022-04-14 04:28:40.509 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:40.509 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:40.701 [AWT-EventQueue-0] EmployeeClient - All Cable Complaints fetched
+[INFO ] 2022-04-14 04:28:40.701 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:40.701 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:40.802 [AWT-EventQueue-0] EmployeeClient - All Payment Complaints fetched
+[INFO ] 2022-04-14 04:28:40.802 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:40.802 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:40.914 [AWT-EventQueue-0] EmployeeClient - Other Complaints fetched
+[INFO ] 2022-04-14 04:28:42.040 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:42.040 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:42.217 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 04:28:42.217 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:28:42.217 [AWT-EventQueue-0] EmployeeClient - Complaint Object Sent
+[INFO ] 2022-04-14 04:28:42.247 [AWT-EventQueue-0] EmployeeClient - Number of Resolved and Unresolved Complaints fetched successfully
+[INFO ] 2022-04-14 04:32:45.965 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:32:45.988 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:32:52.530 [AWT-EventQueue-0] EmployeeClient - Employee provided incorrect credentials
+[INFO ] 2022-04-14 04:33:04.131 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-14 04:33:04.132 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-14 04:33:04.164 [AWT-EventQueue-0] EmployeeClient - Employee provided incorrect credentials

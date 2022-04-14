@@ -105,6 +105,7 @@ public class CustomerController {
 		
 		data1 = client.getComplaintList();
 		data2 = client.getResponseList();
+		System.out.println("Size: " + data2.size());
 		data3 = client.getEmployeeList();
 
 		System.out.println("complete");
