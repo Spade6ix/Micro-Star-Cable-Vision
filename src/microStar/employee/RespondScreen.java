@@ -49,7 +49,7 @@ public class RespondScreen extends JPanel implements MouseListener, ActionListen
 	private JScrollPane scrollPane;
 	public JTable table = null;
 	private JLabel responseLabel = new JLabel("Response:");
-	private JLabel dovLabel = new JLabel("Date of visit yyyy-MM-dd: ");
+	private JLabel dovLabel = new JLabel("Date of visit yyyy-MM-dd HH:mm : ");
 	
 	public JTextField dov = new JTextField();
 	public JTextArea response = new JTextArea();

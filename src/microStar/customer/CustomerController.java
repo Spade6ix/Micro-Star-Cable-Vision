@@ -4,10 +4,7 @@ package microStar.customer;
 import com.mysql.cj.xdevapi.Client;
 import microStar.factory.DBConnectorFactory;
 import microStar.factory.SessionFactoryBuilder;
-import microStar.model.Complaint;
-import microStar.model.Customer;
-import microStar.model.Payment;
-import microStar.model.Response;
+import microStar.model.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -99,23 +96,40 @@ public class CustomerController {
     public static String[][] getComplaintHistory(){
     	String[][] data = null;
     	List<Complaint> data1 = new ArrayList<Complaint>();
+        List<Response> data2 = new ArrayList<Response>();
+        List<Employee> data3 = new ArrayList<Employee>();
     	
 		client.sendAction("View All Complaints of a Customer");
 		client.sendCustomerObj(client.getCustomerObj());
 		client.receiveResponse();
 		
 		data1 = client.getComplaintList();
+		data2 = client.getResponseList();
+		data3 = client.getEmployeeList();
+
 		System.out.println("complete");
-		data = new String[client.getComplaintList().size()][3];
+		data = new String[client.getComplaintList().size()][4];
         int i=0;
         int j=0;
         for (Complaint p: data1){
             data[i][j] = (p.getComplaintID()) + "";
-            j++;
-            data[i][j] = "last response date";
-            j++;
+            j = j+3;
             data[i][j] = p.getComplaintDetails();
             j=0;
+            i++;
+        }
+
+        i=0;
+        j=1;
+        for (Employee p: data3){
+            data[i][j] = p.getFirstName() + " " + p.getLastName();
+            i++;
+        }
+
+        i=0;
+        j=2;
+        for (Response p: data2){
+            data[i][j] = p.getResponseDateTime().getYear() + "-" + p.getResponseDateTime().getMonthValue() + "-" + p.getResponseDateTime().getDayOfMonth();
             i++;
         }
 		

@@ -40,7 +40,7 @@ public class ComplaintHistoryScreen extends JPanel implements MouseListener{
 	   0x6666ff
 	 */
 	
-	private String mainCol[] = {"Complaint ID", "Last Response Date", "Complaint Details"};
+	private String mainCol[] = {"Complaint ID", "Last Responder" ,"Last Response Date", "Complaint Details"};
 	private String moreCol[] = {"Rep ID", "Responses", "Proposed Visit Date"};
 	private String mainData[][] = null;
 	private String moreData[][] = null;
