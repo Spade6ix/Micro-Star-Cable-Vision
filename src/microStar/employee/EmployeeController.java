@@ -160,6 +160,7 @@ public class EmployeeController {
     	empClient.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
     	empClient.getComplaintObj().setStaffID(techId);
 		empClient.sendComplaintObj(empClient.getComplaintObj());
+		System.err.println(empClient.getComplaintObj().getComplaintID());
 		empClient.receiveResponse();	
     }
     
@@ -196,6 +197,9 @@ public class EmployeeController {
     public static String[][] getRespondData() {
     	String[][] data = null;
     	List<Complaint> data1 = new ArrayList<Complaint>();
+		List<Customer> data2 = new ArrayList<Customer>();
+		List<CustomerPhone> data3 = new ArrayList<CustomerPhone>();
+		List<CustomerEmail> data4 = new ArrayList<CustomerEmail>();
     	
 		empClient.sendAction("View Complaints assigned to a Technician");
         empClient.getComplaintObj().setStaffID(empClient.getEmployeeObj().getStaffID());
@@ -203,6 +207,10 @@ public class EmployeeController {
 		empClient.receiveResponse();
 		
 		data1 = empClient.getComplaintList();
+		data2 = empClient.getCustomerList();
+		data3 = empClient.getCustomerPhoneList();
+		data4 = empClient.getCustomerEmailList();
+
 		data = new String[empClient.getComplaintList().size()][9];
         int i=0;
         int j=0;
@@ -210,15 +218,7 @@ public class EmployeeController {
             data[i][j] = (p.getComplaintID()) + "";
             j++;
             data[i][j] = p.getCustomerID();
-            j++;
-            data[i][j] = "Name";
-            j++;
-            data[i][j] = "Email";
-            j++;
-            data[i][j] = "Contact";
-            j++;
-            data[i][j] = "Address";
-            j++;
+            j=j+5;
             data[i][j] = p.getComplaintType();
             j++;
             data[i][j] = p.getComplaintDetails();
@@ -227,6 +227,30 @@ public class EmployeeController {
             j=0;
             i++;
         }
+
+		i=0;
+		j=2;
+		for (Customer p: data2){
+			data[i][j] = p.getFirstName() + " " + p.getLastName();
+			j=j+3;
+			data[i][j] = p.getAddress();
+			j=2;
+			i++;
+		}
+
+		i=0;
+		j=4;
+		for (CustomerPhone p: data3){
+			data[i][j] = p.getPhone();
+			i++;
+		}
+
+		i=0;
+		j=3;
+		for (CustomerEmail p: data4){
+			data[i][j] = p.getEmail();
+			i++;
+		}
 		
 		return data;
     }

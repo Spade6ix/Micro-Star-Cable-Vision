@@ -375,6 +375,9 @@ public class EmployeeClient {
             }
             else if (action.equalsIgnoreCase("View Complaints assigned to a Technician")){
                 complaintList = (List<Complaint>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
+                customerPhoneList = (List<CustomerPhone>) objIs.readObject();
+                customerEmailList = (List<CustomerEmail>) objIs.readObject();
                 logger.info("Complaints assigned to a particular Technician fetched");
             }
             else if (action.equalsIgnoreCase("Technician Create Response")){
