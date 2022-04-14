@@ -122,7 +122,14 @@ public static JPanel currentPanel = null;
 	
 	
 	public void createEmployeeLiveChatScreen() {
+		/*public vars
+		  
+	  	liveChatScreen.message										- message textfield
+	  	liveChatScreen.chat											- chat text area
+	  	liveChatScreen.send											- send button
+		 */
 		LiveChatScreen obj = new LiveChatScreen();
+		obj.send.addActionListener(this);
 		liveChatScreen = obj;
 	}
 	
@@ -312,6 +319,24 @@ public static JPanel currentPanel = null;
 		
 		
 		
+		
+		
+		
+		
+		//LIVE CHAT SCREEN
+		try {
+			
+			//Save Changes
+			if (e.getSource() == liveChatScreen.send) {
+				String message = null;
+				//System.out.println("send live chat message");
+				
+				message = liveChatScreen.message.getText();
+			}
+			
+		} catch(Exception ex) {
+			//respond screen is null
+		}
 		
 		
 	}

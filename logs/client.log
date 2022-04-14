@@ -292,3 +292,45 @@
 [INFO ] 2022-04-13 04:06:13.819 [AWT-EventQueue-0] CustomerClient - Action Sent
 [INFO ] 2022-04-13 04:06:13.821 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
 [INFO ] 2022-04-13 04:06:13.828 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
+[INFO ] 2022-04-13 19:29:51.964 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:29:52.668 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:30:04.052 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:32:32.714 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:32:32.824 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:32:33.104 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:34:38.680 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:34:38.842 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:34:39.257 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:35:39.200 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:35:39.253 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:35:39.440 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:37:02.858 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:37:02.915 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:37:02.993 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:37:44.314 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:37:44.355 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:37:44.705 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:38:29.793 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:38:29.844 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:38:30.121 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:39:28.741 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:39:28.793 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:39:28.883 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:40:10.940 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:40:10.992 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:40:11.455 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:40:52.887 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:40:52.956 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:40:53.712 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:43:05.452 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:43:05.514 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:43:05.914 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:44:10.146 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-13 19:44:10.213 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-13 19:44:10.311 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+[INFO ] 2022-04-13 19:51:48.612 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 19:51:48.851 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 19:51:49.183 [AWT-EventQueue-0] EmployeeClient - Employee Authenticated
+[INFO ] 2022-04-13 19:51:49.184 [AWT-EventQueue-0] EmployeeClient - Action Sent
+[INFO ] 2022-04-13 19:51:49.185 [AWT-EventQueue-0] EmployeeClient - Employee Object Sent
+[INFO ] 2022-04-13 19:51:49.195 [AWT-EventQueue-0] EmployeeClient - Employee is not a Technician

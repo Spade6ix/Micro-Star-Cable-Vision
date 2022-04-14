@@ -62,7 +62,6 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
 	
 	public LodgeComplaintScreen() {
 		
-		Border border = BorderFactory.createLineBorder(Color.gray, 1, false);
 		GridBagConstraints gbc = new GridBagConstraints();
 		this.setLayout(new GridBagLayout());
 		this.setBorder(new EmptyBorder(50, 50, 40, 50));

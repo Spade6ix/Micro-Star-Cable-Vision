@@ -7,10 +7,6 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
-import microStar.employee.EmployeeController;
-import microStar.employee.LiveChatScreen;
-import microStar.model.Customer;
-import microStar.model.Payment;
 
 
 public class CustomerView implements MouseListener, ActionListener{
@@ -167,6 +163,12 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	public void createCustomerLiveChatScreen() {
+		/*public vars
+		  
+	  	liveChatScreen.message										- message textfield
+	  	liveChatScreen.chat											- chat text area
+	  	liveChatScreen.send											- send button
+		 */
 		LiveChatScreen obj = new LiveChatScreen();
 		liveChatScreen = obj;
 	}
@@ -332,28 +334,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		
 		
-		//ACCOUNT STATUS SCREEN
-		try {
-			
-			
-		} catch (Exception ex) {
-			//Account status screen null
-		}
-		
-		
-		
-		
-		
-		//PAYMENT HISTORY SCREEN
-		try {
-			
-			
-		} catch (Exception ex) {
-			//payment history screen null
-		}
-		
-		
-		
 		
 		
 		//COMPLAINT HISTORY SCREEN
@@ -367,6 +347,27 @@ public class CustomerView implements MouseListener, ActionListener{
 			
 		} catch (Exception ex) {
 			//payment history screen null
+		}
+		
+		
+		
+		
+		
+		
+		
+		//LIVE CHAT SCREEN
+		try {
+			
+			//Save Changes
+			if (e.getSource() == liveChatScreen.send) {
+				String message = null;
+				//System.out.println("send live chat message");
+				
+				message = liveChatScreen.message.getText();
+			}
+			
+		} catch(Exception ex) {
+			//respond screen is null
 		}
 		
 		
