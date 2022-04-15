@@ -75,7 +75,7 @@ public class LiveVideoChatScreen extends JPanel implements ActionListener{
 	    
 	    
 	    
-	    //VIDEO 1
+	//VIDEO 1
         gbc.gridx = 1;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.CENTER;
@@ -97,7 +97,7 @@ public class LiveVideoChatScreen extends JPanel implements ActionListener{
 	    
 	    
 	    
-	    //Start/Stop Button
+	    //StartStop Button
         gbc.gridx = 3;
         gbc.gridy = 3;
         gbc.gridwidth = 1;
