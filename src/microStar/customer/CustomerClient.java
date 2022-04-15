@@ -348,7 +348,7 @@ public class CustomerClient {
             }
             else if (action.equalsIgnoreCase("Transmit video frame")){
             	videoFrameObj = (VideoFrame) objIs.readObject();
-            	logger.info("Video frame fetched");
+            	logger.info("Video frame transmitted");
             }
         }
         catch(ClassCastException ex){
@@ -537,11 +537,11 @@ public class CustomerClient {
         this.liveChatList = liveChatList;
     }
     
-    public VideoFrame getVideoFrame() {
+    public VideoFrame getVideoFrameObj() {
         return videoFrameObj;
     }
 
-    public void setVideoFrame(VideoFrame videoFrame) {
+    public void setVideoFrameObj(VideoFrame videoFrame) {
         this.videoFrameObj = videoFrame;
     }
 }

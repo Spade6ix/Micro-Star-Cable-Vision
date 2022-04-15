@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -171,8 +173,66 @@ public class CustomerController {
     }
     
     
- 
     
+    
+    public static void sendVideo2Frame(ImageIcon frame, String id) {
+    	
+    	VideoFrame videoFrame = client.getVideoFrameObj();
+    	videoFrame.setDestination(id);
+    	videoFrame.setFrame(frame);
+    	videoFrame.setSource(client.getCustomerID());
+    	
+    	client.sendAction("Transmit video frame");
+		client.sendVideoFrameObj(videoFrame);
+		client.receiveResponse();
+		
+		//data1 = client.getComplaintList();
+    }
+    
+    
+    
+    
+    
+	public static void getVideo1Frame() {
+	    	
+	}
+    
+    
+ 
+	
+	
+    
+    public static void incomingVideoListen() { //Listen for incoming video chat requests
+    	
+    	class VideoListen extends Thread{
+    		boolean run = true;
+    		
+    		@Override
+    		public void run() {
+    			
+    			System.out.println("incoming video chat listener thread is running");
+    			while(run) {
+    				client.receiveResponse();
+    				
+    		    	if (client.getVideoFrameObj().getSource() == null) {
+    		    		CustomerView.liveVideoChatScreen.statusLabel.setText("Status: disconnected");
+    		    	}
+    		    	
+    		    	if (client.getVideoFrameObj().getSource() != null) {
+    		    		CustomerView.liveVideoChatScreen.statusLabel.setText("Status: incoming");
+    		    	}
+    		    	if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen) {
+    		    		this.run = false;    		  
+    		    		client.getVideoFrameObj().setSource(null);
+    		    	}
+    	    	}
+    	
+    		}
+    	}
+    	
+    	VideoListen videoListen = new VideoListen();
+    	videoListen.start();	
+    }
     
     
 }

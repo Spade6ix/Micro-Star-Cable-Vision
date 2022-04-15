@@ -631,11 +631,11 @@ public class EmployeeClient {
         this.customerList = customerList;
     }
     
-    public VideoFrame getVideoFrame() {
+    public VideoFrame getVideoFrameObj() {
         return videoFrameObj;
     }
 
-    public void setVideoFrame(VideoFrame videoFrame) {
+    public void setVideoFrameObj(VideoFrame videoFrame) {
         this.videoFrameObj = videoFrame;
     }
 }

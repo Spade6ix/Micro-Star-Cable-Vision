@@ -145,7 +145,8 @@ public static JPanel currentPanel = null;
 	  	liveVideoChatScreen.video2											- video 2(sending)
 	  	liveVideoChatScreen.id												- id text field
 	  	liveVideoChatScreen.start_stop										- start/stop button
-	  	iveVideoChatScreen.status											- connection status
+	  	liveVideoChatScreen.status											- connection status
+	  	liveVideoChatScreen.toggle											- start_stop toggle value
 		 */
 		LiveVideoChatScreen obj = new LiveVideoChatScreen();
 		obj.start_stop.addActionListener(this);

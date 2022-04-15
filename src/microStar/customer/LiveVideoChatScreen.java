@@ -25,8 +25,9 @@ public class LiveVideoChatScreen extends JPanel implements ActionListener{
 	public JTextField id = new JTextField();
 	public JButton start_stop = new JButton("Start/Stop");
 	public JLabel statusLabel = new JLabel("Status: ");
+	public int toggle = 0;
 	
-	private JLabel idLabel = new JLabel("ID: ");
+	private JLabel idLabel = new JLabel("ID:      ");
 	
 	
 	
@@ -108,7 +109,7 @@ public class LiveVideoChatScreen extends JPanel implements ActionListener{
         start_stop.setForeground(new Color(0x333333));
         start_stop.setBackground(new Color(0x6666ff));
         start_stop.setBorder(null);
-        start_stop.setPreferredSize(new Dimension(200, 55));
+        start_stop.setPreferredSize(new Dimension(150, 50));
         start_stop.addActionListener(this);
         this.add(start_stop, gbc);
 
@@ -116,7 +117,6 @@ public class LiveVideoChatScreen extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
 		
 	}
 }

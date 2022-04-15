@@ -1,10 +1,12 @@
 package microStar.customer;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -187,7 +189,8 @@ public class CustomerView implements MouseListener, ActionListener{
 	  	liveVideoChatScreen.video2											- video 2(sending)
 	  	liveVideoChatScreen.id												- id text field
 	  	liveVideoChatScreen.start_stop										- start/stop button
-	  	iveVideoChatScreen.status											- connection status
+	  	liveVideoChatScreen.status											- connection status
+	  	liveVideoChatScreen.toggle											- start_stop toggle value
 		 */
 		LiveVideoChatScreen obj = new LiveVideoChatScreen();
 		obj.start_stop.addActionListener(this);
@@ -329,6 +332,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.add(liveVideoChatScreen);
 				currentPanel = liveVideoChatScreen;
 				dashboard.setVisible(true);
+				CustomerController.incomingVideoListen();
 			}
 		} catch(Exception ex) {
 			//Dashboard is null
@@ -377,7 +381,6 @@ public class CustomerView implements MouseListener, ActionListener{
 			}
 			
 		} catch (Exception ex) {
-			System.err.println("screen is null");
 			//payment history screen null
 		}
 		
@@ -396,6 +399,46 @@ public class CustomerView implements MouseListener, ActionListener{
 				//System.out.println("send live chat message");
 				
 				message = liveChatScreen.message.getText();
+			}
+			
+		} catch(Exception ex) {
+			//respond screen is null
+		}
+		
+		
+		
+		
+		
+		
+		
+		//LIVE VIDEO CHAT SCREEN
+		try {
+			
+			//Start/Stop
+			if (e.getSource() == liveVideoChatScreen.start_stop) {
+				
+				if(liveVideoChatScreen.toggle == 0) {
+					liveVideoChatScreen.toggle = 1;
+					liveVideoChatScreen.start_stop.setBackground(new Color(0x43c6e0));
+				} else {
+					liveVideoChatScreen.toggle = 0;
+					liveVideoChatScreen.start_stop.setBackground(new Color(0x6666ff));
+				}
+				
+				
+				ImageIcon frame2 = new ImageIcon("images/image2.png"); 
+				String id = liveVideoChatScreen.id.getText();
+				
+				if(liveVideoChatScreen.toggle == 0) {
+					
+				} 
+				
+				if(liveVideoChatScreen.toggle == 1) {
+					//CustomerController.sendVideo2Frame(frame2, id);
+					//displayVideo2Frame();
+					//CustomerController.getVideo1Frame();
+				}
+		
 			}
 			
 		} catch(Exception ex) {
