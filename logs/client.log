@@ -1,3 +1,12 @@
+<<<<<<< Updated upstream
 [INFO ] 2022-04-15 00:07:09.865 [AWT-EventQueue-0] CustomerClient - Action Sent
 [INFO ] 2022-04-15 00:07:10.528 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
 [INFO ] 2022-04-15 00:07:28.474 [AWT-EventQueue-0] CustomerClient - Customer Authenticated
+=======
+[INFO ] 2022-04-15 00:00:02.119 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-15 00:00:03.285 [AWT-EventQueue-0] CustomerClient - Customer Object Sent
+[INFO ] 2022-04-15 00:00:12.166 [AWT-EventQueue-0] CustomerClient - Complaints fetched successfully
+[INFO ] 2022-04-15 00:00:21.602 [AWT-EventQueue-0] CustomerClient - Action Sent
+[INFO ] 2022-04-15 00:00:21.609 [AWT-EventQueue-0] CustomerClient - Complaint Object Sent
+[INFO ] 2022-04-15 00:00:21.841 [AWT-EventQueue-0] CustomerClient - Responses fetched successfully
+>>>>>>> Stashed changes
