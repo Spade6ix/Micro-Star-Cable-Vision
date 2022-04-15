@@ -24,6 +24,7 @@ public static JPanel currentPanel = null;
 	public static AssignScreen assignScreen = null;
 	public static RespondScreen respondScreen = null;
 	public static LiveChatScreen liveChatScreen = null;
+	public static LiveVideoChatScreen liveVideoChatScreen = null;
 	
 	
 	public static void main(String[] args) {  //FOR UI TESTING PURPOSES
@@ -131,6 +132,24 @@ public static JPanel currentPanel = null;
 		LiveChatScreen obj = new LiveChatScreen();
 		obj.send.addActionListener(this);
 		liveChatScreen = obj;
+	}
+	
+	
+	
+	
+	
+	public void createCustomerLiveVideoChatScreen() {
+		/*public vars
+		  
+	  	liveVideoChatScreen.video1											- video 1(receiving)
+	  	liveVideoChatScreen.video2											- video 2(sending)
+	  	liveVideoChatScreen.id												- id text field
+	  	liveVideoChatScreen.start_stop										- start/stop button
+	  	iveVideoChatScreen.status											- connection status
+		 */
+		LiveVideoChatScreen obj = new LiveVideoChatScreen();
+		obj.start_stop.addActionListener(this);
+		liveVideoChatScreen = obj;
 	}
 	
 	
@@ -257,6 +276,15 @@ public static JPanel currentPanel = null;
 				dashboard.remove(currentPanel);
 				dashboard.add(liveChatScreen);
 				currentPanel = liveChatScreen;
+				dashboard.setVisible(true);
+			}
+			
+			//Live Video chat
+			if(e.getSource() == dashboard.liveVideoChat) {
+				createCustomerLiveVideoChatScreen();
+				dashboard.remove(currentPanel);
+				dashboard.add(liveVideoChatScreen);
+				currentPanel = liveVideoChatScreen;
 				dashboard.setVisible(true);
 			}
 		

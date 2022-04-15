@@ -57,7 +57,7 @@ public class CustomerController {
 		client.receiveResponse();
 		
 		CustomerView.accountStatusScreen.txtps.setText(client.getQueryObj().getPaymentStatus());
-		CustomerView.accountStatusScreen.txtad.setText(client.getQueryObj().getAmountDue().toString());
+		CustomerView.accountStatusScreen.txtad.setText(client.getQueryObj().getAmountDue() + "");
 		CustomerView.accountStatusScreen.txtpdd.setText(client.getQueryObj().getDueDate());
     }
     
@@ -82,7 +82,7 @@ public class CustomerController {
             for (Payment p: data1){
                 data[i][j] = p.getDateOfPayment();
                 j++;
-                data[i][j] = p.getAmountPaid().toString();
+                data[i][j] = p.getAmountPaid() + "";
                 j=0;
                 i++;
             }
@@ -108,7 +108,6 @@ public class CustomerController {
 		System.out.println("Size: " + data2.size());
 		data3 = client.getEmployeeList();
 
-		System.out.println("complete");
 		data = new String[client.getComplaintList().size()][4];
         int i=0;
         int j=0;
@@ -148,7 +147,6 @@ public class CustomerController {
 		client.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
 		client.sendComplaintObj(client.getComplaintObj());
 		client.receiveResponse();
-		
 		data1 = client.getResponseList();
 		
 		data = new String[client.getResponseList().size()][3];
@@ -159,11 +157,10 @@ public class CustomerController {
             j++;
             data[i][j] = p.getResponseDetails();
             j++;
-            data[i][j] = p.getProposedDateOfVisit().toString();
+            data[i][j] = p.getProposedDateOfVisit() + "";
             j=0;
             i++;
         }
-		
 
 		return data;
     }
