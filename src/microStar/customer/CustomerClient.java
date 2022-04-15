@@ -18,6 +18,7 @@ public class CustomerClient {
     private static ObjectOutputStream objOs;
     private ObjectInputStream objIs;
     private String action;
+    private VideoFrame videoFrameObj;
     private Complaint complaintObj;
     private Customer customerObj;
     private CustomerEmail customerEmailObj;
@@ -43,6 +44,7 @@ public class CustomerClient {
     public CustomerClient(){
         try{
             action = "";
+            videoFrameObj = new VideoFrame();
             complaintObj = new Complaint();
             customerObj = new Customer();
             customerEmailObj = new CustomerEmail();
@@ -257,8 +259,23 @@ public class CustomerClient {
             logger.error("Exception Occurred");
             ex.printStackTrace();
         }
-
     }
+    
+    public void sendVideoFrameObj(VideoFrame videoFrame) {
+    	try{
+            objOs.writeObject(videoFrame);
+            logger.info("Video Frame Sent");
+        }
+        catch(IOException ex){
+            logger.error("IOException Occurred");
+            ex.printStackTrace();
+        }
+        catch(Exception ex){
+            logger.error("Exception Occurred");
+            ex.printStackTrace();
+        }
+    }
+    
 
 
     @SuppressWarnings("unchecked")
@@ -328,6 +345,10 @@ public class CustomerClient {
                 customerPhoneList = (List<CustomerPhone>) objIs.readObject();
                 customerEmailList = (List<CustomerEmail>) objIs.readObject();
                 logger.info("Customer Account info fetched successfully");
+            }
+            else if (action.equalsIgnoreCase("Transmit video frame")){
+            	videoFrameObj = (VideoFrame) objIs.readObject();
+            	logger.info("Video frame fetched");
             }
         }
         catch(ClassCastException ex){
@@ -514,5 +535,13 @@ public class CustomerClient {
 
     public void setLiveChatList(List<LiveChat> liveChatList) {
         this.liveChatList = liveChatList;
+    }
+    
+    public VideoFrame getVideoFrame() {
+        return videoFrameObj;
+    }
+
+    public void setVideoFrame(VideoFrame videoFrame) {
+        this.videoFrameObj = videoFrame;
     }
 }

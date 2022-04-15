@@ -278,6 +278,7 @@ public static JPanel currentPanel = null;
 				String cellValue = (String) assignScreen.table.getValueAt(selectedRow, selectedCol);
 				String idValue = (String) assignScreen.table.getValueAt(selectedRow, 0);
 				EmployeeController.assignTechnician(idValue, cellValue);
+				JOptionPane.showMessageDialog(respondScreen, "Technician assigned successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 			
@@ -310,7 +311,7 @@ public static JPanel currentPanel = null;
 				String dov = respondScreen.dov.getText();
 				String complaintId = (String) respondScreen.table.getValueAt(selectedRow, 0);
 				EmployeeController.setComplaintResponse(response, dov, complaintId);
-				JOptionPane.showMessageDialog(respondScreen.table, "Response saved successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(respondScreen, "Response saved successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 		} catch(Exception ex) {

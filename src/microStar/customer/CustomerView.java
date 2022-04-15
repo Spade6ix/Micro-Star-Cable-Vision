@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -324,6 +325,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				CustomerController.client.sendAction("Create Complaint");
 				CustomerController.client.sendComplaintObj(CustomerController.client.getComplaintObj());
 				CustomerController.client.receiveResponse();
+				JOptionPane.showMessageDialog(lodgeComplaintScreen, "Complaint lodged successfully", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 		} catch (Exception ex) {
 			//lodge complaint screen null
