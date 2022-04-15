@@ -36,6 +36,7 @@ public class EmployeeController {
     
     
     public static void login() {
+    	e = new Employee();
     	e.setStaffID(String.valueOf(EmployeeView.loginScreen.idTextField.getText()));
 		e.setPassword(String.valueOf(EmployeeView.loginScreen.passwordTextField.getText()));
 		empClient.sendAction("Employee Login");
