@@ -83,7 +83,7 @@ public class CustomerController {
             for (Payment p: data1){
                 data[i][j] = p.getDateOfPayment();
                 j++;
-                data[i][j] = p.getAmountPaid().toString();
+                data[i][j] = p.getAmountPaid() + "";
                 j=0;
                 i++;
             }
@@ -164,7 +164,7 @@ public class CustomerController {
             j++;
             data[i][j] = p.getResponseDetails();
             j++;
-            data[i][j] = p.getProposedDateOfVisit().toString();
+            data[i][j] = p.getProposedDateOfVisit() + "";
             j=0;
             i++;
         }
