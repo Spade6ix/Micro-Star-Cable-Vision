@@ -40,6 +40,7 @@ public class CustomerController {
     
     
     public static void login() {
+        c = new Customer();
     	c.setCustomerID(String.valueOf(CustomerView.loginScreen.idTextField.getText()));
 		c.setPassword(String.valueOf(CustomerView.loginScreen.passwordTextField.getText()));
 		client.sendAction("Customer Login");
@@ -142,10 +143,14 @@ public class CustomerController {
     public static String[][] getComplaintDetails(String complaintId){
     	String[][] data = null;
     	List<Response> data1 = new ArrayList<Response>();
-    	
+
+        Complaint c = new Complaint();
+        //c = client.getComplaintObj();
+        c.setComplaintID(Integer.parseInt(complaintId));
+
 		client.sendAction("View All Responses to a Complaint");
-		client.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
-		client.sendComplaintObj(client.getComplaintObj());
+		//client.getComplaintObj().setComplaintID(Integer.parseInt(complaintId));
+		client.sendComplaintObj(c);
 		client.receiveResponse();
 		data1 = client.getResponseList();
 		

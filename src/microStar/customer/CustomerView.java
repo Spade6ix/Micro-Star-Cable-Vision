@@ -372,11 +372,12 @@ public class CustomerView implements MouseListener, ActionListener{
 			if(e.getSource() == complaintHistoryScreen.moreInfo) {
 				int row = complaintHistoryScreen.mainTable.getSelectedRow();
 				String id = (String) complaintHistoryScreen.mainTable.getValueAt(row, 0);
-	
+
 				complaintHistoryScreen.moreInfoWindow(CustomerController.getComplaintDetails(id));
 			}
 			
 		} catch (Exception ex) {
+			System.err.println("screen is null");
 			//payment history screen null
 		}
 		
