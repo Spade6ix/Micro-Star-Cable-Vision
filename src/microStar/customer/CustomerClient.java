@@ -275,8 +275,6 @@ public class CustomerClient {
             ex.printStackTrace();
         }
     }
-    
-
 
     @SuppressWarnings("unchecked")
 	public void receiveResponse() {
@@ -349,6 +347,10 @@ public class CustomerClient {
             else if (action.equalsIgnoreCase("Transmit video frame")){
             	videoFrameObj = (VideoFrame) objIs.readObject();
             	logger.info("Video frame transmitted");
+            }
+            else if (action.equalsIgnoreCase("Customer ReadAll LiveChat")){
+                liveChatList = (List<LiveChat>) objIs.readObject();
+                logger.info("All LiveChats for Customer read");
             }
         }
         catch(ClassCastException ex){

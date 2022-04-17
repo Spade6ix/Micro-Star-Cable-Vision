@@ -233,6 +233,12 @@ public class CustomerController {
     	VideoListen videoListen = new VideoListen();
     	videoListen.start();	
     }
-    
-    
+
+    public static void getLiveChat(){
+
+    }
+
+    public static void sendLiveChat(){
+
+    }
 }

@@ -420,6 +420,10 @@ public class EmployeeClient {
             	videoFrameObj = (VideoFrame) objIs.readObject();
             	logger.info("Video frame fetched");
             }
+            else if (action.equalsIgnoreCase("Employee ReadAll LiveChat")){
+                liveChatList = (List<LiveChat>) objIs.readObject();
+                logger.info("All LiveChats for Employee read");
+            }
         }
         catch(ClassCastException ex){
             logger.error("ClassCastException Occurred");
