@@ -370,6 +370,11 @@ public class CustomerClient {
                 customerEmailList = (List<CustomerEmail>) objIs.readObject();
                 logger.info("Customer Account info fetched successfully");
             }
+            else if (action.equalsIgnoreCase("Customer ReadAll LiveChat")){
+                liveChatList = (List<LiveChat>) objIs.readObject();
+                employeeList = (List<Employee>) objIs.readObject();
+                logger.info("All LiveChats for Customer read");
+            }
             objOs.flush();
         }
         catch(ClassCastException ex){

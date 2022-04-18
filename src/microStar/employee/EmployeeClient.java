@@ -441,6 +441,11 @@ public class EmployeeClient {
                     logger.info("Employee is not a Technician");
                 }
             }
+            else if (action.equalsIgnoreCase("Employee ReadAll LiveChat")){
+                liveChatList = (List<LiveChat>) objIs.readObject();
+                customerList = (List<Customer>) objIs.readObject();
+                logger.info("All LiveChats for Employee read");
+            }
             
         }
         catch(ClassCastException ex){
