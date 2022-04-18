@@ -350,6 +350,7 @@ public class CustomerClient {
             }
             else if (action.equalsIgnoreCase("Customer ReadAll LiveChat")){
                 liveChatList = (List<LiveChat>) objIs.readObject();
+                employeeList = (List<Employee>) objIs.readObject();
                 logger.info("All LiveChats for Customer read");
             }
         }
