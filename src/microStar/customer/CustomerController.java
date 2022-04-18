@@ -1,11 +1,16 @@
 package microStar.customer;
 
 
+import com.github.sarxos.webcam.Webcam;
 import com.mysql.cj.xdevapi.Client;
 import microStar.factory.DBConnectorFactory;
 import microStar.factory.SessionFactoryBuilder;
 import microStar.model.*;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +19,7 @@ import javax.swing.ImageIcon;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 public class CustomerController {
     private static final Logger logger = LogManager.getLogger(CustomerController.class);
@@ -175,55 +181,50 @@ public class CustomerController {
     
     
     
-    public static void sendVideo2Frame(ImageIcon frame, String id) {
-    	
-    	VideoFrame videoFrame = client.getVideoFrameObj();
-    	videoFrame.setDestination(id);
-    	videoFrame.setFrame(frame);
-    	videoFrame.setSource(client.getCustomerID());
-    	
-    	client.sendAction("Transmit video frame");
-		client.sendVideoFrameObj(videoFrame);
-		client.receiveResponse();
-		
-		//data1 = client.getComplaintList();
-    }
-    
-    
-    
-    
-    
-	public static void getVideo1Frame() {
-	    	
-	}
-    
-    
  
-	
+    
+    
 	
     
-    public static void incomingVideoListen() { //Listen for incoming video chat requests
+    public static void incomingVideo() { //Listen for incoming video chat requests
     	
     	class VideoListen extends Thread{
-    		boolean run = true;
     		
     		@Override
     		public void run() {
     			
-    			System.out.println("incoming video chat listener thread is running");
-    			while(run) {
-    				client.receiveResponse();
+    			System.out.println("incoming video chat thread is running");
+    			
+    			CustomerView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");
+    			CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: ");
+    			
+    			while(true) {
     				
-    		    	if (client.getVideoFrameObj().getSource() == null) {
-    		    		CustomerView.liveVideoChatScreen.statusLabel.setText("Status: disconnected");
+    				if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen) {
+    		    		break;  		  
     		    	}
+    				
+    				if(CustomerView.liveVideoChatScreen.toggle == 0) {
+    					CustomerView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");  
+    					CustomerView.liveVideoChatScreen.video2.setIcon(new ImageIcon("images/image2.png"));
+    		    	}
+    				
+    				
+    				client.receiveVideoResponse();
+    				
+    				if(client.getVideoSourceState().equals("end")) {
+						CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: "); 
+						CustomerView.liveVideoChatScreen.video1.setIcon(client.getVideoFrame());
+					}
+ 
     		    	
-    		    	if (client.getVideoFrameObj().getSource() != null) {
-    		    		CustomerView.liveVideoChatScreen.statusLabel.setText("Status: incoming");
-    		    	}
-    		    	if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen) {
-    		    		this.run = false;    		  
-    		    		client.getVideoFrameObj().setSource(null);
+    		    	if(client.getVideoSourceState().equals("go")) {
+    		    		CustomerView.liveVideoChatScreen.video1.setIcon(client.getVideoFrame());
+    		    		CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: " + client.getVideoSourceId());
+    		    		
+    		    		if(CustomerView.liveVideoChatScreen.toggle == 1) {
+    		    			CustomerView.liveVideoChatScreen.statusLabel.setText("Status: Connected"); 
+    		    		}
     		    	}
     	    	}
     	
@@ -233,6 +234,70 @@ public class CustomerController {
     	VideoListen videoListen = new VideoListen();
     	videoListen.start();	
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	public static void outgoingVideo(String id) { //Listen for incoming video chat requests
+	    	
+	    	class VideoListen extends Thread{
+	    		
+	    		@Override
+	    		public void run() {
+	    			
+	    			System.out.println("outgoing video chat thread is running");
+    				
+    				ImageIcon frame;
+    				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+    				BufferedImage bf;
+    				
+    				try {
+	    				
+    					Webcam cam = Webcam.getDefault();
+        				cam.setViewSize(new Dimension(640, 480));
+        				cam.open();
+        				
+		    			while(true) {
+		    				
+		    				if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen || CustomerView.liveVideoChatScreen.toggle == 0){
+		    					client.sendAction("Transmit video frame");
+			    				client.sendVideoFrameObj(defaultFrame, id, "end");
+		    					if(cam.isOpen()) {
+		    						cam.close();
+		    					}  
+		    		    		break;
+		    		    	}
+		    				
+		    				bf = cam.getImage();
+		    				frame = new ImageIcon(bf);
+		    				
+		    				//video1
+		    				client.sendAction("Transmit video frame");
+		    				client.sendVideoFrameObj(frame, id, "go");
+		    				
+		    				//video 2
+		    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
+		    				CustomerView.liveVideoChatScreen.video2.setIcon(frame);
+		    	    	}
+    				}catch(Exception ex) {
+    					logger.info("camera is being used by another application");
+    				}
+	    	
+	    		}
+	    	}
+	    	
+	    	VideoListen videoListen = new VideoListen();
+	    	videoListen.start();	
+	 }
+    
+  
+    
+    
     
     
 }
