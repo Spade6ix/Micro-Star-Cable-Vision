@@ -332,7 +332,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.add(liveVideoChatScreen);
 				currentPanel = liveVideoChatScreen;
 				dashboard.setVisible(true);
-				CustomerController.incomingVideo();
+				CustomerController.incomingVideoListen();
 			}
 		} catch(Exception ex) {
 			//Dashboard is null
@@ -425,11 +425,20 @@ public class CustomerView implements MouseListener, ActionListener{
 					liveVideoChatScreen.start_stop.setBackground(new Color(0x6666ff));
 				}
 				
+				
+				ImageIcon frame2 = new ImageIcon("images/image2.png"); 
 				String id = liveVideoChatScreen.id.getText();
 				
-				if (liveVideoChatScreen.toggle == 1) {
-					CustomerController.outgoingVideo(id);
+				if(liveVideoChatScreen.toggle == 0) {
+					
+				} 
+				
+				if(liveVideoChatScreen.toggle == 1) {
+					//CustomerController.sendVideo2Frame(frame2, id);
+					//displayVideo2Frame();
+					//CustomerController.getVideo1Frame();
 				}
+		
 			}
 			
 		} catch(Exception ex) {

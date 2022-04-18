@@ -1,5 +1,6 @@
 package microStar.employee;
 
+import microStar.customer.CustomerClient;
 import microStar.model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,16 +13,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.ImageIcon;
-
 public class EmployeeClient {
     private Socket connectionSocket;
     private static ObjectOutputStream objOs;
     private ObjectInputStream objIs;
     private String action;
-    private ImageIcon videoFrame;
-    private String videoSourceId;
-    private String videoSourceState;
+    private VideoFrame videoFrameObj;
     private Complaint complaintObj;
     private Customer customerObj;
     private CustomerEmail customerEmailObj;
@@ -50,9 +47,7 @@ public class EmployeeClient {
     public EmployeeClient(){
         try{
             action = "";
-            videoSourceId = null;
-            videoSourceState = null;
-            videoFrame = new ImageIcon();
+            videoFrameObj = new VideoFrame();
             complaintObj = new Complaint();
             customerObj = new Customer();
             customerEmailObj = new CustomerEmail();
@@ -111,7 +106,7 @@ public class EmployeeClient {
         try{
             objOs.writeObject(action);
             objOs.flush();
-            //logger.info("Action Sent");
+            logger.info("Action Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -292,14 +287,10 @@ public class EmployeeClient {
 
     }
     
-    
-    public void sendVideoFrameObj(ImageIcon videoFrame, String id, String state) {
+    public void sendVideoFrameObj(VideoFrame videoFrame) {
     	try{
-    		objOs.writeObject(videoFrame);
-            objOs.writeObject(id);
-            objOs.writeObject(state);
-            objOs.reset();
-           // logger.info("Video Frame Sent");
+            objOs.writeObject(videoFrame);
+            logger.info("Video Frame Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -310,22 +301,6 @@ public class EmployeeClient {
             ex.printStackTrace();
         }
     }
-    
-    
-    public void receiveVideoResponse() {
-    	try {
-			videoFrame = (ImageIcon) objIs.readObject();
-			videoSourceId = (String) objIs.readObject();
-			videoSourceState = (String) objIs.readObject();
-		} 
-    	catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} 
-    	catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-    
     
 
     public void receiveResponse() {
@@ -441,7 +416,10 @@ public class EmployeeClient {
                     logger.info("Employee is not a Technician");
                 }
             }
-            
+            else if (action.equalsIgnoreCase("Transmit video frame")){
+            	videoFrameObj = (VideoFrame) objIs.readObject();
+            	logger.info("Video frame fetched");
+            }
         }
         catch(ClassCastException ex){
             logger.error("ClassCastException Occurred");
@@ -653,28 +631,11 @@ public class EmployeeClient {
         this.customerList = customerList;
     }
     
-    public ImageIcon getVideoFrame() {
-        return videoFrame;
+    public VideoFrame getVideoFrameObj() {
+        return videoFrameObj;
     }
 
-    public void setVideoFrame(ImageIcon videoFrame) {
-        this.videoFrame = videoFrame;
+    public void setVideoFrameObj(VideoFrame videoFrame) {
+        this.videoFrameObj = videoFrame;
     }
-
-	public String getVideoSourceState() {
-		return videoSourceState;
-	}
-
-	public void setVideoSourceState(String videoSourceState) {
-		this.videoSourceState = videoSourceState;
-	}
-
-	public String getVideoSourceId() {
-		return videoSourceId;
-	}
-
-	public void setVideoSourceId(String id) {
-		this.videoSourceId = id;
-	}
-    
 }
