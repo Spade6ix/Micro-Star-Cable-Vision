@@ -2,6 +2,7 @@ package microStar.employee;
 
 
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -9,6 +10,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 
 
 
@@ -287,6 +289,7 @@ public static JPanel currentPanel = null;
 				dashboard.add(liveVideoChatScreen);
 				currentPanel = liveVideoChatScreen;
 				dashboard.setVisible(true);
+				EmployeeController.incomingVideo();
 			}
 		
 		} catch (Exception ex) {
@@ -362,6 +365,38 @@ public static JPanel currentPanel = null;
 				//System.out.println("send live chat message");
 				
 				message = liveChatScreen.message.getText();
+			}
+			
+		} catch(Exception ex) {
+			//respond screen is null
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		//LIVE VIDEO CHAT SCREEN
+		try {
+			
+			//Start/Stop
+			if (e.getSource() == liveVideoChatScreen.start_stop) {
+				
+				if(liveVideoChatScreen.toggle == 0) {
+					liveVideoChatScreen.toggle = 1;
+					liveVideoChatScreen.start_stop.setBackground(new Color(0x43c6e0));
+				} else {
+					liveVideoChatScreen.toggle = 0;
+					liveVideoChatScreen.start_stop.setBackground(new Color(0x6666ff));
+				}
+				
+				String id = liveVideoChatScreen.id.getText();
+				
+				if (liveVideoChatScreen.toggle == 1) {
+					EmployeeController.outgoingVideo(id);
+				}
 			}
 			
 		} catch(Exception ex) {

@@ -2,13 +2,20 @@ package microStar.employee;
 
 import microStar.model.*;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.github.sarxos.webcam.Webcam;
 
 public class EmployeeController {
     private static final Logger logger = LogManager.getLogger(EmployeeController.class);
@@ -365,6 +372,120 @@ public class EmployeeController {
     
     
     
+    
+    
+    
+    
+    
+    
+ public static void incomingVideo() { //Listen for incoming video chat requests
+    	
+    	class VideoListen extends Thread{
+    		
+    		@Override
+    		public void run() {
+    			
+    			System.out.println("incoming video chat thread is running");
+    			
+    			EmployeeView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");
+    			EmployeeView.liveVideoChatScreen.status2Label.setText("Incoming from: ");
+    			
+    			while(true) {
+    				
+    				if(EmployeeView.currentPanel != EmployeeView.liveVideoChatScreen) {
+    		    		break;  		  
+    		    	}
+    				
+    				if(EmployeeView.liveVideoChatScreen.toggle == 0) {
+    					EmployeeView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");  
+    					EmployeeView.liveVideoChatScreen.video2.setIcon(new ImageIcon("images/image2.png"));
+    		    	}
+    				
+    				
+    				empClient.receiveVideoResponse();
+    				
+    				if(empClient.getVideoSourceState().equals("end")) {
+    					EmployeeView.liveVideoChatScreen.status2Label.setText("Incoming from: "); 
+						EmployeeView.liveVideoChatScreen.video1.setIcon(empClient.getVideoFrame());
+					}
+ 
+    		    	
+    		    	if(empClient.getVideoSourceState().equals("go")) {
+    		    		EmployeeView.liveVideoChatScreen.video1.setIcon(empClient.getVideoFrame());
+    		    		EmployeeView.liveVideoChatScreen.status2Label.setText("Incoming from: " + empClient.getVideoSourceId());
+    		    		
+    		    		if(EmployeeView.liveVideoChatScreen.toggle == 1) {
+    		    			EmployeeView.liveVideoChatScreen.statusLabel.setText("Status: Connected"); 
+    		    		}
+    		    	}
+    	    	}
+    	
+    		}
+    	}
+    	
+    	VideoListen videoListen = new VideoListen();
+    	videoListen.start();	
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	public static void outgoingVideo(String id) { //Listen for incoming video chat requests
+	    	
+	    	class VideoListen extends Thread{
+	    		
+	    		@Override
+	    		public void run() {
+	    			
+	    			System.out.println("outgoing video chat thread is running");
+    				
+    				ImageIcon frame;
+    				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+    				BufferedImage bf;
+    				
+    				try {
+	    				
+    					Webcam cam = Webcam.getDefault();
+        				cam.setViewSize(new Dimension(640, 480));
+        				cam.open();
+        				
+		    			while(true) {
+		    				
+		    				if(EmployeeView.currentPanel != EmployeeView.liveVideoChatScreen || EmployeeView.liveVideoChatScreen.toggle == 0){
+		    					empClient.sendAction("Transmit video frame");
+			    				empClient.sendVideoFrameObj(defaultFrame, id, "end");
+		    					if(cam.isOpen()) {
+		    						cam.close();
+		    					}  
+		    		    		break;
+		    		    	}
+		    				
+		    				bf = cam.getImage();
+		    				frame = new ImageIcon(bf);
+		    				
+		    				//video1
+		    				empClient.sendAction("Transmit video frame");
+		    				empClient.sendVideoFrameObj(frame, id, "go");
+		    				
+		    				//video 2
+		    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
+		    				EmployeeView.liveVideoChatScreen.video2.setIcon(frame);
+		    	    	}
+    				}catch(Exception ex) {
+    					logger.info("camera is being used by another application");
+    				}
+	    	
+	    		}
+	    	}
+	    	
+	    	VideoListen videoListen = new VideoListen();
+	    	videoListen.start();	
+	 }
     
     
 }

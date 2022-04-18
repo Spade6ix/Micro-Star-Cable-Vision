@@ -15,10 +15,12 @@ import java.util.List;
 
 public class CustomerClient {
     private Socket connectionSocket;
-    private static ObjectOutputStream objOs;
+    private ObjectOutputStream objOs;
     private ObjectInputStream objIs;
     private String action;
-    private VideoFrame videoFrameObj;
+    private ImageIcon videoFrame;
+    private String videoSourceId;
+    private String videoSourceState;
     private Complaint complaintObj;
     private Customer customerObj;
     private CustomerEmail customerEmailObj;
@@ -44,7 +46,9 @@ public class CustomerClient {
     public CustomerClient(){
         try{
             action = "";
-            videoFrameObj = new VideoFrame();
+            videoSourceId = null;
+            videoSourceState = null;
+            videoFrame = new ImageIcon();
             complaintObj = new Complaint();
             customerObj = new Customer();
             customerEmailObj = new CustomerEmail();
@@ -99,7 +103,7 @@ public class CustomerClient {
         this.action = action;
         try{
             objOs.writeObject(action);
-            logger.info("Action Sent");
+            //logger.info("Action Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -260,11 +264,14 @@ public class CustomerClient {
             ex.printStackTrace();
         }
     }
-    
-    public void sendVideoFrameObj(VideoFrame videoFrame) {
+      
+    public void sendVideoFrameObj(ImageIcon videoFrame, String id, String state) {
     	try{
-            objOs.writeObject(videoFrame);
-            logger.info("Video Frame Sent");
+    		objOs.writeObject(videoFrame);
+            objOs.writeObject(id);
+            objOs.writeObject(state);
+            objOs.reset();
+           // logger.info("Video Frame Sent");
         }
         catch(IOException ex){
             logger.error("IOException Occurred");
@@ -276,9 +283,26 @@ public class CustomerClient {
         }
     }
     
+    
+    public void receiveVideoResponse() {
+    	try {
+			videoFrame = (ImageIcon) objIs.readObject();
+			videoSourceId = (String) objIs.readObject();
+			videoSourceState = (String) objIs.readObject();
+		} 
+    	catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} 
+    	catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    
+    
+    
 
 
-    @SuppressWarnings("unchecked")
 	public void receiveResponse() {
         try {
             if (action.equalsIgnoreCase("Customer Login")) {
@@ -346,10 +370,7 @@ public class CustomerClient {
                 customerEmailList = (List<CustomerEmail>) objIs.readObject();
                 logger.info("Customer Account info fetched successfully");
             }
-            else if (action.equalsIgnoreCase("Transmit video frame")){
-            	videoFrameObj = (VideoFrame) objIs.readObject();
-            	logger.info("Video frame transmitted");
-            }
+            objOs.flush();
         }
         catch(ClassCastException ex){
             logger.error("ClassCastException Occurred");
@@ -537,11 +558,29 @@ public class CustomerClient {
         this.liveChatList = liveChatList;
     }
     
-    public VideoFrame getVideoFrameObj() {
-        return videoFrameObj;
+    public ImageIcon getVideoFrame() {
+        return videoFrame;
     }
 
-    public void setVideoFrameObj(VideoFrame videoFrame) {
-        this.videoFrameObj = videoFrame;
+    public void setVideoFrame(ImageIcon videoFrame) {
+        this.videoFrame = videoFrame;
     }
+
+	public String getVideoSourceState() {
+		return videoSourceState;
+	}
+
+	public void setVideoSourceState(String videoSourceState) {
+		this.videoSourceState = videoSourceState;
+	}
+
+	public String getVideoSourceId() {
+		return videoSourceId;
+	}
+
+	public void setVideoSourceId(String id) {
+		this.videoSourceId = id;
+	}	
+	   
+	
 }
