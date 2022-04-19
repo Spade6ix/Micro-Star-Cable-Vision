@@ -257,6 +257,7 @@ public static JPanel currentPanel = null;
 					
 			//Assign
 			if(e.getSource() == dashboard.assign) {
+				EmployeeController.exitVideoChatScreen();
 				createEmployeeAssignScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(assignScreen);
@@ -266,6 +267,7 @@ public static JPanel currentPanel = null;
 			
 			//Respond
 			if(e.getSource() == dashboard.respond) {
+				EmployeeController.exitVideoChatScreen();
 				createEmployeeRespondScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(respondScreen);
@@ -275,6 +277,7 @@ public static JPanel currentPanel = null;
 			
 			//Live chat
 			if(e.getSource() == dashboard.liveChat) {
+				EmployeeController.exitVideoChatScreen();
 				createEmployeeLiveChatScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(liveChatScreen);
@@ -284,6 +287,7 @@ public static JPanel currentPanel = null;
 			
 			//Live Video chat
 			if(e.getSource() == dashboard.liveVideoChat) {
+				EmployeeController.exitVideoChatScreen();
 				createCustomerLiveVideoChatScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(liveVideoChatScreen);

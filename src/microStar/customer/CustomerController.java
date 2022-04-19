@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -114,7 +115,6 @@ public class CustomerController {
 		
 		data1 = client.getComplaintList();
 		data2 = client.getResponseList();
-		System.out.println("Size: " + data2.size());
 		data3 = client.getEmployeeList();
 
 		data = new String[client.getComplaintList().size()][4];
@@ -177,6 +177,10 @@ public class CustomerController {
 
 		return data;
     }
+      
+    
+    
+    
     
     
     
@@ -184,12 +188,11 @@ public class CustomerController {
  
     
     
+    public static VideoRecieve videoRecieve = new VideoRecieve();
 	
-    
     public static void incomingVideo() { //Listen for incoming video chat requests
     	
-    	class VideoListen extends Thread{
-    		
+    	videoRecieve  = new VideoRecieve(){
     		@Override
     		public void run() {
     			
@@ -199,24 +202,23 @@ public class CustomerController {
     			CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: ");
     			
     			while(true) {
-    				
-    				if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen) {
-    		    		break;  		  
-    		    	}
+    			
+    				client.receiveVideoResponse();
     				
     				if(CustomerView.liveVideoChatScreen.toggle == 0) {
     					CustomerView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");  
     					CustomerView.liveVideoChatScreen.video2.setIcon(new ImageIcon("images/image2.png"));
+    					
+    					if(client.getVideoSourceState().equals("exit")) {
+        					break;
+        				}
     		    	}
     				
-    				
-    				client.receiveVideoResponse();
-    				
     				if(client.getVideoSourceState().equals("end")) {
-						CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: "); 
-						CustomerView.liveVideoChatScreen.video1.setIcon(client.getVideoFrame());
-					}
- 
+    					CustomerView.liveVideoChatScreen.status2Label.setText("Incoming from: "); 
+    					CustomerView.liveVideoChatScreen.video1.setIcon(client.getVideoFrame());
+    				}
+
     		    	
     		    	if(client.getVideoSourceState().equals("go")) {
     		    		CustomerView.liveVideoChatScreen.video1.setIcon(client.getVideoFrame());
@@ -227,77 +229,89 @@ public class CustomerController {
     		    		}
     		    	}
     	    	}
-    	
+
     		}
-    	}
-    	
-    	VideoListen videoListen = new VideoListen();
-    	videoListen.start();	
+    	};
+    	videoRecieve.start();
     }
     
     
     
     
     
+    public static void exitVideoChatScreen() throws Exception{
+    	if(videoRecieve.isAlive()) {
+    		if(CustomerView.liveVideoChatScreen.toggle == 1) {
+        		JOptionPane.showMessageDialog(CustomerView.liveVideoChatScreen, "You must stop video chat before leaving this screen!", "Error", JOptionPane.INFORMATION_MESSAGE);
+        		throw new Exception("stop video chat");
+        	}
+
+        	ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+        	client.sendAction("Transmit video frame");
+    		client.sendVideoFrameObj(defaultFrame, client.getCustomerObj().getCustomerID(), "exit");
+    		
+    		while(true) {
+    			if(!videoRecieve.isAlive()) {
+    				break;
+    			}
+    		}
+    	}
+    }
     
     
     
     
+    public static VideoSend videoSend = new VideoSend();
+	
 	public static void outgoingVideo(String id) { //Listen for incoming video chat requests
 	    	
-	    	class VideoListen extends Thread{
-	    		
-	    		@Override
-	    		public void run() {
-	    			
-	    			System.out.println("outgoing video chat thread is running");
-    				
-    				ImageIcon frame;
-    				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
-    				BufferedImage bf;
-    				
-    				try {
+		videoSend = new VideoSend() {
+			@Override
+			public void run() {
+				
+				System.out.println("outgoing video chat thread is running");
+				
+				ImageIcon frame;
+				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+				BufferedImage bf;
+				
+				try {
+					
+					Webcam cam = Webcam.getDefault();
+					cam.setViewSize(new Dimension(640, 480));
+					cam.open();
+					
+	    			while(true) {
 	    				
-    					Webcam cam = Webcam.getDefault();
-        				cam.setViewSize(new Dimension(640, 480));
-        				cam.open();
-        				
-		    			while(true) {
-		    				
-		    				if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen || CustomerView.liveVideoChatScreen.toggle == 0){
-		    					client.sendAction("Transmit video frame");
-			    				client.sendVideoFrameObj(defaultFrame, id, "end");
-		    					if(cam.isOpen()) {
-		    						cam.close();
-		    					}  
-		    		    		break;
-		    		    	}
-		    				
-		    				bf = cam.getImage();
-		    				frame = new ImageIcon(bf);
-		    				
-		    				//video1
-		    				client.sendAction("Transmit video frame");
-		    				client.sendVideoFrameObj(frame, id, "go");
-		    				
-		    				//video 2
-		    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
-		    				CustomerView.liveVideoChatScreen.video2.setIcon(frame);
-		    	    	}
-    				}catch(Exception ex) {
-    					logger.info("camera is being used by another application");
-    				}
-	    	
-	    		}
-	    	}
-	    	
-	    	VideoListen videoListen = new VideoListen();
-	    	videoListen.start();	
+	    				if(CustomerView.currentPanel != CustomerView.liveVideoChatScreen || CustomerView.liveVideoChatScreen.toggle == 0){
+	    					client.sendAction("Transmit video frame");
+		    				client.sendVideoFrameObj(defaultFrame, id, "end");
+	    					if(cam.isOpen()) {
+	    						cam.close();
+	    					}  
+	    		    		break;
+	    		    	}
+	    				
+	    				bf = cam.getImage();
+	    				frame = new ImageIcon(bf);
+	    				
+	    				//video1
+	    				client.sendAction("Transmit video frame");
+	    				client.sendVideoFrameObj(frame, id, "go");
+	    				
+	    				//video 2
+	    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
+	    				CustomerView.liveVideoChatScreen.video2.setIcon(frame);
+	    	    	}
+				}catch(Exception ex) {
+					logger.info("camera is being used by another application");
+				}
+		
+			}
+		};
+	    videoSend.start();	
 	 }
     
   
-    
-    
-    
     
 }

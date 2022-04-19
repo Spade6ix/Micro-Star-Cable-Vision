@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -378,10 +379,11 @@ public class EmployeeController {
     
     
     
- public static void incomingVideo() { //Listen for incoming video chat requests
+public static VideoRecieve videoRecieve = new VideoRecieve();
+	
+    public static void incomingVideo() { //Listen for incoming video chat requests
     	
-    	class VideoListen extends Thread{
-    		
+    	videoRecieve  = new VideoRecieve(){
     		@Override
     		public void run() {
     			
@@ -391,24 +393,23 @@ public class EmployeeController {
     			EmployeeView.liveVideoChatScreen.status2Label.setText("Incoming from: ");
     			
     			while(true) {
-    				
-    				if(EmployeeView.currentPanel != EmployeeView.liveVideoChatScreen) {
-    		    		break;  		  
-    		    	}
+    			
+    				empClient.receiveVideoResponse();
     				
     				if(EmployeeView.liveVideoChatScreen.toggle == 0) {
     					EmployeeView.liveVideoChatScreen.statusLabel.setText("Status: Disconnected");  
     					EmployeeView.liveVideoChatScreen.video2.setIcon(new ImageIcon("images/image2.png"));
+    					
+    					if(empClient.getVideoSourceState().equals("exit")) {
+        					break;
+        				}
     		    	}
-    				
-    				
-    				empClient.receiveVideoResponse();
     				
     				if(empClient.getVideoSourceState().equals("end")) {
     					EmployeeView.liveVideoChatScreen.status2Label.setText("Incoming from: "); 
-						EmployeeView.liveVideoChatScreen.video1.setIcon(empClient.getVideoFrame());
-					}
- 
+    					EmployeeView.liveVideoChatScreen.video1.setIcon(empClient.getVideoFrame());
+    				}
+
     		    	
     		    	if(empClient.getVideoSourceState().equals("go")) {
     		    		EmployeeView.liveVideoChatScreen.video1.setIcon(empClient.getVideoFrame());
@@ -419,13 +420,37 @@ public class EmployeeController {
     		    		}
     		    	}
     	    	}
-    	
+
     		}
-    	}
-    	
-    	VideoListen videoListen = new VideoListen();
-    	videoListen.start();	
+    	};
+    	videoRecieve.start();
     }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ public static void exitVideoChatScreen() throws Exception{
+ 	if(videoRecieve.isAlive()) {
+ 		if(EmployeeView.liveVideoChatScreen.toggle == 1) {
+     		JOptionPane.showMessageDialog(EmployeeView.liveVideoChatScreen, "You must stop video chat before leaving this screen!", "Error", JOptionPane.INFORMATION_MESSAGE);
+     		throw new Exception("stop video chat");
+     	}
+
+     	ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+     	empClient.sendAction("Transmit video frame");
+ 		empClient.sendVideoFrameObj(defaultFrame, empClient.getEmployeeObj().getStaffID(), "exit");
+ 		
+ 		while(true) {
+ 			if(!videoRecieve.isAlive()) {
+ 				break;
+ 			}
+ 		}
+ 	}
+ }
     
     
     
@@ -435,56 +460,55 @@ public class EmployeeController {
     
     
     
+ public static VideoSend videoSend = new VideoSend();
+	
 	public static void outgoingVideo(String id) { //Listen for incoming video chat requests
 	    	
-	    	class VideoListen extends Thread{
-	    		
-	    		@Override
-	    		public void run() {
-	    			
-	    			System.out.println("outgoing video chat thread is running");
-    				
-    				ImageIcon frame;
-    				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
-    				BufferedImage bf;
-    				
-    				try {
+		videoSend = new VideoSend() {
+			@Override
+			public void run() {
+				
+				System.out.println("outgoing video chat thread is running");
+				
+				ImageIcon frame;
+				ImageIcon defaultFrame = new ImageIcon("images/image1.png");
+				BufferedImage bf;
+				
+				try {
+					
+					Webcam cam = Webcam.getDefault();
+					cam.setViewSize(new Dimension(640, 480));
+					cam.open();
+					
+	    			while(true) {
 	    				
-    					Webcam cam = Webcam.getDefault();
-        				cam.setViewSize(new Dimension(640, 480));
-        				cam.open();
-        				
-		    			while(true) {
-		    				
-		    				if(EmployeeView.currentPanel != EmployeeView.liveVideoChatScreen || EmployeeView.liveVideoChatScreen.toggle == 0){
-		    					empClient.sendAction("Transmit video frame");
-			    				empClient.sendVideoFrameObj(defaultFrame, id, "end");
-		    					if(cam.isOpen()) {
-		    						cam.close();
-		    					}  
-		    		    		break;
-		    		    	}
-		    				
-		    				bf = cam.getImage();
-		    				frame = new ImageIcon(bf);
-		    				
-		    				//video1
-		    				empClient.sendAction("Transmit video frame");
-		    				empClient.sendVideoFrameObj(frame, id, "go");
-		    				
-		    				//video 2
-		    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
-		    				EmployeeView.liveVideoChatScreen.video2.setIcon(frame);
-		    	    	}
-    				}catch(Exception ex) {
-    					logger.info("camera is being used by another application");
-    				}
-	    	
-	    		}
-	    	}
-	    	
-	    	VideoListen videoListen = new VideoListen();
-	    	videoListen.start();	
+	    				if(EmployeeView.currentPanel != EmployeeView.liveVideoChatScreen || EmployeeView.liveVideoChatScreen.toggle == 0){
+	    					empClient.sendAction("Transmit video frame");
+		    				empClient.sendVideoFrameObj(defaultFrame, id, "end");
+	    					if(cam.isOpen()) {
+	    						cam.close();
+	    					}  
+	    		    		break;
+	    		    	}
+	    				
+	    				bf = cam.getImage();
+	    				frame = new ImageIcon(bf);
+	    				
+	    				//video1
+	    				empClient.sendAction("Transmit video frame");
+	    				empClient.sendVideoFrameObj(frame, id, "go");
+	    				
+	    				//video 2
+	    				frame = new ImageIcon(bf.getScaledInstance(320, 240, Image.SCALE_FAST));
+	    				EmployeeView.liveVideoChatScreen.video2.setIcon(frame);
+	    	    	}
+				}catch(Exception ex) {
+					logger.info("camera is being used by another application");
+				}
+		
+			}
+		};
+	    videoSend.start();	
 	 }
     
     

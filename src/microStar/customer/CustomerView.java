@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import microStar.model.VideoRecieve;
+
 
 
 public class CustomerView implements MouseListener, ActionListener{
@@ -196,9 +198,6 @@ public class CustomerView implements MouseListener, ActionListener{
 		obj.start_stop.addActionListener(this);
 		liveVideoChatScreen = obj;
 	}
-
-	
-	
 	
 	
 
@@ -278,7 +277,7 @@ public class CustomerView implements MouseListener, ActionListener{
 		//DASHBOARD
 		try {
 			if(e.getSource() == dashboard.lodgeComplaint) {
-				
+				CustomerController.exitVideoChatScreen();
 				createCustomerLodgeComplaintScreen();  //creates new panel
 				dashboard.remove(currentPanel);  //removes current panel from dashboard
 				dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
@@ -288,6 +287,7 @@ public class CustomerView implements MouseListener, ActionListener{
 			
 			//Account Status
 			if(e.getSource() == dashboard.accountStatus) {
+				CustomerController.exitVideoChatScreen();
 				createCustomerAccountStatusScreen();  
 				dashboard.remove(currentPanel);  
 				dashboard.add(accountStatusScreen);  
@@ -297,18 +297,19 @@ public class CustomerView implements MouseListener, ActionListener{
 			}
 			
 			
-			//Lodge Complaint
+			//Complaint History
 			if(e.getSource() == dashboard.complaintHistory) {
-				
+				CustomerController.exitVideoChatScreen();
 				createCustomerComplaintHistoryScreen();  
 				dashboard.remove(currentPanel);  
 				dashboard.add(complaintHistoryScreen);  
 				currentPanel = complaintHistoryScreen;  
-				dashboard.setVisible(true);  
+				dashboard.setVisible(true); 
 			}
 			
 			//payment history
 			if(e.getSource() == dashboard.paymentHistory) {
+				CustomerController.exitVideoChatScreen();
 				createCustomerPaymentHistoryScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(paymentHistoryScreen);
@@ -318,6 +319,7 @@ public class CustomerView implements MouseListener, ActionListener{
 			
 			//Live chat
 			if(e.getSource() == dashboard.liveChat) {
+				CustomerController.exitVideoChatScreen();
 				createCustomerLiveChatScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(liveChatScreen);
@@ -327,6 +329,7 @@ public class CustomerView implements MouseListener, ActionListener{
 			
 			//Live Video chat
 			if(e.getSource() == dashboard.liveVideoChat) {
+				CustomerController.exitVideoChatScreen();
 				createCustomerLiveVideoChatScreen();
 				dashboard.remove(currentPanel);
 				dashboard.add(liveVideoChatScreen);

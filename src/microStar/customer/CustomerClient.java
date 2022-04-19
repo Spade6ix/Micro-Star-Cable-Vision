@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class CustomerClient {
     private String action;
     private ImageIcon videoFrame;
     private String videoSourceId;
+    private String videoDestinationId;
     private String videoSourceState;
     private Complaint complaintObj;
     private Customer customerObj;
@@ -46,8 +48,9 @@ public class CustomerClient {
     public CustomerClient(){
         try{
             action = "";
-            videoSourceId = null;
-            videoSourceState = null;
+            videoSourceId = "";
+            videoDestinationId = "";
+            videoSourceState = "";
             videoFrame = new ImageIcon();
             complaintObj = new Complaint();
             customerObj = new Customer();
@@ -264,6 +267,7 @@ public class CustomerClient {
             ex.printStackTrace();
         }
     }
+    
       
     public void sendVideoFrameObj(ImageIcon videoFrame, String id, String state) {
     	try{
@@ -294,14 +298,10 @@ public class CustomerClient {
 			e.printStackTrace();
 		} 
     	catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
+			//
+		} 
+    }    
     
-    
-    
-    
-
 
 	public void receiveResponse() {
         try {
@@ -585,6 +585,14 @@ public class CustomerClient {
 
 	public void setVideoSourceId(String id) {
 		this.videoSourceId = id;
+	}
+
+	public String getVideoDestinationId() {
+		return videoDestinationId;
+	}
+
+	public void setVideoDestinationId(String videoDestinationId) {
+		this.videoDestinationId = videoDestinationId;
 	}	
 	   
 	
