@@ -131,14 +131,14 @@ public class CustomerController {
         i=0;
         j=1;
         for (Employee p: data3){
-            data[i][j] = p.getFirstName() + " " + p.getLastName();
+            data[i][j] = p.getFirstName() + " " + p.getLastName() + "";
             i++;
         }
 
         i=0;
         j=2;
         for (Response p: data2){
-            data[i][j] = p.getResponseDateTime().getYear() + "-" + p.getResponseDateTime().getMonthValue() + "-" + p.getResponseDateTime().getDayOfMonth();
+            data[i][j] = p.getResponseDateTime().getYear() + "-" + p.getResponseDateTime().getMonthValue() + "-" + p.getResponseDateTime().getDayOfMonth() + "";
             i++;
         }
 		
