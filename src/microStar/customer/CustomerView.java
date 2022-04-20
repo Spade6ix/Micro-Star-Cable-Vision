@@ -238,7 +238,35 @@ public class CustomerView implements MouseListener, ActionListener{
 	}
 
 
+	class Refresh extends Thread{
 
+		public Refresh(){
+
+		}
+
+		@Override
+		public void run() {
+			String chats;
+			boolean flag;
+			while(true){
+				flag = true;
+				try {
+					while(flag) {
+						chats = CustomerController.readAllLiveChats();
+						liveChatScreen.chat.setText(chats);
+						flag = false;
+					}
+					if(!flag){
+						Thread.sleep(2500);
+					}
+				}
+				catch(Exception x){
+					System.err.println("Exception Occurred");
+					x.printStackTrace();
+				}
+			}
+		}
+	}
 
 
 
@@ -278,6 +306,9 @@ public class CustomerView implements MouseListener, ActionListener{
 		
 		//DASHBOARD
 		try {
+			Refresh refresher = new Refresh();
+			//refresher.setDaemon(true);
+
 			if(e.getSource() == dashboard.lodgeComplaint) {
 				CustomerController.exitVideoChatScreen();
 				createCustomerLodgeComplaintScreen();  //creates new panel
@@ -295,7 +326,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.add(accountStatusScreen);  
 				currentPanel = accountStatusScreen;
 				CustomerController.getAccountStatus();
-				dashboard.setVisible(true);  
+				dashboard.setVisible(true);
 			}
 			
 			
@@ -306,7 +337,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.remove(currentPanel);  
 				dashboard.add(complaintHistoryScreen);  
 				currentPanel = complaintHistoryScreen;  
-				dashboard.setVisible(true); 
+				dashboard.setVisible(true);
 			}
 			
 			//payment history
@@ -327,95 +358,7 @@ public class CustomerView implements MouseListener, ActionListener{
 				dashboard.add(liveChatScreen);
 				currentPanel = liveChatScreen;
 				dashboard.setVisible(true);
-				String chats;
-				chats = CustomerController.readAllLiveChats();
-				liveChatScreen.chat.setText(chats);
-				/*while(true){
-					chats = CustomerController.readAllLiveChats();
-					liveChatScreen.chat.setText(chats);
-					//DASHBOARD
-					try {
-						if(e.getSource() == dashboard.lodgeComplaint) {
-							CustomerController.exitVideoChatScreen();
-							createCustomerLodgeComplaintScreen();  //creates new panel
-							dashboard.remove(currentPanel);  //removes current panel from dashboard
-							dashboard.add(lodgeComplaintScreen);  //loads new panel in dashboard
-							currentPanel = lodgeComplaintScreen;  // sets new panel to current panel
-							dashboard.setVisible(true);  //Reloads Component
-							break;
-						}
-
-						//Account Status
-						if(e.getSource() == dashboard.accountStatus) {
-							CustomerController.exitVideoChatScreen();
-							createCustomerAccountStatusScreen();
-							dashboard.remove(currentPanel);
-							dashboard.add(accountStatusScreen);
-							currentPanel = accountStatusScreen;
-							CustomerController.getAccountStatus();
-							dashboard.setVisible(true);
-							break;
-						}
-
-
-						//Complaint History
-						if(e.getSource() == dashboard.complaintHistory) {
-							CustomerController.exitVideoChatScreen();
-							createCustomerComplaintHistoryScreen();
-							dashboard.remove(currentPanel);
-							dashboard.add(complaintHistoryScreen);
-							currentPanel = complaintHistoryScreen;
-							dashboard.setVisible(true);
-							break;
-						}
-
-						//payment history
-						if(e.getSource() == dashboard.paymentHistory) {
-							CustomerController.exitVideoChatScreen();
-							createCustomerPaymentHistoryScreen();
-							dashboard.remove(currentPanel);
-							dashboard.add(paymentHistoryScreen);
-							currentPanel = paymentHistoryScreen;
-							dashboard.setVisible(true);
-							break;
-						}
-
-						//Live Video chat
-						if(e.getSource() == dashboard.liveVideoChat) {
-							CustomerController.exitVideoChatScreen();
-							createCustomerLiveVideoChatScreen();
-							dashboard.remove(currentPanel);
-							dashboard.add(liveVideoChatScreen);
-							currentPanel = liveVideoChatScreen;
-							dashboard.setVisible(true);
-							CustomerController.incomingVideo();
-							break;
-						}
-					} catch(Exception ex) {
-						//Dashboard is null
-					}
-
-					//LIVE CHAT SCREEN
-					try {
-
-						//Save Changes
-						if (e.getSource() == liveChatScreen.send) {
-							String message = null;
-							String employeeID = null;
-							//System.out.println("send live chat message");
-
-							message = liveChatScreen.message.getText();
-							int selectedRow = liveChatScreen.table.getSelectedRow();
-							employeeID = (String) liveChatScreen.table.getValueAt(selectedRow, 0);
-							CustomerController.sendLiveChat(message,employeeID);
-							JOptionPane.showMessageDialog(liveChatScreen, "Message sent", "successful", JOptionPane.INFORMATION_MESSAGE);
-						}
-
-					} catch(Exception ex) {
-						//respond screen is null
-						//System.err.println("NULL");
-					}
-				}*/
+				refresher.start();
 			}
 			
 			//Live Video chat
