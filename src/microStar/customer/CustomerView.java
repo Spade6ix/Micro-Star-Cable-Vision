@@ -257,7 +257,7 @@ public class CustomerView implements MouseListener, ActionListener{
 						flag = false;
 					}
 					if(!flag){
-						Thread.sleep(2500);
+						Thread.sleep(3500);
 					}
 				}
 				catch(Exception x){

@@ -131,6 +131,7 @@ public class LiveChatScreen extends JPanel implements MouseListener, ActionListe
         chat.setPreferredSize(new Dimension(650, 400));
         chat.setLineWrap(true);
         chat.setBorder(null);
+        chat.setEditable(false);
 	    this.add(chat, gbc);
         
         

@@ -126,6 +126,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         id.setBackground(new Color(0x999999));
         id.setPreferredSize(new Dimension(200, 40));
         id.setBorder(null);
+        id.setEditable(false);
         this.add(id, gbc);
         
         
@@ -139,6 +140,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         firstName.setBackground(new Color(0x999999));
         firstName.setPreferredSize(new Dimension(200, 40));
         firstName.setBorder(null);
+        firstName.setEditable(false);
         this.add(firstName, gbc);
         
         
@@ -152,6 +154,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         lastName.setBackground(new Color(0x999999));
         lastName.setPreferredSize(new Dimension(200, 40));
         lastName.setBorder(null);
+        lastName.setEditable(false);
 	    this.add(lastName, gbc);
         
 	    
@@ -165,6 +168,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         email.setBackground(new Color(0x999999));
         email.setPreferredSize(new Dimension(200, 40));
         email.setBorder(null);
+        email.setEditable(false);
 	    this.add(email, gbc);
 	    
 	    
@@ -178,6 +182,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         contact.setBackground(new Color(0x999999));
         contact.setPreferredSize(new Dimension(200, 40));
         contact.setBorder(null);
+        contact.setEditable(false);
 	    this.add(contact, gbc);
 	    
 	    
@@ -228,6 +233,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         street.setBackground(new Color(0x999999));
         street.setPreferredSize(new Dimension(200, 40));
         street.setBorder(null);
+        street.setEditable(false);
         this.add(street, gbc);
         
         
@@ -241,6 +247,7 @@ public class LodgeComplaintScreen extends JPanel implements MouseListener{
         parish_state.setBackground(new Color(0x999999));
         parish_state.setPreferredSize(new Dimension(200, 40));
         parish_state.setBorder(null);
+        parish_state.setEditable(false);
         this.add(parish_state, gbc);
         
         
