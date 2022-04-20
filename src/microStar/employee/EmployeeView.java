@@ -2,6 +2,8 @@ package microStar.employee;
 
 
 
+import microStar.customer.CustomerController;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -119,11 +121,11 @@ public static JPanel currentPanel = null;
 		obj.save.addActionListener(this);
 		respondScreen = obj;
 	}
-	
-	
-	
-	
-	String[][] d1; //TEMP DATA, SWAP FOR REAL DATA ARRAY
+
+
+
+
+	String[][] d1 = EmployeeController.getCustomerList(); //TEMP DATA, SWAP FOR REAL DATA ARRAY
 	public void createEmployeeLiveChatScreen() {
 		/*public vars
 		  
@@ -366,9 +368,14 @@ public static JPanel currentPanel = null;
 			//Save Changes
 			if (e.getSource() == liveChatScreen.send) {
 				String message = null;
+				String customerID = null;
 				//System.out.println("send live chat message");
 				
 				message = liveChatScreen.message.getText();
+				int selectedRow = liveChatScreen.table.getSelectedRow();
+				customerID = (String) liveChatScreen.table.getValueAt(selectedRow, 0);
+				EmployeeController.sendLiveChat(message,customerID);
+				JOptionPane.showMessageDialog(liveChatScreen, "Message sent", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 		} catch(Exception ex) {

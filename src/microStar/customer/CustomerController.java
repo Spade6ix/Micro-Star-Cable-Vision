@@ -311,7 +311,42 @@ public class CustomerController {
 		};
 	    videoSend.start();	
 	 }
-    
-  
-    
+
+
+	public static String[][] getEmployeeList(){
+		String[][] data = null;
+		List<Employee> data1 = new ArrayList<Employee>();
+
+		Customer c = new Customer();
+		c.setCustomerID(client.getCustomerObj().getCustomerID());
+
+		client.sendAction("Customer ReadAll LiveChat");
+		client.sendCustomerObj(c);
+		client.receiveResponse();
+		data1 = client.getEmployeeList();
+
+		data = new String[client.getEmployeeList().size()][2];
+		int i=0;
+		int j=0;
+		for (Employee e: data1){
+			data[i][j] = e.getStaffID();
+			j++;
+			data[i][j] = e.getFirstName() + " " + e.getLastName();
+			j=0;
+			i++;
+		}
+
+		return data;
+	}
+
+	public static void sendLiveChat(String message, String ID){
+		LiveChat liveChatObj = new LiveChat();
+		liveChatObj.setCustomerID(client.getCustomerObj().getCustomerID());
+		liveChatObj.setMessage(message);
+		liveChatObj.setStaffID(ID);
+		liveChatObj.setSentByCustomer(true);
+		client.sendAction("Customer Create LiveChat");
+		client.sendLiveChatObj(liveChatObj);
+		client.receiveResponse();
+	}
 }

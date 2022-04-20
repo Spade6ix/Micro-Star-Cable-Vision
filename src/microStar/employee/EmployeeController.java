@@ -305,10 +305,43 @@ public class EmployeeController {
 		empClient.receiveResponse();
 
 	}
+
+	public static String[][] getCustomerList(){
+		String[][] data = null;
+		List<Customer> data1 = new ArrayList<Customer>();
+
+		Employee e = new Employee();
+		e.setStaffID(empClient.getEmployeeObj().getStaffID());
+
+		empClient.sendAction("Employee ReadAll LiveChat");
+		empClient.sendEmployeeObj(e);
+		empClient.receiveResponse();
+		data1 = empClient.getCustomerList();
+
+		data = new String[empClient.getCustomerList().size()][2];
+		int i=0;
+		int j=0;
+		for (Customer c: data1){
+			data[i][j] = c.getCustomerID();
+			j++;
+			data[i][j] = c.getFirstName() + " " + c.getLastName();
+			j=0;
+			i++;
+		}
+
+		return data;
+	}
     
-    
-    
-    
+    public static void sendLiveChat(String message, String ID){
+    	LiveChat liveChatObj = new LiveChat();
+		liveChatObj.setCustomerID(ID);
+		liveChatObj.setMessage(message);
+		liveChatObj.setStaffID(empClient.getEmployeeObj().getStaffID());
+		liveChatObj.setSentByCustomer(false);
+		empClient.sendAction("Employee Create LiveChat");
+		empClient.sendLiveChatObj(liveChatObj);
+		empClient.receiveResponse();
+	}
     
     
     

@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import microStar.employee.EmployeeController;
 import microStar.model.VideoRecieve;
 
 
@@ -167,7 +168,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	
-	String[][] d1; //TEMP DATA, SWAP FOR REAL DATA ARRAY
+	String[][] d1 = CustomerController.getEmployeeList(); //TEMP DATA, SWAP FOR REAL DATA ARRAY
 	public void createCustomerLiveChatScreen() {
 		/*public vars
 		  
@@ -399,13 +400,19 @@ public class CustomerView implements MouseListener, ActionListener{
 			//Save Changes
 			if (e.getSource() == liveChatScreen.send) {
 				String message = null;
+				String employeeID = null;
 				//System.out.println("send live chat message");
 				
 				message = liveChatScreen.message.getText();
+				int selectedRow = liveChatScreen.table.getSelectedRow();
+				employeeID = (String) liveChatScreen.table.getValueAt(selectedRow, 0);
+				CustomerController.sendLiveChat(message,employeeID);
+				JOptionPane.showMessageDialog(liveChatScreen, "Message sent", "successful", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
 		} catch(Exception ex) {
 			//respond screen is null
+			System.err.println("NULL");
 		}
 		
 		
