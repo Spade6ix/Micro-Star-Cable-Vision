@@ -167,7 +167,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	
 	
 	
-	
+	String[][] d1; //TEMP DATA, SWAP FOR REAL DATA ARRAY
 	public void createCustomerLiveChatScreen() {
 		/*public vars
 		  
@@ -175,7 +175,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	  	liveChatScreen.chat											- chat text area
 	  	liveChatScreen.send											- send button
 		 */
-		LiveChatScreen obj = new LiveChatScreen();
+		LiveChatScreen obj = new LiveChatScreen(d1);
 		liveChatScreen = obj;
 	}
 	

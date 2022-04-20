@@ -123,7 +123,7 @@ public static JPanel currentPanel = null;
 	
 	
 	
-	
+	String[][] d1; //TEMP DATA, SWAP FOR REAL DATA ARRAY
 	public void createEmployeeLiveChatScreen() {
 		/*public vars
 		  
@@ -131,7 +131,7 @@ public static JPanel currentPanel = null;
 	  	liveChatScreen.chat											- chat text area
 	  	liveChatScreen.send											- send button
 		 */
-		LiveChatScreen obj = new LiveChatScreen();
+		LiveChatScreen obj = new LiveChatScreen(d1);
 		obj.send.addActionListener(this);
 		liveChatScreen = obj;
 	}
