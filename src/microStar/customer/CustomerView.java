@@ -177,6 +177,7 @@ public class CustomerView implements MouseListener, ActionListener{
 	  	liveChatScreen.send											- send button
 		 */
 		LiveChatScreen obj = new LiveChatScreen(d1);
+		obj.send.addActionListener(this);
 		liveChatScreen = obj;
 	}
 	
@@ -412,7 +413,7 @@ public class CustomerView implements MouseListener, ActionListener{
 			
 		} catch(Exception ex) {
 			//respond screen is null
-			System.err.println("NULL");
+			//System.err.println("NULL");
 		}
 		
 		
