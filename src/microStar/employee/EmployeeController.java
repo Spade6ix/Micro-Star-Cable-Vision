@@ -362,7 +362,7 @@ public class EmployeeController {
 				//chats = chats.concat(" SENT/RECEIVED---> Received");
 			}
 			else if(!l.isSentByCustomer()){
-				chats = chats.concat("\n\t\t\t" + l.getCustomerID() + ": " + l.getMessage() + " [SENT]");
+				chats = chats.concat("\n\t\t\t@" + l.getCustomerID() + ": " + l.getMessage() + " [SENT]");
 				//chats = chats.concat(" SENT/RECEIVED---> Sent");
 			}
 		}

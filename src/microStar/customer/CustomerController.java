@@ -365,7 +365,7 @@ public class CustomerController {
 
 		for(LiveChat l : data1){
 			if(l.isSentByCustomer()){
-				chats = chats.concat("\n\t\t\t" + l.getStaffID() + ": " + l.getMessage() + " [SENT]");
+				chats = chats.concat("\n\t\t\t@" + l.getStaffID() + ": " + l.getMessage() + " [SENT]");
 				//chats = chats.concat(" SENT/RECEIVED---> Sent");
 			}
 			else if(!l.isSentByCustomer()){
