@@ -285,6 +285,73 @@ public static JPanel currentPanel = null;
 				dashboard.add(liveChatScreen);
 				currentPanel = liveChatScreen;
 				dashboard.setVisible(true);
+				String chats;
+				chats = EmployeeController.readAllLiveChats();
+				liveChatScreen.chat.setText(chats);
+				/*while(true){
+					chats = EmployeeController.readAllLiveChats();
+					liveChatScreen.chat.setText(chats);
+					//DASHBOARD
+					try {
+
+						//Assign
+						if(e.getSource() == dashboard.assign) {
+							EmployeeController.exitVideoChatScreen();
+							createEmployeeAssignScreen();
+							dashboard.remove(currentPanel);
+							dashboard.add(assignScreen);
+							currentPanel = assignScreen;
+							dashboard.setVisible(true);
+							break;
+						}
+
+						//Respond
+						if(e.getSource() == dashboard.respond) {
+							EmployeeController.exitVideoChatScreen();
+							createEmployeeRespondScreen();
+							dashboard.remove(currentPanel);
+							dashboard.add(respondScreen);
+							currentPanel = respondScreen;
+							dashboard.setVisible(true);
+							break;
+						}
+
+						//Live Video chat
+						if(e.getSource() == dashboard.liveVideoChat) {
+							EmployeeController.exitVideoChatScreen();
+							createCustomerLiveVideoChatScreen();
+							dashboard.remove(currentPanel);
+							dashboard.add(liveVideoChatScreen);
+							currentPanel = liveVideoChatScreen;
+							dashboard.setVisible(true);
+							EmployeeController.incomingVideo();
+							break;
+						}
+
+					} catch (Exception ex) {
+						//dashboard obj null
+					}
+
+					//LIVE CHAT SCREEN
+					try {
+
+						//Save Changes
+						if (e.getSource() == liveChatScreen.send) {
+							String message = null;
+							String customerID = null;
+							//System.out.println("send live chat message");
+
+							message = liveChatScreen.message.getText();
+							int selectedRow = liveChatScreen.table.getSelectedRow();
+							customerID = (String) liveChatScreen.table.getValueAt(selectedRow, 0);
+							EmployeeController.sendLiveChat(message,customerID);
+							JOptionPane.showMessageDialog(liveChatScreen, "Message sent", "successful", JOptionPane.INFORMATION_MESSAGE);
+						}
+
+					} catch(Exception ex) {
+						//respond screen is null
+					}
+				 }*/
 			}
 			
 			//Live Video chat

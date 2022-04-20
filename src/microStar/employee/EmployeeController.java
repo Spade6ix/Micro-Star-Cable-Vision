@@ -342,6 +342,33 @@ public class EmployeeController {
 		empClient.sendLiveChatObj(liveChatObj);
 		empClient.receiveResponse();
 	}
+
+	public static String readAllLiveChats(){
+		String chats = "";
+		List<LiveChat> data1 = new ArrayList<LiveChat>();
+
+		Employee e = new Employee();
+		e.setStaffID(empClient.getEmployeeObj().getStaffID());
+
+		empClient.sendAction("Employee ReadAll LiveChat");
+		empClient.sendEmployeeObj(e);
+		empClient.receiveResponse();
+
+		data1 = empClient.getLiveChatList();
+
+		for(LiveChat l : data1){
+			if(l.isSentByCustomer()){
+				chats = chats.concat("\n" + l.getCustomerID() + ": " + l.getMessage() + " [RECEIVED]");
+				//chats = chats.concat(" SENT/RECEIVED---> Received");
+			}
+			else if(!l.isSentByCustomer()){
+				chats = chats.concat("\n\t\t\t" + l.getCustomerID() + ": " + l.getMessage() + " [SENT]");
+				//chats = chats.concat(" SENT/RECEIVED---> Sent");
+			}
+		}
+
+		return chats;
+	}
     
     
     

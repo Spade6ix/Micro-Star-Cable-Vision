@@ -349,4 +349,31 @@ public class CustomerController {
 		client.sendLiveChatObj(liveChatObj);
 		client.receiveResponse();
 	}
+
+	public static String readAllLiveChats(){
+		String chats = "";
+		List<LiveChat> data1 = new ArrayList<LiveChat>();
+
+		Customer c = new Customer();
+		c.setCustomerID(client.getCustomerObj().getCustomerID());
+
+		client.sendAction("Customer ReadAll LiveChat");
+		client.sendCustomerObj(c);
+		client.receiveResponse();
+
+		data1 = client.getLiveChatList();
+
+		for(LiveChat l : data1){
+			if(l.isSentByCustomer()){
+				chats = chats.concat("\n\t\t\t" + l.getStaffID() + ": " + l.getMessage() + " [SENT]");
+				//chats = chats.concat(" SENT/RECEIVED---> Sent");
+			}
+			else if(!l.isSentByCustomer()){
+				chats = chats.concat("\n" + l.getStaffID() + ": " + l.getMessage() + " [RECEIVED]");
+				//chats = chats.concat(" SENT/RECEIVED---> Received");
+			}
+		}
+
+		return chats;
+	}
 }
